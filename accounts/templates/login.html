@@ -1,0 +1,43 @@
+{% extends "imports.html" %}
+
+{% load widget_tweaks %}
+
+{% block base %}
+<body class="simple-page">
+	<div class="simple-page-wrap">
+		<div class="simple-page-logo animated swing">
+			<a href="index.html">
+				<span><i class="fa fa-gg"></i></span>
+				<span>Projeto Artesão</span>
+			</a>
+		</div><!-- logo -->
+		<div class="simple-page-form animated flipInY" id="login-form">
+	<h4 class="form-title m-b-xl text-center">Entrar com sua conta</h4>
+
+	<form method="POST">
+		{% csrf_token %}
+		{% for field in form %}
+		<div class="form-group">
+			{% render_field field class="form-control" placeholder=field.label %}
+		</div>
+		{% endfor %}
+
+		<div class="form-group m-b-xl">
+			<div class="checkbox checkbox-primary">
+				<input type="checkbox" id="keep_me_logged_in"/>
+				<label for="keep_me_logged_in">Manter-se logado</label>
+			</div>
+		</div>
+
+		<button type="submit" role="button" class="btn btn-primary">Entrar</button>
+
+	</form>
+
+</div><!-- #login-form -->
+<div class="simple-page-footer text-center">
+		<a href="index.html" class="btn btn-outline btn-default" data-toggle="tooltip" data-placement="bottom" title="Voltar para Home"><i class="fa fa-home"></i></a>
+	</div>
+	</div><!-- .simple-page-wrap -->
+</body>
+
+{% endblock %}
