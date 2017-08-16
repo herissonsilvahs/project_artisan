@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, TemplateView, DetailView, View
+from django.views.generic import CreateView, TemplateView, DetailView, View, UpdateView
 from .models import Artisan
 from .forms import ArtisanForm
 from django.core.urlresolvers import reverse_lazy
@@ -50,7 +50,6 @@ class ChangeStatusArtisanView(View):
 		artisan.status = self.status
 		artisan.save()
 		return redirect(reverse_lazy('artisans:detail', kwargs={'pk':artisan.pk}))
-
 
 
 new = CreateArtisanView.as_view()

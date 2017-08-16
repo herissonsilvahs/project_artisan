@@ -1,0 +1,8 @@
+<form class="" action="{% url 'accounts:upload_avatar' %}" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<input type="file" name="avatar">
+	<button type="submit">ENVIAR</button>
+</form>
+
+
+<img src="{{user.photo}}">

@@ -2,6 +2,8 @@ import os
 from decouple import config
 from dj_database_url import parse as dburl
 
+import cloudinary
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #apps externas
     'widget_tweaks',
+    'cloudinary',
     #apps internas
     'core',
     'accounts',
@@ -119,4 +122,10 @@ AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.ModelBackend',
+)
+
+cloudinary.config(
+  cloud_name = "dlr1vmgpr",
+  api_key = "719242976737185",
+  api_secret = "_n7AmJKuJ0QuZu6bNmh56g3yUgU"
 )

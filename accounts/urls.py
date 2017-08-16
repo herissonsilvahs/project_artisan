@@ -11,4 +11,5 @@ urlpatterns = [
 	url(r'^status/(?P<pk>\d+)/active', views.activate, name='activate'),
 	url(r'^status/(?P<pk>\d+)/disable', views.deactivate, name='deactivate'),
 	url(r'^status/(?P<pk>\d+)/block', views.block, name='block'),
+	url(r'^upload/$', views.upload_avatar, name="upload_avatar"),
 ]

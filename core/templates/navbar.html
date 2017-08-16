@@ -68,59 +68,15 @@
                 </div>
               </div>
             </a><!-- .media-group-item -->
-
-            <a href="javascript:void(0)" class="media-group-item">
-              <div class="media">
-                <div class="media-left">
-                  <div class="avatar avatar-xs avatar-circle">
-                    <img src="assets/images/205.jpg" alt="">
-                    <i class="status status-offline"></i>
-                  </div>
-                </div>
-                <div class="media-body">
-                  <h5 class="media-heading">John Doe</h5>
-                  <small class="media-meta">2 hours ago</small>
-                </div>
-              </div>
-            </a><!-- .media-group-item -->
-
-            <a href="javascript:void(0)" class="media-group-item">
-              <div class="media">
-                <div class="media-left">
-                  <div class="avatar avatar-xs avatar-circle">
-                    <img src="assets/images/207.jpg" alt="">
-                    <i class="status status-away"></i>
-                  </div>
-                </div>
-                <div class="media-body">
-                  <h5 class="media-heading">Sara Smith</h5>
-                  <small class="media-meta">idle 5 min ago</small>
-                </div>
-              </div>
-            </a><!-- .media-group-item -->
-
-            <a href="javascript:void(0)" class="media-group-item">
-              <div class="media">
-                <div class="media-left">
-                  <div class="avatar avatar-xs avatar-circle">
-                    <img src="assets/images/211.jpg" alt="">
-                    <i class="status status-away"></i>
-                  </div>
-                </div>
-                <div class="media-body">
-                  <h5 class="media-heading">Donia Dyab</h5>
-                  <small class="media-meta">idle 5 min ago</small>
-                </div>
-              </div>
-            </a><!-- .media-group-item -->
+           
           </div>
         </li>
 
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{user}}</a>
           <ul class="dropdown-menu animated flipInY">
-            <li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>Perfil</a></li>
-            <li><a href="javascript:void(0)"><i class="fa m-r-md fa-lg fa-sign-out"></i>Sair</a></li>
+            <li><a href="#"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>Perfil</a></li>
+            <li><a href="{% url 'accounts:logout' %}"><i class="fa m-r-md fa-lg fa-sign-out"></i>Sair</a></li>
           </ul>
         </li>
       </ul>
@@ -148,6 +104,14 @@
             <span class="menu-text">Usuários</span>
           </a>
         </li>
+
+        <li class="has-submenu">
+          <a href="{% url 'artisans:list' %}">
+            <i class="menu-icon fa fa-paint-brush fa-lg"></i>
+            <span class="menu-text">Artesãos</span>
+          </a>
+        </li>
+
       </ul><!-- .app-menu -->
     </div><!-- .menubar-scroll-inner -->
   </div><!-- .menubar-scroll -->

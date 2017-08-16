@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import TemplateView, DetailView, View
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import TemplateView, DetailView, View, UpdateView
 from .forms import UserCreateForm, UserUpdateForm
 
 from .models import User
@@ -10,6 +11,10 @@ from .polices import IsRoot, IsAdm
 
 from django.contrib.auth.views import LoginView
 from .forms import AuthenticationFormWithChekUsersStatus
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 class LoginCustomView(LoginView):
     template_name = 'login.html'
@@ -69,7 +74,16 @@ class ChangeStatusUserView(LoginRequiredMixin, IsAdm, View):
 		return redirect(reverse_lazy('accounts:detail', kwargs={'pk':user.pk}))
 
   
+class UploadImg(LoginRequiredMixin, TemplateView):
+    template_name = 'profile.html'
 
+    def post(self, request, *args, **kwargs):
+        filep = self.request.FILES['avatar']
+        avatar = cloudinary.uploader.upload(filep, public_id=self.request.user.email)
+        user = self.request.user
+        user.photo = avatar['secure_url']
+        user.save()
+        return redirect(reverse_lazy('accounts:list'))
 
 login = LoginCustomView.as_view()
 dashboard = DashboardView.as_view()
@@ -78,3 +92,4 @@ detail = DetailUserView.as_view()
 activate = ChangeStatusUserView.as_view()
 deactivate = ChangeStatusUserView.as_view(status=1)
 block = ChangeStatusUserView.as_view(status=2)
+upload_avatar = UploadImg.as_view()
