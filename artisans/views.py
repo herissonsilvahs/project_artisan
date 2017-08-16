@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, TemplateView, DetailView
+from django.views.generic import CreateView, TemplateView, DetailView, View
 from .models import Artisan
 from .forms import ArtisanForm
 from django.core.urlresolvers import reverse_lazy
@@ -43,16 +43,19 @@ class DetailArtisanView(DetailView):
 			form.save()
 		return self.render_to_response(context)
 
-class ChangeStatusUserView(View):
+class ChangeStatusArtisanView(View):
 	status = 0
 	def get(self, request, pk):
 		artisan = get_object_or_404(Artisan, pk=pk)
 		artisan.status = self.status
 		artisan.save()
-		return redirect(reverse_lazy('accounts:detail', kwargs={'pk':user.pk}))
+		return redirect(reverse_lazy('artisans:detail', kwargs={'pk':artisan.pk}))
 
 
 
 new = CreateArtisanView.as_view()
 list_artisan = ListArtisanView.as_view()
 detail = DetailArtisanView.as_view()
+activate = ChangeStatusArtisanView.as_view()
+deactivate = ChangeStatusArtisanView.as_view(status=1)
+block = ChangeStatusArtisanView.as_view(status=2)
