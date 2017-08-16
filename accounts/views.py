@@ -25,10 +25,7 @@ class ListUserView(LoginRequiredMixin, IsAdm, TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super(ListUserView, self).get_context_data(**kwargs)
 		context['form_create'] = UserCreateForm(self.request.POST or None)
-<<<<<<< HEAD
-=======
 		context['users'] = User.objects.all()
->>>>>>> e7732337915a99cc50ab7d3aed3a840e21e6a75f
 		return context
 
 	def post(self, request, *args, **kwargs):
