@@ -1,0 +1,122 @@
+{% extends "navbar.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+ <div class="wrap">
+     <section class="app-content">
+      <div class="row">
+        <div class="col-md-12 widget-header">
+          <header class="col-md-6 left">
+            <h2 style="color:black; padding-bottom:5%;"><strong>Gerenciamento de Usuários</strong>
+              <br><small>Lista de todos os usuários cadastrados</small></h2>
+
+            </header>
+            <header class="col-md-6 right">
+              <div style="padding-top:3%;">
+                <button type="button" role="button" class="btn btn-success btn-lg pull-right" data-toggle="modal" data-target="#addUser"><i class="fa fa-plus"></i> Add Artesãos</button>
+              </div>
+            </header><!-- .widget-header -->
+          </div>
+        </div>
+        <div class="row">
+         <!-- DOM dataTable -->
+         <div class="col-md-12">
+          <div class="widget">
+           <div class="widget-body">
+            <div class="table-responsive">
+             <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
+              <thead>
+               <tr>
+                <th style="width:5%;">Foto</th>
+                <th style="width:10%;">Nome</th>
+                <th style="width:10%;">E-mail</th>
+                <th style="width:10%;">CPF</th>
+                <th style="width:10%;">Telefone</th>
+            	<th style="width:10%;">Telefone</th>
+            	<th style="width:10%;">Biografia</th>
+                <th class="text-center" style="width:10%;">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+            {% for artisan in artisans %}
+            <tr>
+              <td><img src="assets/images/221.jpg" class="img-responsive avatar avatar-sm avatar-circle img-circle" alt="Avatar"></td>
+              
+              <td>{{artisan.name}}</td>
+              <td>{{artisan.email}}</td>
+              <td>{{artisan.cpf}}</td>
+              <td>{{artisan.phone}}</td>
+              <td>{{artisan.phone_optional}}</td>
+              <td>{{artisan.biography}}</td>
+
+              <td class="text-center">
+                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                <button type="button" role="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div><!-- .widget-body -->
+  </div><!-- .widget -->
+</div><!-- END column -->
+
+
+<!-- add User Modal -->
+<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">Novo Artesão</h4>
+      </div>
+      <div class="modal-body">
+        
+
+        <form method="POST">
+          {% csrf_token %}
+          
+          <div class="row">
+            <div class="col-md-12">
+            <div class="col-md-4 col-md-offset-4">
+              <input name="" class="dropzone form-control input-sm" value="" data-plugin="dropzone" data-options="{ url: 'api/dropzone'}" placeholder="Foto" style="text-align:center;">
+            </div>
+            </div>
+          </div>
+          
+          {% for field in form %}
+          <div class="form-group"> 
+            <label for="{{field.auto_id}}" class="control-label">{{field.label}}</label>
+            {% render_field field class="form-control" placeholder=field.label %}
+          </div>
+          {% endfor %}
+      
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+   

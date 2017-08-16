@@ -9,7 +9,7 @@ class Artisan(models.Model):
 	phone = models.CharField('Telefone', max_length=30)
 	phone_optional = models.CharField('Telefone Opcional', max_length=30)
 	cpf = models.CharField('CPF', max_length=15)
-	biography = models.CharField('Biografia', max_length=250)
+	biography = models.TextField('Biografia', max_length=250)
 
 	class Meta:
 		verbose_name = 'Artesão'

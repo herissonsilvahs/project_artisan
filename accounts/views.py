@@ -8,12 +8,11 @@ class DashboardView(TemplateView):
 
 class ListUserView(TemplateView):
 	template_name = 'list_user.html'
+	context_object_name = 'users'
 
 	def get_context_data(self, **kwargs):
 		context = super(ListUserView, self).get_context_data(**kwargs)
 		context['form_create'] = UserCreateForm(self.request.POST or None)
-
-		context['users'] = User.objects.all()
 		return context
 
 	def post(self, request, *args, **kwargs):
