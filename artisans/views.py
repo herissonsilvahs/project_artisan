@@ -1,14 +1,25 @@
-from django.shortcuts import render
-from django.views.generic import CreateView, TemplateView, DetailView, View, UpdateView
+from django.shortcuts import render, redirect
+from django.views.generic import TemplateView, DetailView, View, UpdateView
 from .models import Artisan
 from .forms import ArtisanForm
 from django.core.urlresolvers import reverse_lazy
 
-class CreateArtisanView(CreateView):
+class CreateArtisanView(TemplateView):
 	template_name = 'new_artisan.html'
-	model = Artisan
-	form_class = ArtisanForm
-	success_url = reverse_lazy('accounts:list')
+
+	def get_context_data(self, **kwargs):
+		context = super(CreateArtisanView, self).get_context_data(**kwargs)
+		context['form'] = ArtisanForm(self.request.POST or None)
+		return context
+
+	def post(self, request, *args, **kwargs):
+	 	context = self.get_context_data(**kwargs)
+	 	form = context['form']
+	 	if form.is_valid():
+	 		artisan = form.save()
+	 		return redirect(reverse_lazy('addresses:create', kwargs={'pk':artisan.pk}))
+	 	return self.render_to_response(context)
+
 
 class ListArtisanView(TemplateView):
 	template_name = 'list_artisan.html'
