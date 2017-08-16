@@ -71,7 +71,9 @@ class ChangeStatusUserView(LoginRequiredMixin, IsAdm, View):
 		user.save()
 		return redirect(reverse_lazy('accounts:detail', kwargs={'pk':user.pk}))
 
+  
 
+  
 login = LoginCustomView.as_view()
 dashboard = DashboardView.as_view()
 list_user = ListUserView.as_view()
