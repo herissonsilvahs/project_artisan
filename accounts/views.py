@@ -70,7 +70,7 @@ class ChangeStatusUserView(LoginRequiredMixin, IsAdm, View):
 
   
 
-  
+
 login = LoginCustomView.as_view()
 dashboard = DashboardView.as_view()
 list_user = ListUserView.as_view()
