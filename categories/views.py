@@ -13,6 +13,13 @@ class ListCategoryView(TemplateView):
 		context['categories'] = Category.objects.all()
 		return context
 
+	def post(self, request, *args, **kwargs):
+		context = self.get_context_data(**kwargs)
+		form = context['form']
+		if form.is_valid:
+			form.save()
+		return self.render_to_response(context)
+
 
 
 list_category = ListCategoryView.as_view()
