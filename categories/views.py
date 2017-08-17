@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, DetailView
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import TemplateView, DetailView, View, DeleteView
 from .forms import CategoryForm
 from .models import Category
+from django.core.urlresolvers import reverse_lazy
 
 # Create your views here.
 class ListCategoryView(TemplateView):
@@ -37,6 +38,14 @@ class DetailCategoryView(DetailView):
 			form.save()
 		return self.render_to_response(context)
 
+class DeleteCategoryView(DeleteView):
+	template_name = 'delete_category.html'
+	model = Category
+	context_object_name = 'category'
+	success_url = reverse_lazy('categories:list')
+
+
 
 list_category = ListCategoryView.as_view()
 detail = DetailCategoryView.as_view()
+delete = DeleteCategoryView.as_view()

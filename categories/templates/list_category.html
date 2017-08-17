@@ -45,7 +45,7 @@
                 <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
 
                 <a href="{% url 'categories:detail' category.pk %}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-                <button type="button" role="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                <a href="{% url 'categories:delete' category.pk %}" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
               </td>
             </tr>
             {% endfor %}
@@ -87,6 +87,21 @@
 
 
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal confirmação -->
+<div class="modal fade" id="showConfirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">Deseja excluir esta categoria?</h4>
+        <a href="#" class="btn btn-danger btn-sm">Confirmar</a>
+        <a href="#" class="btn btn-primary btn-sm">Cancelar</a>
+      </div>
+      
     </div>
   </div>
 </div>
