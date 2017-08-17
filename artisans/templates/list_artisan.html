@@ -3,57 +3,55 @@
 {% load widget_tweaks %}
 
 {% block content %}
- <div class="wrap">
-     <section class="app-content">
-      <div class="row">
-        <div class="col-md-12 widget-header">
-          <header class="col-md-6 left">
-            <h2 style="color:black; padding-bottom:5%;"><strong>Gerenciamento de Usuários</strong>
-              <br><small>Lista de todos os usuários cadastrados</small></h2>
+<div class="wrap">
+ <section class="app-content">
+  <div class="row">
+    <div class="col-md-12 widget-header">
+      <header class="col-md-6 left">
+        <h2 style="color:black; padding-bottom:5%;"><strong>Gerenciamento de Usuários</strong>
+          <br><small>Lista de todos os usuários cadastrados</small></h2>
 
-            </header>
-            <header class="col-md-6 right">
-              <div style="padding-top:3%;">
-                <a href="{% url 'artisans:new' %}" class="btn btn-success btn-lg pull-right"><i class="fa fa-plus"></i> Artesão</a>
-              </div>
-            </header><!-- .widget-header -->
+        </header>
+        <header class="col-md-6 right">
+          <div style="padding-top:3%;">
+            <a href="{% url 'artisans:new' %}" class="btn btn-success btn-lg pull-right"><i class="fa fa-plus"></i> Artesão</a>
           </div>
-        </div>
-        <div class="row">
-         <!-- DOM dataTable -->
-         <div class="col-md-12">
-          <div class="widget">
-           <div class="widget-body">
-            <div class="table-responsive">
-             <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
-              <thead>
-               <tr>
-                <th style="width:5%;">Foto</th>
-                <th style="width:10%;">Nome</th>
-                <th style="width:10%;">E-mail</th>
-                <th style="width:10%;">CPF</th>
-                <th style="width:10%;">Telefone</th>
-            	<th style="width:10%;">Telefone</th>
-            	<th style="width:10%;">Biografia</th>
-                <th class="text-center" style="width:10%;">Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-            
-            {% for artisan in artisans %}
-            <tr>
-              <td><img src="assets/images/221.jpg" class="img-responsive avatar avatar-sm avatar-circle img-circle" alt="Avatar"></td>
-              
-              <td>{{artisan.name}}</td>
-              <td>{{artisan.email}}</td>
-              <td>{{artisan.cpf}}</td>
-              <td>{{artisan.phone}}</td>
-              <td>{{artisan.phone_optional}}</td>
-              <td>{{artisan.biography}}</td>
+        </header><!-- .widget-header -->
+      </div>
+    </div>
+    <div class="row">
+     <!-- DOM dataTable -->
+     <div class="col-md-12">
+      <div class="widget">
+       <div class="widget-body">
+        <div class="table-responsive">
+         <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
+          <thead>
+           <tr>
+            <th style="width:5%;">Foto</th>
+            <th style="width:10%;">Nome</th>
+            <th style="width:10%;">E-mail</th>
+            <th style="width:10%;">CPF</th>
+            <th style="width:10%;">Telefone</th>
+            <th style="width:10%;">Telefone</th>
+            <th class="text-center" style="width:10%;">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
 
-              <td class="text-center">
-                <a href="{% url 'artisans:detail' artisan.pk %}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-                <button type="button" role="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
+          {% for artisan in artisans %}
+          <tr>
+            <td><img src="{{ artisan.photo }}" class="img-responsive avatar avatar-sm avatar-circle img-circle" alt="Avatar"></td>
+
+            <td>{{artisan.name}}</td>
+            <td>{{artisan.email}}</td>
+            <td>{{artisan.cpf}}</td>
+            <td>{{artisan.phone}}</td>
+            <td>{{artisan.phone_optional}}</td>
+
+            <td class="text-center">
+              <a href="{% url 'artisans:detail' artisan.pk %}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+              <button type="button" role="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
             </tr>
             {% endfor %}
 
@@ -77,4 +75,3 @@
 
 
 
-   
