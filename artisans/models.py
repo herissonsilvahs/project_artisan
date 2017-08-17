@@ -19,7 +19,7 @@ class Artisan(models.Model):
 	phone = models.CharField('Telefone', max_length=30)
 	phone_optional = models.CharField('Telefone Opcional', max_length=30)
 	cpf = models.CharField('CPF', max_length=15)
-	biography = models.TextField('Biografia', max_length=250)
+	biography = models.TextField('Biografia')
 	status = models.IntegerField('Status', choices=STATUS, default=ACTIVATED)
 	address = models.ForeignKey(Address, verbose_name='Endereço', null=True)
 
