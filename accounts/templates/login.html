@@ -1,8 +1,26 @@
-{% extends "imports.html" %}
 
+<html lang="pt-br">
 {% load widget_tweaks %}
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<title>Projeto Artesão</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="Admin, Dashboard, Bootstrap">
+	<link rel="shortcut icon" sizes="196x196" href="{% static 'assets/images/logo.png' %}">
 
-{% block base %}
+	<!-- FONTS IMPORTS -->
+	<link rel="stylesheet" href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/material-design-iconic-font/dist/css/material-design-iconic-font.css' %}">
+	<!-- /FONTS IMPORTS -->
+	<link rel="stylesheet" href="{% static 'vendors/animate.css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'css/core.css' %}">
+	<link rel="stylesheet" href="{% static 'css/misc-pages.css' %}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
+</head>
+
 <body class="simple-page">
 	<div class="simple-page-wrap">
 		<div class="simple-page-logo animated swing">
@@ -12,32 +30,31 @@
 			</a>
 		</div><!-- logo -->
 		<div class="simple-page-form animated flipInY" id="login-form">
-	<h4 class="form-title m-b-xl text-center">Entrar com sua conta</h4>
+			<h4 class="form-title m-b-xl text-center">Entrar com sua conta</h4>
 
-	<form method="POST">
-		{% csrf_token %}
-		{% for field in form %}
-		<div class="form-group">
-			{% render_field field class="form-control" placeholder=field.label %}
+			<form method="POST">
+				{% csrf_token %}
+				{% for field in form %}
+				<div class="form-group">
+					{% render_field field class="form-control" placeholder=field.label %}
+				</div>
+				{% endfor %}
+
+				<div class="form-group m-b-xl">
+					<div class="checkbox checkbox-primary">
+						<input type="checkbox" id="keep_me_logged_in"/>
+						<label for="keep_me_logged_in">Manter-se logado</label>
+					</div>
+				</div>
+
+				<button type="submit" role="button" class="btn btn-primary">Entrar</button>
+
+			</form>
+
+		</div><!-- #login-form -->
+		<div class="simple-page-footer text-center">
+			<a href="index.html" class="btn btn-outline btn-default" data-toggle="tooltip" data-placement="bottom" title="Voltar para Home"><i class="fa fa-home"></i></a>
 		</div>
-		{% endfor %}
-
-		<div class="form-group m-b-xl">
-			<div class="checkbox checkbox-primary">
-				<input type="checkbox" id="keep_me_logged_in"/>
-				<label for="keep_me_logged_in">Manter-se logado</label>
-			</div>
-		</div>
-
-		<button type="submit" role="button" class="btn btn-primary">Entrar</button>
-
-	</form>
-
-</div><!-- #login-form -->
-<div class="simple-page-footer text-center">
-		<a href="index.html" class="btn btn-outline btn-default" data-toggle="tooltip" data-placement="bottom" title="Voltar para Home"><i class="fa fa-home"></i></a>
-	</div>
 	</div><!-- .simple-page-wrap -->
-</body>
 
-{% endblock %}
+</body></html>
