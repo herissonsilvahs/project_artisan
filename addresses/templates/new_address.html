@@ -4,11 +4,58 @@
 
 <form method="POST">
 	{% csrf_token %}
-	{% for field in form  %}
-		 <label for="{{field.auto_id}}" class="active">{{field.label}}</label>
-		 {% render_field field %}
-	{% endfor %}
-	<button type="submit">Próximo</button>
-</form>
 
-{% endblock %}
+	<div class="row md-margin">
+		<div class="col-sm-12 col-md-6">
+			<div class="form-group">
+				<label for="{{form.zipcode.auto_id}}" class="control-label">{{form.zipcode.label}}</label>
+				{% render_field form.zipcode class="form-control" placeholder=form.zipcode.label %}
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label for="{{form.street.auto_id}}" class="control-label">{{form.street.label}}</label>
+				{% render_field form.street class="form-control" placeholder=form.street.label %}
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-2">
+			<div class="form-group">
+				<label for="{{form.number.auto_id}}" class="control-label">{{form.number.label}}</label>
+				{% render_field form.number class="form-control" placeholder=form.number.label %}
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-6">
+			<div class="form-group">
+				<label for="{{form.neighborhood.auto_id}}" class="control-label">{{form.neighborhood.label}}</label>
+				{% render_field form.neighborhood class="form-control" placeholder=form.neighborhood.label %}
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label for="{{form.city.auto_id}}" class="control-label">{{form.city.label}}</label>
+				{% render_field form.city class="form-control" placeholder=form.city.label %}
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-2">
+			<div class="form-group">
+				<label for="{{form.state.auto_id}}" class="control-label">{{form.state.label}}</label>
+				{% render_field form.state class="form-control" placeholder=form.state.label %}
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-12">
+			<div class="form-group">
+				<button type="submit" class="btn btn-success pull-right">Próximo</button>
+			</div>
+		</div>
+
+		</div>
+
+	</form>
+
+	{% endblock %}

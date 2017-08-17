@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
 	{% csrf_token %}
 	<div class="row md-margin">
 
@@ -56,11 +56,14 @@
 			</div>
 		</div>
 
+		<div class="col-sm-12 col-md-12">
+			<div class="form-group"> 
+				<button type="submit" class="btn btn-success pull-right">Próximo</button>
+			</div>
+		</div>
+
 	</div>
 
-	<div class="modal-footer">
-		<button type="submit" class="btn btn-success">Próximo</button>
-	</div>
 </form>
 
 {% endblock %}

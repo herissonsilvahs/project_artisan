@@ -4,6 +4,10 @@ from .models import Artisan
 from .forms import ArtisanForm
 from django.core.urlresolvers import reverse_lazy
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 class CreateArtisanView(TemplateView):
 	template_name = 'new_artisan.html'
 
@@ -13,12 +17,16 @@ class CreateArtisanView(TemplateView):
 		return context
 
 	def post(self, request, *args, **kwargs):
-	 	context = self.get_context_data(**kwargs)
-	 	form = context['form']
-	 	if form.is_valid():
-	 		artisan = form.save()
-	 		return redirect(reverse_lazy('addresses:create', kwargs={'pk':artisan.pk}))
-	 	return self.render_to_response(context)
+		context = self.get_context_data(**kwargs)
+		form =	context['form']
+		if form.is_valid():
+			artisan = form.save(commit=False)
+			filep = self.request.FILES['photo']
+			photo = cloudinary.uploader.upload(filep, public_id=artisan.email)
+			artisan.photo = photo['secure_url']
+			artisan.save()
+			return redirect(reverse_lazy('addresses:create', kwargs={'pk':artisan.pk}))
+		return self.render_to_response(context)
 
 
 class ListArtisanView(TemplateView):
