@@ -15,7 +15,7 @@ class Artisan(models.Model):
 
 	name = models.CharField('Nome', max_length=150)
 	email = models.CharField('Email', max_length=90)
-	photo = models.CharField('Foto', max_length=200)
+	photo = models.CharField('Foto', max_length=200, default="http://res.cloudinary.com/dlr1vmgpr/image/upload/v1503512788/avatar_art_hnzs69.jpg")
 	phone = models.CharField('Telefone', max_length=30)
 	phone_optional = models.CharField('Telefone Opcional', max_length=30)
 	cpf = models.CharField('CPF', max_length=15)

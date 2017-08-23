@@ -21,9 +21,10 @@ class CreateArtisanView(TemplateView):
 		form =	context['form']
 		if form.is_valid():
 			artisan = form.save(commit=False)
-			filep = self.request.FILES['photo']
-			photo = cloudinary.uploader.upload(filep, public_id=artisan.email)
-			artisan.photo = photo['secure_url']
+			if 'photo' in self.request.FILES:
+				filep = self.request.FILES['photo']
+				photo = cloudinary.uploader.upload(filep, public_id=artisan.email)
+				artisan.photo = photo['secure_url']
 			artisan.save()
 			return redirect(reverse_lazy('addresses:create', kwargs={'pk':artisan.pk}))
 		return self.render_to_response(context)

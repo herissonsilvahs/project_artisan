@@ -42,7 +42,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     nivel = models.IntegerField('Nível', choices=TYPES, default=SUPPORT)
     address = models.ForeignKey(Address, verbose_name='Endereço', null=True)
-    photo = models.CharField('Avatar', max_length=350)
+    photo = models.CharField('Avatar', max_length=350, default="https://res.cloudinary.com/dlr1vmgpr/image/upload/v1503512687/avatar_g4vll9.png")
     is_staff = models.BooleanField('Equipe', default=False)
     is_active = models.BooleanField('Ativo', default=True)
 
