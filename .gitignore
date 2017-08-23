@@ -2,5 +2,4 @@
 *.sqlite3
 .venv
 *pyc
-migrations/
 __pycache__/
