@@ -17,7 +17,7 @@ class Category(models.Model):
 class SubCategory(models.Model):
 	name = models.CharField('Nome', max_length=50)
 	description = models.TextField('Descrição', max_length=400)
-	category = models.ForeignKey(Category, verbose_name='Categoria', null=True)
+	category = models.ForeignKey(Category, verbose_name='Categoria', null=True, on_delete=models.SET_NULL)
 
 	class Meta:
 		verbose_name = 'Subcategoria'
