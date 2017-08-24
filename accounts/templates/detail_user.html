@@ -4,21 +4,66 @@
 
 {% block content %}
 
-<h1>PERFIL</h1>
-<h2>{{user_request}}</h2>
+<div class="wrap">
+      <section class="app-content">
+        <div class="profile-header">
+          <div class="profile-cover">
+            <div class="cover-user m-b-lg">
+              <div>
+                <a data-toggle="modal" data-target="#update_user" class="cover-icon"><i class="fa fa-pencil"></i></a>
+              </div>
+              <div>
+                <div class="avatar avatar-xl avatar-circle">
+                  <a href="javascript:void(0)">
+                    <img class="img-responsive" src="{{user_request.photo}}" alt="avatar"/>
+                  </a>
+                </div><!-- .avatar -->
+              </div>
+              <div>
+                <a data-toggle="modal" data-target="#address" class="cover-icon"><i class="fa fa-envelope-o"></i></a>
+              </div>
+            </div>
+            <div class="text-center">
+              <h4 class="profile-info-name m-b-lg"><a href="javascript:void(0)" class="title-color">{{user_request}}</a></h4>
+              <div>
+                
+                <a href="javascript:void(0)" class="m-r-xl theme-color"><i class="fa fa-envelope m-r-xs"></i> {{user_request.email}}</a>
+                
+                <a href="javascript:void(0)" class="theme-color"><i class="fa fa-phone m-r-xs"></i>{{user_request.phone}} | 
+                  {% if user_request.phoneOptional %}
+                    <i class="fa fa-phone m-r-xs"></i>{{user_request.phoneOptional}}
+                  {% endif %}
+                  </a>
+              </div>
+            </div>
+          </div><!-- .profile-cover -->
 
-<button type="button" role="button" class="btn btn-success btn-lg pull-right" data-toggle="modal" data-target="#update_user">
-	<i class="fa fa-plus"></i> Atualizar {{user_request}}
-</button>
-<button type="button" role="button" class="btn btn-success btn-lg pull-right" data-toggle="modal" data-target="#address">
-  
-  {% if user_request.address %}
-  <i class="fa fa-refresh"></i> Atualizar Endereço
-  {% else %}
-  <i class="fa fa-plus"></i> Adicionar Endereço
-  {% endif %}
+          <div class="promo-footer">
+            <div class="row no-gutter">
+              <div class="col-sm-2 col-sm-offset-3 col-xs-6 promo-tab">
+                <div class="text-center">
+                  <small>Usuário</small>
+                  <h4 class="m-0 m-t-xs">{{user_request.username}}</h4>
+                </div>
+              </div>
+              <div class="col-sm-2 col-xs-6 promo-tab">
+                <div class="text-center">
+                  <small>Status</small>
+                  <h4 class="m-0 m-t-xs">{{user_request.get_status_display}}</h4>
+                </div>
+              </div>
+              <div class="col-sm-2 col-xs-12 promo-tab">
+                <div class="text-center">
+                  <small>Nível de acesso</small>
+                  <h4 class="m-0 m-t-xs">
+                    {{user_request.get_nivel_display}}
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div><!-- .promo-footer -->
+        </div><!-- .profile-header -->
 
-</button>
 
 <!-- update User Modal -->
 <div class="modal fade" id="update_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
