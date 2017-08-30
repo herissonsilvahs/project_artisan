@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, DetailView, View, UpdateView
 from .models import Artisan
 from .forms import ArtisanForm
 from django.core.urlresolvers import reverse_lazy
+from addresses.forms import AddressForm
 
 import cloudinary
 import cloudinary.uploader
@@ -53,14 +54,21 @@ class DetailArtisanView(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(DetailArtisanView, self).get_context_data(**kwargs)
 		context['form'] = ArtisanForm(self.request.POST or None, instance=context['artisan'])
+		context['form_address'] = AddressForm(self.request.POST or None, instance=context['artisan'].address)
 		return context
 
 	def post(self, request, *args, **kwargs):
 		self.object = self.get_object()
 		context = self.get_context_data(object=self.object)
 		form = context['form']
+		form_address = context['form_address']
 		if form.is_valid():
 			form.save()
+		if form_address.is_valid():
+			address = form_address.save()
+			artisan = get_object_or_404(Artisan, pk=self.object.pk)
+			artisan.address = address
+			artisan.save()
 		return self.render_to_response(context)
 
 class ChangeStatusArtisanView(View):

@@ -45,6 +45,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     photo = models.CharField('Avatar', max_length=350, default="https://res.cloudinary.com/dlr1vmgpr/image/upload/v1503512687/avatar_g4vll9.png")
     is_staff = models.BooleanField('Equipe', default=False)
     is_active = models.BooleanField('Ativo', default=True)
+    created = models.DateTimeField('Criado em', auto_now_add=True)
+    updated = models.DateTimeField('Atualizado em', auto_now=True)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'name']

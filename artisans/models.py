@@ -8,9 +8,9 @@ class Artisan(models.Model):
 	DISABLED = 1
 	BLOCKED = 2
 	STATUS = (
-        (ACTIVATED, 'activated'),
-        (DISABLED, 'disabled'),
-        (BLOCKED, 'blocked'),
+        (ACTIVATED, 'Ativado'),
+        (DISABLED, 'Desativado'),
+        (BLOCKED, 'Bloqueado'),
     )
 
 	name = models.CharField('Nome', max_length=150)
@@ -22,6 +22,8 @@ class Artisan(models.Model):
 	biography = models.TextField('Biografia')
 	status = models.IntegerField('Status', choices=STATUS, default=ACTIVATED)
 	address = models.ForeignKey(Address, verbose_name='Endereço', null=True)
+	created = models.DateTimeField('Criado em', auto_now_add=True)
+	updated = models.DateTimeField('Atualizado em', auto_now=True)
 
 	class Meta:
 		verbose_name = 'Artesão'
