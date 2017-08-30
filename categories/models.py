@@ -33,6 +33,9 @@ class Material(models.Model):
     description = models.TextField('Descrição')
     subcategory = models.ForeignKey(SubCategory, verbose_name='SubCategoria', null=True, on_delete=models.SET_NULL)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Material'
         verbose_name_plural = 'Materiais'

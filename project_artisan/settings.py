@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'addresses',
     'artisans',
     'categories',
+    'artifacts',
 ]
 
 MIDDLEWARE = [
