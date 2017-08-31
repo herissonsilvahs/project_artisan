@@ -17,7 +17,7 @@
                     <header class="col-md-6 right">
                         <div style="padding-top:3%;">
                             <button type="button" role="button" class="btn btn-success btn-lg pull-right"
-                                    data-toggle="modal" data-target="#addUser"><i class="fa fa-plus"></i> Add Materiais
+                                    data-toggle="modal" data-target="#addUser"><i class="fa fa-plus"></i> Add Artesanatos
                             </button>
                         </div>
                     </header><!-- .widget-header -->
@@ -70,12 +70,12 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title text-center" id="myModalLabel">Novo Material</h4>
+                                <h4 class="modal-title text-center" id="myModalLabel">Novo Artesanato</h4>
                             </div>
                             <div class="modal-body">
 
 
-                                <form method="POST">
+                                <form method="POST" enctype="multipart/form-data">
                                     {% csrf_token %}
 
                                     <div class="form-group">
@@ -104,7 +104,7 @@
 
                                     <div class="form-group">
                                         <label for="{{ form.artisan.auto_id }}"
-                                               class="control-label">{{ form.artisan.label }}</label>
+                                               class="control-label">Artesão</label>
                                         {% render_field form.artisan class="form-control" placeholder=form.artisan.label %}
                                     </div>
 
