@@ -41,9 +41,6 @@
               <td>{{category.description}}</td>
 
               <td class="text-center">
-    
-                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-
                 <a href="{% url 'categories:detail' category.pk %}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
                 <a href="{% url 'categories:delete' category.pk %}" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
               </td>
