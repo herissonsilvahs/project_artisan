@@ -31,7 +31,6 @@ class SubCategory(models.Model):
 class Material(models.Model):
     name = models.CharField('Nome', max_length=50)
     description = models.TextField('Descrição')
-    subcategory = models.ForeignKey(SubCategory, verbose_name='SubCategoria', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name

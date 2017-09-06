@@ -17,6 +17,6 @@ class SubCategoryForm(forms.ModelForm):
 class MaterialForm(forms.ModelForm):
     class Meta:
         model = Material
-        fields = ['name', 'description', 'subcategory']
+        fields = ['name', 'description']
 
 

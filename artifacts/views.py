@@ -36,6 +36,7 @@ class CreateArtifactView(TemplateView):
             artifact.save()
         return self.render_to_response(context)
 
+
 class ListArtifactView(TemplateView):
     template_name = 'list_artifact.html'
 
