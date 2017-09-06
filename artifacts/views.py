@@ -1,7 +1,8 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.urlresolvers import reverse_lazy
 
 # Create your views here.
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 from artifacts.forms import ArtifactForm
 from artifacts.models import Artifact
@@ -34,30 +35,16 @@ class CreateArtifactView(TemplateView):
                 photo = cloudinary.uploader.upload(filep, public_id=artifact.pk)
                 artifact.photo = photo['secure_url']
             artifact.save()
-        return self.render_to_response(context)
+        return redirect(reverse_lazy('artisans:detail', kwargs={'pk': artisan.pk}))
 
 
-class ListArtifactView(TemplateView):
+class ListArtifactView(ListView):
+    model = Artifact
+    context_object_name = 'artifacts'
     template_name = 'list_artifact.html'
+    paginate_by = 20
 
-    def get_context_data(self, **kwargs):
-        context = super(ListArtifactView, self).get_context_data(**kwargs)
-        context['form'] = ArtifactForm(self.request.POST or None)
-        context['artifacts'] = Artifact.objects.all()
-        return context
 
-    def post(self, request, *args, **kwargs):
-        context = self.get_context_data(**kwargs)
-        form = context['form']
-        if form.is_valid():
-            artifact = form.save()
-            if 'photo' in self.request.FILES:
-                filep = self.request.FILES['photo']
-                filep.name = str(artifact.pk)
-                photo = cloudinary.uploader.upload(filep, public_id=artifact.pk)
-                artifact.photo = photo['secure_url']
-            artifact.save()
-        return self.render_to_response(context)
 
 new_artifact = CreateArtifactView.as_view()
 list_artifact = ListArtifactView.as_view()
