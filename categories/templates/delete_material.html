@@ -1,14 +1,26 @@
-<!-- Modal confirmação -->
-<div class="modal fade" id="showConfirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+{% extends "navbar.html" %}
 
-      <form method="POST">
-        {% csrf_token %}
-        <input type="submit" value="Confirmar">
-        <a href="{{request.META.HTTP_REFERER}}" value="Cancelar">Cancelar</a>
-      </form>
-      
-    </div>
-  </div>
-</div>
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <div class="wrap">
+        <section class="app-content">
+            <div class="row">
+            <div class="alert alert-danger" role="alert">
+                Você deseja excluir o material?<br>
+                Veja o que acontecerá caso você opte por excluír um material:<br>
+                1 - Os artesanatos existentes que fazem parte deste material serão atualizados para "vazio"
+
+            </div>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-danger" value="Confirmar">
+                    <a class="btn btn-default" href="{{request.META.HTTP_REFERER}}" value="Cancelar">Cancelar</a>
+                </form>
+            </div>
+        </section>
+    </div><br>
+
+{% endblock %}

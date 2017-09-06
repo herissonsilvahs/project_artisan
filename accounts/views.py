@@ -85,11 +85,11 @@ class UploadImg(LoginRequiredMixin, TemplateView):
         user.save()
         return redirect(reverse_lazy('accounts:list'))
 
+
 login = LoginCustomView.as_view()
 dashboard = DashboardView.as_view()
 list_user = ListUserView.as_view()
 detail = DetailUserView.as_view()
 activate = ChangeStatusUserView.as_view()
 deactivate = ChangeStatusUserView.as_view(status=1)
-block = ChangeStatusUserView.as_view(status=2)
 upload_avatar = UploadImg.as_view()

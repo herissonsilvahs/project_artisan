@@ -19,11 +19,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     ACTIVATED = 0
     DISABLED = 1
-    BLOCKED = 2
     STATUS = (
         (ACTIVATED, 'Ativado'),
         (DISABLED, 'Desativado'),
-        (BLOCKED, 'Bloqueado'),
     )
     name = models.CharField('Nome', max_length=150)
     email = models.EmailField('Email', unique=True)

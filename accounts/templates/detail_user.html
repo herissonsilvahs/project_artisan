@@ -3,140 +3,82 @@
 {% load widget_tweaks %}
 
 {% block content %}
+    <div class="wrap">
+        <section class="app-content">
+            <div class="profile-header">
+                <div class="profile-cover">
+                    <div class="cover-user m-b-lg">
+                        <div>
+                            <a data-toggle="modal" data-target="#update_user" class="cover-icon"><i class="fa fa-pencil"></i></a>
+                        </div>
+                        <div>
+                            <div class="avatar avatar-xl avatar-circle">
+                                <a href="javascript:void(0)">
+                                    <img class="img-responsive" src="{{user_request.photo}}" alt="avatar"/>
+                                </a>
+                            </div><!-- .avatar -->
+                        </div>
+                        <div>
+                            <a data-toggle="modal" data-target="#address" class="cover-icon"><i class="fa fa-map-marker"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="profile-info-name m-b-lg"><a href="javascript:void(0)" class="title-color">{{user_request}}</a></h4>
+                        <div>
 
-<div class="wrap">
-      <section class="app-content">
-        <div class="profile-header">
-          <div class="profile-cover">
-            <div class="cover-user m-b-lg">
-              <div>
-                <a data-toggle="modal" data-target="#update_user" class="cover-icon"><i class="fa fa-pencil"></i></a>
-              </div>
-              <div>
-                <div class="avatar avatar-xl avatar-circle">
-                  <a href="javascript:void(0)">
-                    <img class="img-responsive" src="{{user_request.photo}}" alt="avatar"/>
-                  </a>
-                </div><!-- .avatar -->
-              </div>
-              <div>
-                <a data-toggle="modal" data-target="#address" class="cover-icon"><i class="fa fa-envelope-o"></i></a>
-              </div>
-            </div>
-            <div class="text-center">
-              <h4 class="profile-info-name m-b-lg"><a href="javascript:void(0)" class="title-color">{{user_request}}</a></h4>
-              <div>
-                
-                <a href="javascript:void(0)" class="m-r-xl theme-color"><i class="fa fa-envelope m-r-xs"></i> {{user_request.email}}</a>
-                
-                <a href="javascript:void(0)" class="theme-color"><i class="fa fa-phone m-r-xs"></i>{{user_request.phone}} | 
-                  {% if user_request.phoneOptional %}
-                    <i class="fa fa-phone m-r-xs"></i>{{user_request.phoneOptional}}
-                  {% endif %}
-                  </a>
-              </div>
-            </div>
-          </div><!-- .profile-cover -->
+                            <a href="javascript:void(0)" class="m-r-xl theme-color"><i class="fa fa-envelope m-r-xs"></i> {{user_request.email}}</a>
 
-          <div class="promo-footer">
-            <div class="row no-gutter">
-              <div class="col-sm-2 col-sm-offset-3 col-xs-6 promo-tab">
-                <div class="text-center">
-                  <small>Usuário</small>
-                  <h4 class="m-0 m-t-xs">{{user_request.username}}</h4>
-                </div>
-              </div>
-              <div class="col-sm-2 col-xs-6 promo-tab">
-                <div class="text-center">
-                  <small>Status</small>
-                  <h4 class="m-0 m-t-xs">{{user_request.get_status_display}}</h4>
-                </div>
-              </div>
-              <div class="col-sm-2 col-xs-12 promo-tab">
-                <div class="text-center">
-                  <small>Nível de acesso</small>
-                  <h4 class="m-0 m-t-xs">
-                    {{user_request.get_nivel_display}}
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div><!-- .promo-footer -->
-        </div><!-- .profile-header -->
+                            <a href="javascript:void(0)" class="theme-color"><i class="fa fa-phone m-r-xs"></i>{{user_request.phone}} |
+                                {% if user_request.phoneOptional %}
+                                    <i class="fa fa-phone m-r-xs"></i>{{user_request.phoneOptional}}
+                                {% endif %}
+                            </a>
+                        </div>
+                    </div>
+                </div><!-- .profile-cover -->
 
+                <div class="promo-footer">
+                    <div class="row no-gutter">
+                        <div class="col-sm-2 col-sm-offset-3 col-xs-6 promo-tab">
+                            <div class="text-center">
+                                <small>Usuário</small>
+                                <h4 class="m-0 m-t-xs">{{user_request.username}}</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-6 promo-tab">
+                            <div class="text-center">
+                                <small>Status</small>
+                                <h4>
+                                  <span class="badge
+                                   {% if user_request.status == 0 %}
+                                   badge-success
+                                   {% elif user_request.status == 1 %}
+                                   badge-warning
+                                   {% elif user_request.status == 2 %}
+                                   badge-danger
+                                   {% endif %}">
+                                      {{ user_request.get_status_display }}
+                                  </span>
+                                  <a data-toggle="modal" data-target="#status-update-user" class="btn btn-default btn-xs">Modificar status</a>
 
-<!-- update User Modal -->
-<div class="modal fade" id="update_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title text-center" id="myModalLabel">Novo Usuário</h4>
-      </div>
-      <div class="modal-body">
-        
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-12 promo-tab">
+                            <div class="text-center">
+                                <small>Nível de acesso</small>
+                                <h4 class="m-0 m-t-xs">
+                                    {{user_request.get_nivel_display}}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .promo-footer -->
+            </div><!-- .profile-header -->
 
-        <form method="POST">
-          {% csrf_token %}
-          
-          <div class="row">
-            <div class="col-md-12">
-            <div class="col-md-4 col-md-offset-4">
-              <input name="" class="dropzone form-control input-sm" value="" data-plugin="dropzone" data-options="{ url: 'api/dropzone'}" placeholder="Foto" style="text-align:center;">
-            </div>
-            </div>
-          </div>
-          
-          {% for field in form_update %}
-          <div class="form-group"> 
-            <label for="{{field.auto_id}}" class="control-label">{{field.label}}</label>
-            {% render_field field class="form-control" placeholder=field.label %}
-          </div>
-          {% endfor %}
-      
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-            <button type="submit" class="btn btn-success">Atualizar</button>
-          </div>
-        </form>
-
-
-      </div>
+        </section>
     </div>
-  </div>
-</div>
-
-<!-- update User Modal -->
-<div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title text-center" id="myModalLabel">Endereço</h4>
-      </div>
-      <div class="modal-body">
-        
-
-        <form method="POST">
-          {% csrf_token %}
-          
-          {% for field in form_address %}
-          <div class="form-group"> 
-            <label for="{{field.auto_id}}" class="control-label">{{field.label}}</label>
-            {% render_field field class="form-control" placeholder=field.label %}
-          </div>
-          {% endfor %}
-      
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-            <button type="submit" class="btn btn-success">Atualizar</button>
-          </div>
-        </form>
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
+    {% include "modal_update_user.html" %}
+    {% include "modal_update_address.html" %}
+    {% include "modal_status_user.html" %}
 {% endblock %}

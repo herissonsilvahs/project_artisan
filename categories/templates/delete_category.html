@@ -5,15 +5,22 @@
 {% block content %}
 
     <div class="wrap">
-    <section class="app-content">
-    <div class="row">
-      <form method="POST">
-        {% csrf_token %}
-        <input type="submit" value="Confirmar">
-        <a href="{{request.META.HTTP_REFERER}}" value="Cancelar">Cancelar</a>
-      </form>
-    </div>
-    </section>
-    </div>
+        <section class="app-content">
+            <div class="row">
+            <div class="alert alert-danger" role="alert">
+                Você deseja excluir a categoria?<br>
+                Veja o que acontecerá caso você opte por excluír uma categoria:<br>
+                1 - As subcategorias dependentes desta categoria terá essa dependência anulada
+
+            </div>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-danger" value="Confirmar">
+                    <a class="btn btn-default" href="{{request.META.HTTP_REFERER}}" value="Cancelar">Cancelar</a>
+                </form>
+            </div>
+        </section>
+    </div><br>
 
 {% endblock %}
