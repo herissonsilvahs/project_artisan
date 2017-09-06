@@ -147,7 +147,7 @@
                             <p class="text-muted m-b-lg">
                               {{artifact.get_summary}}
                             </p>
-                            <a href="#" class="btn p-v-xl btn-default">Ver</a>
+                            <a href="{% url 'artifacts:detail' artifact.pk %}" class="btn p-v-xl btn-default">Ver</a>
                         </div><!-- .widget-body -->
                     </div><!-- .widget -->
                 </div><!-- END column -->
