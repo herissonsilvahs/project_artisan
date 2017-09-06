@@ -1,7 +1,8 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.urlresolvers import reverse_lazy
 
 # Create your views here.
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView, DeleteView
 
 from artifacts.forms import ArtifactForm
 from artifacts.models import Artifact
@@ -10,6 +11,7 @@ from artisans.models import Artisan
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+
 
 class CreateArtifactView(TemplateView):
     template_name = 'new_artifact.html'
@@ -34,30 +36,49 @@ class CreateArtifactView(TemplateView):
                 photo = cloudinary.uploader.upload(filep, public_id=artifact.pk)
                 artifact.photo = photo['secure_url']
             artifact.save()
-        return self.render_to_response(context)
+        return redirect(reverse_lazy('artisans:detail', kwargs={'pk': artisan.pk}))
 
 
-class ListArtifactView(TemplateView):
+class ListArtifactView(ListView):
+    model = Artifact
+    context_object_name = 'artifacts'
     template_name = 'list_artifact.html'
+    paginate_by = 20
+
+
+class DetailArtifactView(DetailView):
+    model = Artifact
+    template_name = 'detail_artifact.html'
 
     def get_context_data(self, **kwargs):
-        context = super(ListArtifactView, self).get_context_data(**kwargs)
-        context['form'] = ArtifactForm(self.request.POST or None)
-        context['artifacts'] = Artifact.objects.all()
+        context = super(DetailArtifactView, self).get_context_data(**kwargs)
+        context['form'] = ArtifactForm(self.request.POST or None, instance=context['artifact'])
         return context
 
     def post(self, request, *args, **kwargs):
-        context = self.get_context_data(**kwargs)
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object)
         form = context['form']
         if form.is_valid():
-            artifact = form.save()
-            if 'photo' in self.request.FILES:
-                filep = self.request.FILES['photo']
-                filep.name = str(artifact.pk)
-                photo = cloudinary.uploader.upload(filep, public_id=artifact.pk)
-                artifact.photo = photo['secure_url']
-            artifact.save()
+            form.save()
         return self.render_to_response(context)
+
+
+class DeleteArtifactView(DeleteView):
+    template_name = 'delete_artifact.html'
+    model = Artifact
+    context_object_name = 'artifact'
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object)
+        artifact = context['artifact']
+        artisan_pk = artifact.artisan.pk
+        if artifact.delete():
+            return redirect(reverse_lazy('artisans:detail', kwargs={'pk': artisan_pk}))
+
 
 new_artifact = CreateArtifactView.as_view()
 list_artifact = ListArtifactView.as_view()
+detail_artifact = DetailArtifactView.as_view()
+delete_artifact = DeleteArtifactView.as_view()

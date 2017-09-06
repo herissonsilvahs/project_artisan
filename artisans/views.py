@@ -24,9 +24,10 @@ class CreateArtisanView(TemplateView):
         context = self.get_context_data(**kwargs)
         form = context['form']
         if form.is_valid():
-            artisan = form.save(commit=False)
+            artisan = form.save()
             if 'photo' in self.request.FILES:
                 filep = self.request.FILES['photo']
+                filep.name = str(artisan.pk)
                 photo = cloudinary.uploader.upload(filep, public_id=artisan.email)
                 artisan.photo = photo['secure_url']
             artisan.save()

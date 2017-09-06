@@ -22,4 +22,4 @@ class Artifact(models.Model):
         ordering = ['created']
 
     def get_summary(self):
-        return self.description[:50]+'...'
+        return self.description[:20]+'...'
