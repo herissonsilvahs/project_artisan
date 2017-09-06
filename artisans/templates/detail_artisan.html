@@ -63,7 +63,7 @@
                 </div>
                 <div class="col-sm-2 col-xs-12 promo-tab">
                     <div class="text-center">
-                        <button class="btn btn-success" type="button" name="button">Cadastrar artesanato</button>
+                        <a href="{% url 'artifacts:new' artisan.pk %}" class="btn btn-default pull-right">Cadastrar artesanato</a>
                     </div>
                 </div>
             </div>
@@ -129,88 +129,32 @@
                 </div>
                 <hr>
             </div>
+
             <div class="row">
+
+              {% for artifact in artifacts %}
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <header class="widget-header">
-                            <h4 class="widget-title text-center">Cadeira</h4>
+                            <h4 class="widget-title text-center">{{artifact.name}}</h4>
                         </header><!-- .widget-header -->
                         <hr class="widget-separator">
                         <div class="widget-body text-center">
                             <div class="big-icon m-b-md watermark">
-                                <img src="assets/images/cadeira.jpg" class="img-rounded" height="400" width="150">
+                                <img src="{{artifact.photo}}" class="img-rounded" height="400" width="150">
                             </div>
                             <h4 class="m-b-md">Sobre o artesanato</h4>
-                            <p class="text-muted m-b-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat officiis aperiam incidunt.</p>
+                            <p class="text-muted m-b-lg">
+                              {{artifact.get_summary}}
+                            </p>
                             <a href="#" class="btn p-v-xl btn-default">Ver</a>
                         </div><!-- .widget-body -->
                     </div><!-- .widget -->
                 </div><!-- END column -->
+              {% endfor %}
+
             </div><!-- /row -->
 
-            <!-- Likes/comments Modal -->
-            <div id="likesModal" class="modal fade" tabindex="-1" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">3 people like this</h4>
-                        </div>
-                        <div class="modal-body">
-                            <ul class="list-group m-0">
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="javascript:void(0)" class="avatar avatar-sm">
-                                                <img class="img-responsive" src="assets/images/221.jpg" alt="avatar"/>
-                                            </a><!-- .avatar -->
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="media-heading m-0"><a href="javascript:void(0)">John Doe</a></h5>
-                                        </div>
-                                        <div class="media-right">
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-default"><i class="fa fa-rss m-r-xs"></i>Follow</a>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="javascript:void(0)" class="avatar avatar-sm">
-                                                <img class="img-responsive" src="assets/images/104.jpg" alt="avatar"/>
-                                            </a><!-- .avatar -->
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="media-heading m-0"><a href="javascript:void(0)">Sara Adams</a></h5>
-                                        </div>
-                                        <div class="media-right">
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-default"><i class="fa fa-user-plus m-r-xs"></i>Add Freind</a>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="javascript:void(0)" class="avatar avatar-sm">
-                                                <img class="img-responsive" src="assets/images/101.jpg" alt="avatar"/>
-                                            </a><!-- .avatar -->
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="media-heading m-0"><a href="javascript:void(0)">John Doe</a></h5>
-                                        </div>
-                                        <div class="media-right">
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-default"><i class="fa fa-user-plus m-r-xs"></i>Add Friend</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
-            <!-- APP FOOTER -->
         </section>
     </div>
 

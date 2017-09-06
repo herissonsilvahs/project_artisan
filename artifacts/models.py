@@ -12,3 +12,6 @@ class Artifact(models.Model):
                              default="http://res.cloudinary.com/dlr1vmgpr/image/upload/v1503512788/avatar_art_hnzs69.jpg")
     material = models.ForeignKey(Material, verbose_name='Material', null=True)
     artisan = models.ForeignKey(Artisan, verbose_name='Material', null=False)
+
+    def get_summary(self):
+        return self.description[:50]+'...'
