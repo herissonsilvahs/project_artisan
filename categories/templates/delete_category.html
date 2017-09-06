@@ -1,14 +1,19 @@
-<!-- Modal confirmação -->
-<div class="modal fade" id="showConfirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+{% extends "navbar.html" %}
 
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <div class="wrap">
+    <section class="app-content">
+    <div class="row">
       <form method="POST">
         {% csrf_token %}
         <input type="submit" value="Confirmar">
         <a href="{{request.META.HTTP_REFERER}}" value="Cancelar">Cancelar</a>
       </form>
-      
     </div>
-  </div>
-</div>
+    </section>
+    </div>
+
+{% endblock %}

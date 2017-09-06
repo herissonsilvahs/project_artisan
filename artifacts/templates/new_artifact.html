@@ -3,49 +3,57 @@
 {% block content %}
 
 
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 
-    <div class="row md-margin">
+        <div class="row md-margin">
 
-    <div class="col-sm-12 col-md-6">
-      <div class="form-group">
-          <label for="{{ form.name.auto_id }}">{{ form.name.label }}</label>
-          {% render_field form.name class="form-control" placeholder=form.name.label %}
-      </div>
-    </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                    <label for="{{ form.name.auto_id }}">{{ form.name.label }}</label>
+                    {% render_field form.name class="form-control" placeholder=form.name.label %}
+                </div>
+            </div>
 
-  <div class="col-sm-12 col-md-6">
-      <div class="form-group">
-          <label for="{{ form.photo.auto_id }}"
-                 class="control-label">{{ form.photo.label }}</label>
-          <input type="file" name="photo" class="form-control-file">
-          <small id="fileHelp" class="form-text text-muted">Insira a imagem do artesanato com uma qaulidade boa</small>
-      </div>
-    </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                    <label for="{{ form.photo.auto_id }}"
+                           class="control-label">{{ form.photo.label }}</label>
+                    <input type="file" name="photo" class="form-control-file">
+                    <small id="fileHelp" class="form-text text-muted">Insira a imagem do artesanato com uma qualidade boa</small>
+                </div>
+            </div>
 
-  <div class="col-sm-12 col-md-12">
-    <div class="form-group">
-        <label for="{{ form.description.auto_id }}"
-               class="control-label">{{ form.description.label }}</label>
-        {% render_field form.description class="form-control" placeholder=form.description.label %}
-    </div>
-  </div>
+            <div class="col-sm-12 col-md-12">
+                <div class="form-group">
+                    <label for="{{ form.description.auto_id }}"
+                           class="control-label">{{ form.description.label }}</label>
+                    {% render_field form.description class="form-control" placeholder=form.description.label %}
+                </div>
+            </div>
 
-<div class="col-sm-12 col-md-6">
-    <div class="form-group">
-        <label for="{{ form.material.auto_id }}"
-               class="control-label">{{ form.material.label }}</label>
-        {% render_field form.material class="form-control" placeholder=form.material.label %}
-    </div>
-  </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                    <label for="{{ form.material.auto_id }}"
+                           class="control-label">{{ form.material.label }}</label>
+                    {% render_field form.material class="form-control" placeholder=form.material.label %}
+                </div>
+            </div>
 
-<div class="col-sm-12 col-md-12">
-    <button type="submit" class="btn btn-success pull-right">Cadastrar</button>
-  </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                    <label for="{{ form.subcategory.auto_id }}"
+                           class="control-label">{{ form.subcategory.label }}</label>
+                    {% render_field form.subcategory class="form-control" placeholder=form.subcategory.label %}
+                </div>
+            </div>
 
-  </div>
-</form>
+            <div class="col-sm-12 col-md-12">
+                <button type="submit" class="btn btn-success pull-right">Cadastrar</button>
+            </div>
+
+        </div>
+    </form>
 
 {% endblock %}
 <!--
