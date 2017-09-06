@@ -59,7 +59,7 @@ class DetailArtisanView(DetailView):
         context = super(DetailArtisanView, self).get_context_data(**kwargs)
         context['form'] = ArtisanForm(self.request.POST or None, instance=context['artisan'])
         context['form_address'] = AddressForm(self.request.POST or None, instance=context['artisan'].address)
-        context['artifacts'] = Artifact.objects.filter(artisan=context['artisan'].pk)
+        context['artifacts'] = Artifact.objects.filter(artisan=context['artisan'].pk)[:4]
         return context
 
     def post(self, request, *args, **kwargs):
