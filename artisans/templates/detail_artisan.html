@@ -47,9 +47,23 @@
                 <div class="col-sm-2 col-xs-12 promo-tab">
                     <div class="text-center">
                         <small>Status</small>
-                        <h4 class="m-0 m-t-xs">
-                            {{ artisan.get_status_display }}
+                        <h4>
+                          <span class="badge
+                           {% if artisan.status == 0 %}
+                           badge-success
+                           {% elif artisan.status == 1 %}
+                           badge-warning
+                           {% elif artisan.status == 2 %}
+                           badge-danger
+                           {% endif %}">
+                              {{ artisan.get_status_display }}
+                          </span>
                         </h4>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-12 promo-tab">
+                    <div class="text-center">
+                        <button class="btn btn-success" type="button" name="button">Cadastrar artesanato</button>
                     </div>
                 </div>
             </div>
@@ -77,7 +91,7 @@
                             </div>
                             <div class="media-body">
                                 <div class="list-group">
-                                    <small class="media-meta">Publicada em:</small>
+                                    <small class="media-meta">Publicada em: {{artisan.created}}</small>
                                     <div class="stream-body m-t-xl">
                                         {{ artisan.biography|linebreaks }}
                                     </div>
@@ -102,6 +116,9 @@
                                 </div>
                             </div><!-- .widget -->
                         </div><!-- END column -->
+                        <div class="col-md-12">
+                          <a data-toggle="modal" data-target="#status-update" class="btn btn-default btn-sm pull-right">Modificar status</a>
+                        </div>
                     </div><!-- .row -->
 
                 </div><!-- END column -->
@@ -197,75 +214,8 @@
         </section>
     </div>
 
-
-    <!-- update User Modal -->
-    <div class="modal fade" id="update_artisan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title text-center" id="myModalLabel">Novo Artesão</h4>
-                </div>
-                <div class="modal-body">
-
-
-                    <form method="POST">
-                        {% csrf_token %}
-
-                        {% for field in form %}
-                            <div class="form-group">
-                                <label for="{{field.auto_id}}" class="control-label">{{field.label}}</label>
-                                {% render_field field class="form-control" placeholder=field.label %}
-                            </div>
-                        {% endfor %}
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                            <button type="submit" class="btn btn-success">Atualizar</button>
-                        </div>
-                    </form>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title text-center" id="myModalLabel">Endereço</h4>
-                </div>
-                <div class="modal-body">
-
-
-                    <form method="POST">
-                        {% csrf_token %}
-
-                        {% for field in form_address %}
-                            <div class="form-group">
-                                <label for="{{field.auto_id}}" class="control-label">{{field.label}}</label>
-                                {% render_field field class="form-control" placeholder=field.label %}
-                            </div>
-                        {% endfor %}
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                            <button type="submit" class="btn btn-success">Atualizar</button>
-                        </div>
-                    </form>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+{% include "modal_update_artisan.html" %}
+{% include "modal_update_address.html" %}
+{% include "modal_status.html" %}
 
 {% endblock %}
-
-
-

@@ -1,0 +1,30 @@
+{% load widget_tweaks %}
+<div class="modal fade" id="status-update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="myModalLabel">Modificar Status</h4>
+                <div class="alert alert-danger" role="alert">
+                    A modificação de status pode afetar na forma de exibição ou no nível de acesso.
+                </div>
+            </div>
+            <div class="modal-body">
+
+
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+              {% if not artisan.status == 0 %}
+                  <a href="{% url 'artisans:activate' artisan.pk %}" class="btn btn-success">Ativar</a>
+              {% endif %}
+              {% if not artisan.status == 1 %}
+                  <a href="{% url 'artisans:deactivate' artisan.pk %}" class="btn btn-warning">Desativar</a>
+              {% endif %}
+              {% if not artisan.status == 2 %}
+                  <a href="{% url 'artisans:block' artisan.pk %}" class="btn btn-danger">Bloquear</a>
+              {% endif %}
+
+
+            </div>
+        </div>
+    </div>
+</div>

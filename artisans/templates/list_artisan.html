@@ -41,17 +41,20 @@
 
           {% for artisan in artisans %}
           <tr>
-            <td><img src="{{ artisan.photo }}" class="img-responsive avatar avatar-sm avatar-circle img-circle" alt="Avatar"></td>
+            <td>
+              <a href="{% url 'artisans:detail' artisan.pk %}">
+                <img src="{{ artisan.photo }}" class="img-responsive avatar avatar-sm avatar-circle img-circle" alt="Avatar">
+              </a>
+            </td>
 
-            <td>{{artisan.name}}</td>
+            <td><a href="{% url 'artisans:detail' artisan.pk %}">{{artisan.name}}</a></td>
             <td>{{artisan.email}}</td>
             <td>{{artisan.cpf}}</td>
             <td>{{artisan.phone}}</td>
             <td>{{artisan.phone_optional}}</td>
 
             <td class="text-center">
-              <a href="{% url 'artisans:detail' artisan.pk %}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-              <button type="button" role="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
+              <a href="{% url 'artisans:detail' artisan.pk %}" class="btn btn-primary"><i class="fa fa-eye"></i></a>
             </tr>
             {% endfor %}
 
@@ -63,15 +66,3 @@
 </div><!-- END column -->
 
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
