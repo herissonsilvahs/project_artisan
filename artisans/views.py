@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import TemplateView, DetailView, View, UpdateView
+from django.views.generic import TemplateView, DetailView, View, UpdateView, ListView
 from .models import Artisan
 from .forms import ArtisanForm
 from django.core.urlresolvers import reverse_lazy
@@ -88,8 +88,15 @@ class ChangeStatusArtisanView(View):
         return redirect(reverse_lazy('artisans:detail', kwargs={'pk': artisan.pk}))
 
 
+class ArtisansListUsersView(ListView):
+    model = Artisan
+    template_name = 'list_artisan_for_user.html'
+    context_object_name = 'artisans'
+    paginate_by = 10
+
 new = CreateArtisanView.as_view()
 list_artisan = ListArtisanView.as_view()
 detail = DetailArtisanView.as_view()
 activate = ChangeStatusArtisanView.as_view()
 deactivate = ChangeStatusArtisanView.as_view(status=1)
+list_artisans_users = ArtisansListUsersView.as_view()

@@ -19,7 +19,7 @@ class Artifact(models.Model):
     class Meta:
         verbose_name = "Artefato"
         verbose_name_plural = "Artefatos"
-        ordering = ['created']
+        ordering = ['-created']
 
     def get_summary(self):
         return self.description[:20]+'...'

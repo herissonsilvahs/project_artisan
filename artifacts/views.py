@@ -78,7 +78,14 @@ class DeleteArtifactView(DeleteView):
             return redirect(reverse_lazy('artisans:detail', kwargs={'pk': artisan_pk}))
 
 
+class ArtifactListUsersView(ListView):
+    model = Artifact
+    template_name = 'list_artifact_for_user.html'
+    context_object_name = 'artifacts'
+    paginate_by = 10
+
 new_artifact = CreateArtifactView.as_view()
 list_artifact = ListArtifactView.as_view()
 detail_artifact = DetailArtifactView.as_view()
 delete_artifact = DeleteArtifactView.as_view()
+list_artifact_users = ArtifactListUsersView.as_view()
