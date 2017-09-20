@@ -1,320 +1,274 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html>
 <head>
-<title></title>
-<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{% static 'vendors/jquery/dist/jquery.js' %}"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
-<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-<!--//theme-style-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- start menu -->
-<script src="{% static 'js/simpleCart.min.js' %}"> </script>
-<!-- start menu -->
-<link href="{% static 'css/memenu.css' %}" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="{% static 'js/memenu.js' %}"></script>
-<script>$(document).ready(function(){$(".memenu").memenu();});</script>
-<!-- /start menu -->
+	<title>Projeto Artesão</title>
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<!-- Custom Theme files -->
+	<!--theme style-->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+
+	<!--//theme style-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Wedding Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- start menu -->
+	<script src="{% static 'js/simpleCart.min.js' %}"> </script>
+	<!-- start menu -->
+	<link href="{% static 'css/memenu.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript" src="{% static 'js/memenu.js' %}"></script>
+	<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+	<!-- /start menu -->
 </head>
 <body>
-<!--header-->
-<div class="top_bg">
-	<div class="container">
-		<div class="header_top-sec">
-			<div class="top_left">
-				<ul>
-					<li><a href="#">Ajuda</a></li>|
-					<li><a href="contact.html">Contato</a></li>|
-					<li><a href="login.html">Entrar</a></li>|
-					<li><a href="checkout.html">Solicitar Cadastro</a></li>
+	<!--header-->
+	<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+	<script>
+		$(function () {
+			$("#slider").responsiveSlides({
+				auto: true,
+				nav: true,
+				speed: 500,
+				namespace: "callbacks",
+				pager: false,
+			});
+		});
+	</script>
+
+	<div class="header-top">
+		<div class="header-bottom">
+			<div class="logo" style="background-color:#4292f4;">
+				<h1><a href="index.html">ArtesãoNato</a></h1>
+			</div>
+			<!---->
+			<div class="top-nav">
+				<ul class="memenu skyblue"><li class="active"><a href="index.html">Início</a></li>
+					<li class="grid"><a href="#">Artesões</a></li>
+					<!--
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="product.html">New Arrivals</a></li>
+										<li><a href="product.html">Home</a></li>
+										<li><a href="product.html">Decorates</a></li>
+										<li><a href="product.html">Accessories</a></li>
+										<li><a href="product.html">Kids</a></li>
+										<li><a href="product.html">Login</a></li>
+										<li><a href="product.html">Brands</a></li>
+										<li><a href="product.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Type</h4>
+									<ul>
+										<li><a href="product.html">Diwali Lights</a></li>
+										<li><a href="product.html">Tube Lights</a></li>
+										<li><a href="product.html">Bulbs</a></li>
+										<li><a href="product.html">Ceiling Lights</a></li>
+										<li><a href="product.html">Accessories</a></li>
+										<li><a href="product.html">Lanterns</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="product.html">Everyday</a></li>
+										<li><a href="product.html">Philips</a></li>
+										<li><a href="product.html">Havells</a></li>
+										<li><a href="product.html">Wipro</a></li>
+										<li><a href="product.html">Jaguar</a></li>
+										<li><a href="product.html">Ave</a></li>
+										<li><a href="product.html">Gold Medal</a></li>
+										<li><a href="product.html">Anchor</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					-->
+					<li class="grid"><a href="#">Artesanatos</a></li>
+					<li class="grid"><a href="#">Sobre</a></li>
 				</ul>
 			</div>
-				<div class="clearfix"> </div>
+			<!---->
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<!---->
+	<div class="slider">
+		<div class="callbacks_container">
+			<ul class="rslides" id="slider">
+				<li>
+					<div class="banner1">
+						<div class="banner-info">
+							<h3>Cultura da Região</h3>
+							<p></p>
+							<br><br>
+							<div class="col-md-6 col-md-offset-3">
+							<button type="button" class="btn btn-info btn-lg"><i class="glyphicon glyphicon-th-list"></i> Ir para o Catálogo</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="banner2">
+						<div class="banner-info">
+							<h3>Arte da Região</h3>
+							<p></p>
+							<br><br>
+							<div class="col-md-6 col-md-offset-3">
+							<button type="button" class="btn btn-info btn-lg"><i class="glyphicon glyphicon-th-list"></i> Ir para o Catálogo</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="banner3">
+						<div class="banner-info">
+							<h3>Artesão da Região</h3>
+							<p></p>
+							<br><br>
+							<div class="col-md-6 col-md-offset-3">
+							<button type="button" class="btn btn-info btn-lg"><i class="glyphicon glyphicon-th-list"></i> Ir para o Catálogo</button>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!---->
+	<script src="js/bootstrap.js"> </script>
+
+	<div class="items">
+		<div class="offers">
+			<div class="container">
+				<h3>Novos Artesanatos</h3>
+			</div>
+		</div>
+		<div class="container">
+			<div class="items-sec">
+				<div class="col-md-3 feature-grid">
+					<a href="product.html"><img src="images/img1.jpg" alt=""/>
+						<div class="arrival-info">
+							<p>Art 1</p>
+						</div>
+						<div class="viw">
+							<a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Ver mais</a>
+						</div>
+					</a>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!---->
+
+	<div class="items">
+		<div class="offers">
+			<div class="container">
+				<h3>Artesanatos Em Alta</h3>
+			</div>
+		</div>
+		<div class="container">
+			<div class="items-sec">
+				<div class="col-md-3 feature-grid">
+					<a href="product.html"><img src="images/img1.jpg" alt=""/>
+						<div class="arrival-info">
+							<p>Art 2</p>
+						</div>
+						<div class="viw">
+							<a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Ver mais</a>
+						</div>
+					</a>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!---->
+	<div class="offers">
+		<div class="container">
+			<h3>Registros</h3>
+			<div class="offer-grids">
+				<div class="col-md-6 grid-left">
+					<div class="offer-grid1">
+						<div class="text-center">
+							<h4>Número de Artesanatos</h4>
+							<p></p>
+						</div>
+						<div class="clearfix"></div>
+					</div><a href="#redirecionar-para-tela-de-mais-artesanatos" data-toggle="tooltip" data-placement="top" title="Veja a lista de artesãos clicando aqui"></a>
+				</div>
+				<div class="col-md-6 grid-right">
+					<div class="offer-grid1 text-center">
+						<div class="text-center">
+							<h4>Número de Artesãos</h4>
+							<p></p>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div><a href="#" data-toggle="tooltip" data-placement="top" title="Veja a lista de artesanatos clicando aqui"><div class="offer-grid2"></a>
+			</div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>
-<div class="header-top">
-	 <div class="header-bottom" style="background-color:#E0EEEE;">
-		 <div class="container">
-				<div class="logo">
-					<a href="index.html"><h1 style="color:#4876FF;">ArtesãoNato</h1></a>
-				</div>
-			 <!---->
-
-			 <div class="top-nav">
-				<ul class="memenu skyblue"><li class="active"><a href="index.html">Início</a></li>
-					<li class="grid"><a href="#">Artesãos</a>
-						<div class="mepanel">
-							<div class="row">
-								<div class="col1 me-one">
-									<h4>Por Estado</h4>
-									<ul>
-										<li><a href="product.html">Ceará</a></li>
-									</ul>
-								</div>
-								<div class="col1 me-one">
-									<h4>Por Principais Cidades</h4>
-									<ul>
-										<li><a href="product.html">Juazeiro do Norte, CE</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="grid"><a href="#">Artesanatos</a>
-						<div class="mepanel">
-							<div class="row">
-								<div class="col1 me-one">
-									<h4>Madeira</h4>
-									<ul>
-										<li><a href="product.html">New Arrivals</a></li>
-									</ul>
-								</div>
-								<div class="col1 me-one">
-									<h4>Gesso</h4>
-									<ul>
-										<li><a href="product.html">Men</a></li>
-										<li><a href="product.html">Women</a></li>
-										<li><a href="product.html">Brands</a></li>
-										<li><a href="product.html">Kids</a></li>
-										<li><a href="product.html">Accessories</a></li>
-										<li><a href="product.html">Style Videos</a></li>
-									</ul>
-								</div>
-								<div class="col1 me-one">
-									<h4>Argila</h4>
-									<ul>
-										<li><a href="product.html">Levis</a></li>
-										<li><a hrjef="product.html">Persol</a></li>
-										<li><a href="product.html">Nike</a></li>
-										<li><a href="product.html">Edwin</a></li>
-										<li><a href="product.html">New Balance</a></li>
-										<li><a href="product.html">Jack & Jones</a></li>
-										<li><a href="product.html">Paul Smith</a></li>
-										<li><a href="product.html">Ray-Ban</a></li>
-										<li><a href="product.html">Wood Wood</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="grid"><a href="typo.html">Sobre a Plataforma</a></li>
-				</ul>
-				<div class="clearfix"><hr> </div>
-			 </div>
-	  </div>
-</div>
-<div class="featured">
-	 <div class="container">
-		 <h3>Artesanatos em Alta</h3>
-		 <div class="feature-grids">
-			 <div class="col-md-3 feature-grid jewel">
-				 <a href="product.html"><img src="images/at1.jpg" alt=""/>
-					 <div class="arrival-info">
-						 <h4>Jewellerys #1</h4>
-						 <p>Rs 12000</p>
-						 <span>Rs 18000</del></span>
-						 <span></span>
-					 </div>
-					 <div class="viw">
-						<a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Quick View</a>
-					 </div>
-					 <div class="shrt">
-						<a href="product.html"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Shortlist</a>
-					 </div></a>
-			 </div>
-			 <div class="col-md-3 feature-grid jewel">
-				 <a href="product.html"><img src="images/at2.jpg" alt=""/>
-					 <div class="arrival-info">
-						 <h4>Jewellerys #1</h4>
-						 <p>Rs 12000</p>
-						 <span>Rs 18000</del></span>
-						 <span></span>
-					 </div>
-					 <div class="viw">
-						<a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Quick View</a>
-					 </div>
-					 <div class="shrt">
-						<a href="product.html"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Shortlist</a>
-					 </div></a>
-			 </div>
-			 <div class="col-md-3 feature-grid jewel">
-				 <a href="product.html"><img src="images/at3.jpg" alt=""/>
-					 <div class="arrival-info">
-						 <h4>Jewellerys #1</h4>
-						 <p>Rs 12000</p>
-						 <span>Rs 18000</del></span>
-						 <span></span>
-					 </div>
-					 <div class="viw">
-						<a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Quick View</a>
-					 </div>
-					 <div class="shrt">
-						<a href="product.html"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Shortlist</a>
-					 </div></a>
-			 </div>
-		 </div>
-	 </div>
-</div>
 <!---->
-<div class="arrivals">
-	 <div class="container">
-		 <h3>Artesãos Em Alta</h3>
-		 <div class="arrival-grids">
-			 <ul id="flexiselDemo1">
-				 <li>
-					 <a href="product.html"><img src="images/art1.jpg" alt=""/>
-					 <div class="arrival-info">
-						 <h4>Francisco Assis</h4>
-						 <p>Crato, CE</p>
-						 <span>Tantos Tipos de Artesanatos</span><br>
-						 <span>Tantos anos de Trabalho</span>
-					 </div>
-					 <div class="viw">
-						<a href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Ver Perfil</a>
-					 </div>
-					 <div class="shrt">
-						<a href="#"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Ver Artesanatos</a>
-					 </div></a>
-				 </li>
-				 <li>
-					 <a href="product.html"><img src="images/art2.jpg" alt=""/>
-						<div class="arrival-info">
-						 <h4>José Joaquim</h4>
-						 <p>Juazeiro do Norte, CE</p>
-						 <span>Tantos Tipos de Artesanatos</span><br>
-						 <span>Tantos anos de Trabalho</span>
-					 </div>
-					 <div class="viw">
-						<a href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Ver Perfil</a>
-					 </div>
-					 <div class="shrt">
-						<a href="#"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Ver Artesanatos</a>
-					 </div></a>
-				 </li>
-				 <li>
-					 <a href="product.html"><img src="images/art3.jpg" alt=""/>
-						<div class="arrival-info">
-						 <h4>Pedro Dantas</h4>
-						 <p>Crato, CE</p>
-						 <span>Tantos Tipos de Artesanatos</span><br>
-						 <span>Tantos anos de Trabalho</span>
-					 </div>
-					 <div class="viw">
-						<a href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Ver Perfil</a>
-					 </div>
-					 <div class="shrt">
-						<a href="#"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Ver Artesanatos</a>
-					 </div></a>
-				 </li>
-				 <li>
-				    <a href="product.html"> <img src="images/art4.jpg" alt=""/>
-						<div class="arrival-info">
-						 <h4>Arquimedes Medes</h4>
-						 <p>Barbalha, CE</p>
-						 <span>Tantos Tipos de Artesanatos</span><br>
-						 <span>Tantos anos de Trabalho</span>
-					 </div>
-					 <div class="viw">
-						<a href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Ver Perfil</a>
-					 </div>
-					 <div class="shrt">
-						<a href="#"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Ver Artesanatos</a>
-					 </div></a>
-				 </li>
-				</ul>
-				<script type="text/javascript">
-				 $(window).load(function() {
-				  $("#flexiselDemo1").flexisel({
-					visibleItems: 4,
-					animationSpeed: 1000,
-					autoPlay: true,
-					autoPlaySpeed: 3000,
-					pauseOnHover:true,
-					enableResponsiveBreakpoints: true,
-					responsiveBreakpoints: {
-						portrait: {
-							changePoint:480,
-							visibleItems: 1
-						},
-						landscape: {
-							changePoint:640,
-							visibleItems: 2
-						},
-						tablet: {
-							changePoint:768,
-							visibleItems: 3
-						}
-					}
-				});
-				});
-				</script>
-				<script type="text/javascript" src="js/jquery.flexisel.js"></script>
-		  </div>
-	 </div>
-</div>
-<!---->
-<div class="shoping">
-	 <div class="container">
-		 <div class="shpng-grids">
-			 <div class="col-md-4 shpng-grid">
-				 <h3>Tantos Artesanatos Cadastrados </h3>
-				 <p>Procure pelo artesanato do seu interesse</p>
-			 </div>
-			 <div class="col-md-4 shpng-grid">
-				 <h3>Tantos Artesãos Cadastrados</h3>
-				 <p>Procure pelo artesão do seu interesse</p>
-			 </div>
-			 <div class="col-md-4 shpng-grid">
-				 <h3>Tantas Visitas Registradas</h3>
-				 <p>Cadastre seu artesanato</p>
-			 </div>
-			 <div class="clearfix"></div>
-		 </div>
-	 </div>
+<div class="subscribe">
+	<div class="container">
+		<h3>Receber Novidades por e-mail</h3>
+		<form>
+			<input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+			<input type="submit" value="Subscribe">
+		</form>
+	</div>
 </div>
 <!---->
 <div class="footer">
-	 <div class="container">
-		 <div class="ftr-grids">
-			 <div class="col-md-3 ftr-grid">
-				 <h4>Sobre ArtesãoNato</h4>
-				 <ul>
-					 <li><a href="#">Quem somos?</a></li>
-					 <li><a href="contact.html">Contate-nos</a></li>
-					 <li><a href="#">Novidades</a></li>
-					 <li><a href="#">Time</a></li>
-				 </ul>
-			 </div>
-			 <div class="col-md-3 ftr-grid">
-				 <h4>Serviços da Plataforma</h4>
-				 <ul>
-					 <li><a href="#">FAQ</a></li>
-				 </ul>
-			 </div>
-			 <div class="col-md-3 ftr-grid">
-				 <h4>Seu Acesso</h4>
-				 <ul>
-					 <li><a href="account.html">Sua Conta</a></li>
-					 <li><a href="#">Informações Pessoais</a></li>
-					 <li><a href="#">Artesanatos</a></li>
-				 </ul>
-			 </div>
-			 <div class="clearfix"></div>
-		 </div>
-	 </div>
+	<div class="container">
+		<div class="footer-grids">
+			<div class="col-md-4 about-us">
+				<h3>Sobre </h3>
+				<p></p>
+			</div>
+			<div class="col-md-4 ftr-grid">
+				<h3>Informações</h3>
+				<ul class="nav-bottom">
+					<li><a href="#">Track Order</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4 ftr-grid">
+				<h3>Categorias</h3>
+				<ul class="nav-bottom">
+					<li><a href="#">Car Lights</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<div class="copywrite">
+	<div class="container">
+		<div class="copy">
+			<p>Catálogo ArtesãoNato © 2017</p>
+		</div>
+		<div class="social">
+			<a href="#"><i class="facebook"></i></a>
+			<a href="#"><i class="twitter"></i></a>
+			<a href="#"><i class="dribble"></i></a>
+			<a href="#"><i class="google"></i></a>
+			<a href="#"><i class="youtube"></i></a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
 </div>
 <!---->
- <div class="copywrite">
-	 <div class="container">
-			 <p>Copyright © 2017 ArtesãoNato Plataforma.</p>
-		 </div>
-</div>
 </body>
 </html>

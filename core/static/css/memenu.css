@@ -1,15 +1,15 @@
 .memenu
 {margin:0;padding:0;width:100%;list-style:none;display:inline-block;position:relative;font-family:Calibri,Arial;font-size:15px}
-.memenu li{display:inline-block;text-align:left;}
+.memenu li{text-align:left;}
 ul.memenu.skyblue {text-align: center;}
-.memenu>li>a{  font-family: 'JosefinSans-Regular';float:left;padding: 5px 25px 5px 25px;color:#caccce;font-weight:600;text-decoration:none;text-transform:uppercase;transition:color .4s ease-in-out;-moz-transition:color .4s ease-in-out;-webkit-transition:color .4s ease-in-out;-o-transition:color .4s ease-in-out}
+.memenu>li>a{ font-family: 'Dosis-Regular';float:left;padding:38px 30px;color:#caccce;font-weight:600;text-decoration:none;text-transform:uppercase;border-right: 1px solid #eee;transition:color .4s ease-in-out;-moz-transition:color .4s ease-in-out;-webkit-transition:color .4s ease-in-out;-o-transition:color .4s ease-in-out}
 .memenu>li>.mepanel {
 	position: absolute;
 	display: none;
 	background: #fff;
 	width: 80%;
-	top: 47px;
-	left: 10.7%;
+	top: 97px;
+	left: 5.7%;
 	z-index: 99;
 	padding: 20px 30px 20px;
 	border: solid 1px #ccc;
@@ -22,14 +22,13 @@ ul.memenu.skyblue {text-align: center;}
 }
 .me-one ul li {
   list-style: none;
-  margin: 0 0 10px 0;
+  margin: 0 0 7px 0;
   text-align: left !important;
   display: block;
 }
 .me-one ul li a{
-	color:#181b2a;
-	font-size:15px;
-	font-weight:600;
+	color:#B6B6B6;
+	font-size:14px;
 }
 .me-one ul li a:hover{
 	text-decoration:none;
@@ -38,7 +37,6 @@ ul.memenu.skyblue {text-align: center;}
 .me-one h4{
 	color:#00a0dc;
 	font-size:1.3em;
-	font-weight:600;
 	text-align:left;
 }
 .memenu .mepanel ul{margin:0;padding:0;margin-top: 15px;}
@@ -64,21 +62,33 @@ ul.memenu.skyblue {text-align: center;}
 .skyblue>li:hover>a,.skyblue>li.active>a,.skyblue .dropdown li:hover>a{color:#00a0dc}.
 skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{border:solid 1px #0194be}
 .skyblue form.contact input[type="submit"]{background:#0194be}
-@media (max-width: 1280px){
-.memenu>li>a {
-  padding: 0px 25px 0px 25px;
-}
-}
 @media (max-width: 991px){
 .memenu>li>a {
-  padding: 0px 9px 0px 9px;
+    padding: 38px 26px;
+}
+}
+@media (max-width: 800px){
+.memenu>li>a {
+    padding: 38px 10px;
 }
 }
 @media(max-width:768px){
-	.memenu>li{display:block;width:100%;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;text-align:center;}
-	.memenu>li:hover,.memenu>li.active{border-top:0;text-align:center;}
+.memenu {
+    margin-top: 28px;
+}
+.me-one h4 {
+    text-align: left;
+}
+.memenu>li.active {
+    text-align: left;
+}
+.memenu>li>a {
+    border-right:none;
+	}
+	.memenu>li{display:block;width:100%;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;text-align:left;}
+	.memenu>li.active{border-top:0;text-align:left;}
 	.memenu>li>a{padding:15px 25px}
-	.memenu>li:hover>a,.memenu>li.active>a{padding:15px 25px;text-align:center;}
+	.memenu>li.active>a{padding:15px 25px;text-align:left;}
 	.memenu a{width:100%;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 	.memenu .dropdown,.memenu .dropdown li .dropdown{width:100%;display:none;left:0;border-left:0;position:static;border:0;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 	.memenu .dropdown li{background:#fff!important;border:0}
@@ -89,9 +99,6 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
 		border: none;
 		width: 100%;
 		}
-	.me-one ul li {
-		text-align: center !important;
-	}
 	.mepanel .row{
 		margin:0;
 	}
@@ -107,17 +114,45 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
 	.memenu>li.showhide span.icon1:after { top: 10px;right: 46.5%;}
 	.memenu>li.showhide span.icon2:after { top: 22px;right: 46.5%;}
 	.skyblue li>a, .skyblue>li.showhide span { color: #4B4B4B;}
-	.me-one h4 { text-align: center;}
+	.me-one h4 { text-align:left;}
 	.memenu>li.showhide span.icon1:after { }
+}
+@media (max-width: 667px){
+.memenu>li.showhide span.icon1:after {
+    top: 10px;
+    right: 45.5%;
+}
+.memenu>li.showhide span.icon2:after {
+    top: 22px;
+    right: 45.5%;
+}
 }
 @media (max-width: 640px){
 .memenu>li.showhide {
   width: 18%;
 }
-.memenu>li.showhide span.icon1:after { top: 10px;right: 44.6%;}
-	.memenu>li.showhide span.icon2:after { top: 22px;right: 44.6%;}
+.memenu>li.showhide span.icon1:after { top: 10px;right: 45.5%;}
+	.memenu>li.showhide span.icon2:after { top: 22px;right: 45.5%;}
+}
+@media (max-width: 600px){
+.memenu>li.showhide span.icon1:after {
+    top: 10px;
+    right: 44.5%;
+}
+.memenu>li.showhide span.icon2:after {
+    top: 22px;
+    right: 44.5%;
+}
+}
+@media (max-width: 568px){
+.memenu>li.showhide {
+    width: 30%;
+}
 }
 @media (max-width: 480px){
+.memenu {
+    margin:13px 12px;
+}
 .memenu>li.showhide {
   width: 25%;
   margin: 0;
@@ -147,8 +182,11 @@ left: 4.5%;
 }
 }
 @media (max-width:320px){
+.memenu {
+    margin: 13px;
+}
 .memenu>li.showhide {
-  width: 40%;
+  width: 37%;
   margin: 0;
 }
 .memenu>li>a, .memenu>li.active>a {
@@ -166,9 +204,6 @@ left: 4.5%;
 .glyphicon-shopping-cart:before {
   margin-left:3px;
   font-size: 1em;
-}
-.flexslider .slides > li {
-  height: 252px!important;
 }
 }
 	
