@@ -94,9 +94,15 @@ class ArtisansListUsersView(ListView):
     context_object_name = 'artisans'
     paginate_by = 10
 
+class ArtisansShowUserView(DetailView):
+    model = Artisan
+    template_name = 'show_artisan_for_user.html'
+    context_object_name = 'artisan'
+
 new = CreateArtisanView.as_view()
 list_artisan = ListArtisanView.as_view()
 detail = DetailArtisanView.as_view()
 activate = ChangeStatusArtisanView.as_view()
 deactivate = ChangeStatusArtisanView.as_view(status=1)
 list_artisans_users = ArtisansListUsersView.as_view()
+show_artisan_user = ArtisansShowUserView.as_view()
