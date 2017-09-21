@@ -7,6 +7,7 @@ from django.views.generic import TemplateView, ListView, DetailView, DeleteView
 from artifacts.forms import ArtifactForm
 from artifacts.models import Artifact
 from artisans.models import Artisan
+from categories.models import Category, SubCategory, Material
 
 import cloudinary
 import cloudinary.uploader
@@ -86,6 +87,30 @@ class ArtifactListUsersView(ListView):
     template_name = 'list_artifact_for_user.html'
     context_object_name = 'artifacts'
     paginate_by = 10
+
+    def get_queryset(self):
+        queryset = Artifact.objects.all()
+        order_by = self.request.GET.get('order_by', '')
+        order = self.request.GET.get('order', '')
+        if order_by == 'categoria':
+            queryset = Artifact.objects.filter(subcategory__category=order)
+        elif order_by == 'sub_categoria':
+            queryset = Artifact.objects.filter(subcategory=order)
+        elif order_by == 'material':
+            queryset = Artifact.objects.filter(material=order)
+        elif self.request.GET.get('search', ''):
+            queryset = Artifact.objects.filter(name__icontains=self.request.GET.get('search', ''))
+
+        return queryset
+
+
+
+    def get_context_data(self, **kwargs):
+        context = super(ArtifactListUsersView, self).get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        context['sub_categories'] = SubCategory.objects.all()
+        context['materials'] = Material.objects.all()
+        return context
 
 
 class ArtifactShowUserView(DetailView):

@@ -1,12 +1,12 @@
 {% extends 'index.html' %}
-
+{% load static %}
 {% block content %}
 
     <div class="product-model">
         <div class="container">
             <div class="row">
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="{% url 'core:index' %}">Início</a></li>
                     <li class="active">Artesanatos</li>
                 </ol>
             </div>
@@ -40,21 +40,57 @@
         <div class="rsidebar span_1_of_left">
             <section  class="sky-form">
                 <div class="product_right">
+                    <form action="?search=" method="GET">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="Artesanato">
+                            <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Pesquisar</button>
+                      </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="product_right">
                     <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categorias</h4>
                     <div class="tab1">
-                        <ul class="place">
-                            <li class="sort">Madeira</li>
-                            <li class="by"><img src="images/do.png" alt=""></li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                        <div class="single-bottom">
-                            <a href="#"><p>Lanterns</p></a>
-                            <a href="#"><p>Wall Lamps</p></a>
-                            <a href="#"><p>Table Lamps</p></a>
-                            <a href="#"><p>Selling Lamps</p></a>
-                        </div>
+
+                        {% for category in categories %}
+                            <ul class="place">
+                                <li class="sort"><a href="?order_by=categoria&order={{category.pk}}">{{ category.name }}</a></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        {% endfor %}
+
                     </div>
                 </div>
+
+                <div class="product_right">
+                    <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Sub Categorias</h4>
+                    <div class="tab1">
+
+                        {% for sub_category in sub_categories %}
+                            <ul class="place">
+                                <li class="sort"><a href="?order_by=sub_categoria&order={{sub_category.pk}}">{{ sub_category.name }}</a></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+                <div class="product_right">
+                    <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Materiais</h4>
+                    <div class="tab1">
+
+                        {% for material in materials %}
+                            <ul class="place">
+                                <li class="sort"><a href="?order_by=material&order={{material.pk}}">{{ material.name }}</a></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        {% endfor %}
+
+                    </div>
+                </div>
+
             </section>
         </div>
     </div>
