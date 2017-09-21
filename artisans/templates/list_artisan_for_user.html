@@ -6,14 +6,14 @@
         <div class="container">
             <div class="row">
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="{% url 'core:index' %}">Início</a></li>
                     <li class="active">Artesões</li>
                 </ol>
             </div>
             <h2>Artesões</h2>
             <div class="col-md-9 product-model-sec">
                 {% for artisan in artisans %}
-                    <a href="{% url 'artisans:show_artisan_user' artisan.pk %}">><div class="product-grid">
+                    <a href="{% url 'artisans:show_artisan_user' artisan.pk %}"><div class="product-grid">
                         <div class="more-product"><span> </span></div>
                         <div class="product-img b-link-stripe b-animate-go  thickbox">
                             <img src="{{ artisan.photo }}" class="img-responsive" alt="">
