@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'artisans',
     'categories',
     'artifacts',
+    'comments',
 ]
 
 MIDDLEWARE = [

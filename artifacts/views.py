@@ -12,6 +12,9 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+from comments.forms import CommentForm
+from comments.models import Comment
+
 
 class CreateArtifactView(TemplateView):
     template_name = 'new_artifact.html'
@@ -84,6 +87,7 @@ class ArtifactListUsersView(ListView):
     context_object_name = 'artifacts'
     paginate_by = 10
 
+
 class ArtifactShowUserView(DetailView):
     model = Artifact
     template_name = 'show_artifact_for_user.html'
@@ -93,8 +97,21 @@ class ArtifactShowUserView(DetailView):
         context = super(ArtifactShowUserView, self).get_context_data(**kwargs)
         query = Artifact.objects.filter(subcategory=self.get_object().subcategory.pk)
         context['related_artifacts'] = query.exclude(pk=self.get_object().pk)
-
+        context['form_comment'] = CommentForm(self.request.POST or None)
+        context['comments'] = Comment.objects.filter(artifact=self.get_object().pk)
         return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object)
+        form_comment = context['form_comment']
+        if form_comment.is_valid():
+            comment = form_comment.save(commit=False)
+            comment.artifact = self.get_object()
+            comment.save()
+
+        return self.render_to_response(context)
+
 
 new_artifact = CreateArtifactView.as_view()
 list_artifact = ListArtifactView.as_view()
