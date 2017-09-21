@@ -84,8 +84,21 @@ class ArtifactListUsersView(ListView):
     context_object_name = 'artifacts'
     paginate_by = 10
 
+class ArtifactShowUserView(DetailView):
+    model = Artifact
+    template_name = 'show_artifact_for_user.html'
+    context_object_name = 'artifact'
+
+    def get_context_data(self, **kwargs):
+        context = super(ArtifactShowUserView, self).get_context_data(**kwargs)
+        query = Artifact.objects.filter(subcategory=self.get_object().subcategory.pk)
+        context['related_artifacts'] = query.exclude(pk=self.get_object().pk)
+
+        return context
+
 new_artifact = CreateArtifactView.as_view()
 list_artifact = ListArtifactView.as_view()
 detail_artifact = DetailArtifactView.as_view()
 delete_artifact = DeleteArtifactView.as_view()
 list_artifact_users = ArtifactListUsersView.as_view()
+show_artifact_user = ArtifactShowUserView.as_view()

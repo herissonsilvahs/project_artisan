@@ -15,7 +15,7 @@
 
 
                 {% for artifact in artifacts %}
-                    <a href="single.html"><div class="product-grid">
+                    <a href="{% url 'artifacts:show_artifact_user' artifact.pk %}"><div class="product-grid">
                         <div class="more-product"><span> </span></div>
                         <div class="product-img b-link-stripe b-animate-go  thickbox">
                             <img src="{{ artifact.photo }}" class="img-responsive" alt="">
