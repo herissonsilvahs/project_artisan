@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^status/(?P<pk>\d+)/active', views.activate, name='activate'),
     url(r'^status/(?P<pk>\d+)/disable', views.deactivate, name='deactivate'),
     url(r'^artesaos/$', views.list_artisans_users, name='list_artisan_users'),
+    url(r'^artesao/(?P<pk>\d+)$', views.show_artisan_user, name='show_artisan_user'),
 ]

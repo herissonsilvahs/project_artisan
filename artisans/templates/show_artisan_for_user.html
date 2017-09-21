@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="product">
+        <div class="container">
+            <div class="product-price1">
+                <div class="top-sing">
+                    <div class="col-md-7 single-top">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li data-thumb="{{ artisan.photo }}" style="list-style: none">
+                                    <div class="thumb-image"> <img src="{{ artisan.photo }}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <script src="{% static 'js/imagezoom.js' %}"></script>
+                        <script defer src="{% static 'js/jquery.flexslider.js'  %}"></script>
+
+                    </div>
+                    <div class="col-md-5 single-top-in simpleCart_shelfItem">
+                        <div class="single-para ">
+                            <h4>Artesao </h4>
+                            <h5 class="item_price">{{ artisan.name }}</h5>
+                            <p class="para">{{ artisan.biography }}</p>
+                            <div class="prdt-info-grid">
+                                <ul>
+                                    <li>- Email : {{ artisan.email }} </li>
+                                    <li>- Telefone : {{ artisan.phone }} </li>
+                                    <li>- Estado : {{ artisan.address.state }}</li>
+                                    <li>- Cidade : {{ artisan.address.city }}</li>
+                                    <li>- Bairro : {{ artisan.address.neighborhood }}</li>
+                                    <li>- Rua : {{ artisan.address.street }},
+                                        Nº {{ artisan.address.number }}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="check">
+                                <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Cadastrado em: {{ artisan.created }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

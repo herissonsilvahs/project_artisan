@@ -1,3 +1,61 @@
-{% for artisan in artisans %}
-    {{ artisan.name }}
-{% endfor %}
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <div class="product-model">
+        <div class="container">
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Início</a></li>
+                    <li class="active">Artesões</li>
+                </ol>
+            </div>
+            <h2>Artesões</h2>
+            <div class="col-md-9 product-model-sec">
+                {% for artisan in artisans %}
+                    <a href="{% url 'artisans:show_artisan_user' artisan.pk %}">><div class="product-grid">
+                        <div class="more-product"><span> </span></div>
+                        <div class="product-img b-link-stripe b-animate-go  thickbox">
+                            <img src="{{ artisan.photo }}" class="img-responsive" alt="">
+                            <div class="b-wrapper">
+                                <h4 class="b-animate b-from-left  b-delay03">
+                                    <button><span class="fa fa-file-text-o" aria-hidden="true"></span> Ver mais</button>
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-info simpleCart_shelfItem">
+                        <div class="product-info-cust prt_name">
+                            <h4>{{ artisan.name }}</h4>
+                            <div class="clearfix"> </div>
+                        </div>
+
+                    </div>
+                    </div>
+                {% endfor %}
+
+        </div>
+        <div class="rsidebar span_1_of_left">
+            <section  class="sky-form">
+                <div class="product_right">
+                    <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categorias</h4>
+                    <div class="tab1">
+                        <ul class="place">
+                            <li class="sort">Madeira</li>
+                            <li class="by"><img src="images/do.png" alt=""></li>
+                            <div class="clearfix"> </div>
+                        </ul>
+                        <div class="single-bottom">
+                            <a href="#"><p>Lanterns</p></a>
+                            <a href="#"><p>Wall Lamps</p></a>
+                            <a href="#"><p>Table Lamps</p></a>
+                            <a href="#"><p>Selling Lamps</p></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
