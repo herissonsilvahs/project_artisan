@@ -94,6 +94,14 @@ class ArtisansListUsersView(ListView):
     context_object_name = 'artisans'
     paginate_by = 10
 
+    def get_queryset(self):
+        queryset = Artisan.objects.all()
+        if self.request.GET.get('search', ''):
+            queryset = Artisan.objects.filter(name__icontains=self.request.GET.get('search', ''))
+
+        return queryset
+
+
 class ArtisansShowUserView(DetailView):
     model = Artisan
     template_name = 'show_artisan_for_user.html'

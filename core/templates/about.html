@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="product-model">
+        <div class="container">
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'core:index' %}">Início</a></li>
+                    <li class="active">Sobre</li>
+                </ol>
+            </div>
+            <div class="container">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tabsb" data-toggle="tab">Sobre</a></li>
+                    <li><a href="#tabsbplatform" data-toggle="tab">Sobre a Plataforma</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane" id="tabsb">
+                        <h3>Sobre</h3>
+                        <p>Donec quis dictum dolor, et mollis magna. Nunc et facilisis eros. Suspendisse potenti. Vestibulum tristique metus at justo aliquet vehicula. Etiam nec massa velit. Donec ultrices magna ante. Donec auctor a lorem at malesuada. Suspendisse dignissim lorem aliquam, fermentum leo sed, sagittis ex. Donec et ex sed diam consectetur consectetur at vitae sem. Etiam consectetur metus vel urna iaculis, vel molestie augue hendrerit. Suspendisse ultrices nisl id mi tristique, id placerat risus bibendum. Phasellus pharetra, justo sit amet congue interdum, mi tellus maximus quam, sit amet vulputate lacus dolor id enim. Morbi tincidunt, dui a pulvinar aliquet, justo ante laoreet urna, at fermentum ex ante eget ex. Donec at tincidunt erat.</p>
+                    </div>
+                    <div class="tab-pane" id="tabsbplataform">
+                        <h3>Sobre a plataforma</h3>
+                        <p>Nunc convallis dui at pretium posuere. Donec aliquet justo non leo finibus, nec fringilla nisi facilisis. Cras et mi porta ex iaculis tincidunt. Suspendisse nisl risus, sollicitudin a ornare eget, sodales in dolor. Vestibulum euismod malesuada imperdiet. Ut suscipit dolor orci, ac mollis est vestibulum quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce bibendum imperdiet nisi, in porttitor quam cursus eget. </p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+{% endblock %}
