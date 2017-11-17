@@ -8,56 +8,58 @@
 	<div class="row md-margin">
 
 		<div class="col-sm-12 col-md-6">
-			<div class="form-group"> 
+			<div class="form-group">
 				<label for="{{form.name.auto_id}}" class="control-label">{{form.name.label}}</label>
 				{% render_field form.name class="form-control" placeholder=form.name.label autofocus=True %}
 			</div>
 		</div>
 
 		<div class="col-sm-12 col-md-6">
-			<div class="form-group"> 
-				<label for="photo_artisan" class="control-label">Foto do Artesão</label>
-				<input type="file" class="btn-primary form-control" id="photo_artisan" name="photo">
-			</div>
-		</div>
-
-		<div class="col-sm-12 col-md-6">
-			<div class="form-group"> 
+			<div class="form-group">
 				<label for="{{form.email.auto_id}}" class="control-label">{{form.email.label}}</label>
 				{% render_field form.email class="form-control" placeholder=form.email.label %}
 			</div>
 		</div>
 
 		<div class="col-sm-12 col-md-6">
-			<div class="form-group"> 
+			<div class="form-group">
 				<label for="{{form.phone.auto_id}}" class="control-label">{{form.phone.label}}</label>
 				{% render_field form.phone class="form-control" placeholder=form.phone.label %}
 			</div>
 		</div>
 
 		<div class="col-sm-12 col-md-6">
-			<div class="form-group"> 
+			<div class="form-group">
 				<label for="{{form.phone_optional.auto_id}}" class="control-label">{{form.phone_optional.label}}</label>
 				{% render_field form.phone_optional class="form-control" placeholder=form.phone_optional.label %}
 			</div>
 		</div>
 
 		<div class="col-sm-12 col-md-6">
-			<div class="form-group"> 
+			<div class="form-group">
 				<label for="{{form.cpf.auto_id}}" class="control-label">{{form.cpf.label}}</label>
 				{% render_field form.cpf class="form-control" placeholder=form.cpf.label %}
 			</div>
 		</div>
 
+		<div class="col-sm-12 col-md-6">
+				<div class="form-group">
+						<label for="{{ form.photo.auto_id }}"
+									 class="control-label">{{ form.photo.label }}</label>
+						<input type="file" name="photo" class="form-control-file">
+						<small id="fileHelp" class="form-text text-muted">Insira a foto do artesão com uma qualidade boa</small>
+				</div>
+		</div>
+
 		<div class="col-sm-12 col-md-12">
-			<div class="form-group"> 
+			<div class="form-group">
 				<label for="{{form.biography.auto_id}}" class="control-label">{{form.biography.label}}</label>
 				{% render_field form.biography class="form-control" placeholder=form.biography.label %}
 			</div>
 		</div>
 
 		<div class="col-sm-12 col-md-12">
-			<div class="form-group"> 
+			<div class="form-group">
 				<button type="submit" class="btn btn-success pull-right">Próximo</button>
 			</div>
 		</div>
@@ -67,7 +69,7 @@
 </form>
 
 {% endblock %}
-<!-- 
+<!--
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-md-4 col-md-offset-4">
