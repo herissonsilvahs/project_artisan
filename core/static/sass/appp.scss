@@ -1,0 +1,19 @@
+//cnt: container
+//bg: background
+//desc: description
+
+html,body, h1,h2,h3,h4,h5,h6{
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "Arvo", serif;
+}
+
+*{ // temporário
+  word-wrap: break-word;
+}
+
+@import "header";
+@import "crafts";
+@import "description-section";
+@import "positioning";

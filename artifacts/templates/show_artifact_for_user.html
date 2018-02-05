@@ -5,151 +5,276 @@
 {% load widget_tweaks %}
 
 {% block content %}
-    <div class="product">
-        <div class="container">
-            <div class="product-price1">
-                <div class="top-sing">
-                    <div class="col-md-7 single-top">
-                        <div class="flexslider">
-                            <ul class="slides">
-                                <li data-thumb="{{ artifact.photo }}" style="list-style: none">
-                                    <div class="thumb-image"><img src="{{ artifact.photo }}" data-imagezoom="true"
-                                                                  class="img-responsive" alt=""/></div>
-                                </li>
-                            </ul>
-                        </div>
-                        <script src="{% static 'js/imagezoom.js' %}"></script>
-                        <script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
-
-                    </div>
-                    <div class="col-md-5 single-top-in simpleCart_shelfItem">
-                        <div class="single-para ">
-                            <h4>Artesanato </h4>
-                            <h5 class="item_price">{{ artifact.name }}</h5>
-                            <p class="para">{{ artifact.description }}</p>
-                            <div class="prdt-info-grid">
-                                <ul>
-                                    <li>- Artesão : {{ artifact.artisan.name }}</li>
-                                    <li>- Categoria : {{ artifact.subcategory.category.name }}</li>
-                                    <li>- Sub Categoria : {{ artifact.subcategory.name }} </li>
-                                    <li>- Material : {{ artifact.material.name }}</li>
-                                </ul>
-                            </div>
-                            <div class="check">
-                                <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Cadastrado
-                                    em: {{ artifact.created }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="product-price1">
-                <div class="col-md-7 pull-left">
-                    <div class="single-para ">
-                        <h4>Artesão</h4>
-                        <h5 class="item_price">{{ artifact.artisan.name }}</h5>
-                        <p class="para"> {{ artifact.artisan.biography }} </p>
-                        <div class="prdt-info-grid">
-                            <ul>
-                                <li>- Email : {{ artifact.artisan.email }} </li>
-                                <li>- Telefone : {{ artifact.artisan.phone }} </li>
-                                <li>- Estado : {{ artifact.artisan.address.state }}</li>
-                                <li>- Cidade : {{ artifact.artisan.address.city }}</li>
-                                <li>- Bairro : {{ artifact.artisan.address.neighborhood }}</li>
-                                <li>- Rua : {{ artifact.artisan.address.street }},
-                                    Nº {{ artifact.artisan.address.number }}
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="check">
-                            <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Cadastrado
-                                em: {{ artifact.artisan.created }}</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        {% for comment in comments %}
-                            {{ comment.name }}
-                            {{ comment.comment }}
-                            à {{ comment.created|timesince }}
-                        {% endfor %}
-
-                    </div>
-
-                    <!-- COMMENTS -->
-                    <form class="form-horizontal" method="POST">
-                        {% csrf_token %}
-
-                        {% for field in form_comment %}
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="{{ field.auto_id }}">{{ field.label }}</label>
-                                <div class="col-sm-10">
-                                    {% render_field field class="form-control" %}
-                                </div>
-                            </div>
-                        {% endfor %}
-
-
-
-
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <input type="submit" value="Enviar Comentário">
-                            </div>
-                        </div>
-
-                    </form>
-
-                </div>
-
-                <div class="col-md-5 pull-right">
-                    <a href="#">
-                        <img src="{{ artifact.artisan.photo }}" alt="Usuário" class="img-responsive thumbnail"
-                             style="margin: 0 auto;">
-                    </a>
-                </div>
+    <div class="crafts-cnt">
+        <h2 class="crafts-title">
+           {{ artifact.name }}
+        </h2>
+        <h4 class="crafts-artisan">
+            Artesão: {{ artifact.artisan.name }}
+        </h4>
+        <div class="crafts">
+            <div class="crafts__bg">
+                <img src="{{ artifact.photo }}" data-imagezoom="true" class="craft__img" alt=""/>
             </div>
         </div>
 
+        <div class="description">
+            <div class="description__title">
+                <span>Descrição</span>
+            </div>
 
-        <div class="container">
-            <div class="bottom-prdt">
-                <h4>Artesanatos Relacionados</h4>
-                <div class="clearfix"></div>
+            <div class="description__details">
+                {{ artifact.description }}
+            </div>
+        </div>
 
-                <div class="btm-grid-sec">
+        <div class="information">
+            <div class="information__title">
+                <span>Informações</span>
+            </div>
 
-                    {% for related_artifact in related_artifacts %}
-                        <a href="{% url 'artifacts:show_artifact_user' related_artifact.pk %}">
-                            <div class="product-grid">
-                                <div class="more-product"><span> </span></div>
-                                <div class="product-img b-link-stripe b-animate-go  thickbox">
-                                    <img src="{{ related_artifact.photo }}" class="img-responsive" alt="">
-                                    <div class="b-wrapper">
-                                        <h4 class="b-animate b-from-left  b-delay03">
-                                            <button><span class="fa fa-file-text-o" aria-hidden="true"></span> Ver mais
-                                            </button>
-                                        </h4>
-                                    </div>
+            <div class="information__details">
+                <span>Categoria: {{ artifact.subcategory.category.name }}</span>
+                <span>Subcategoria: {{ artifact.subcategory.name }}</span>
+                <span>Material: {{ artifact.material.name }}</span>
+            </div>
+        </div>
+
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+            <!-- Background of PhotoSwipe.
+                 It's a separate element as animating opacity is faster than rgba(). -->
+            <div class="pswp__bg"></div>
+
+            <!-- Slides wrapper with overflow:hidden. -->
+            <div class="pswp__scroll-wrap">
+
+                <!-- Container that holds slides.
+                    PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                    Don't modify these 3 pswp__item elements, data is added later on. -->
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+
+                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                <div class="pswp__ui pswp__ui--hidden">
+
+                    <div class="pswp__top-bar">
+
+                        <!--  Controls are self-explanatory. Order can be changed. -->
+
+                        <div class="pswp__counter"></div>
+
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                        <!-- element will get class pswp__preloader--active when preloader is running -->
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
                                 </div>
-                        </a>
-                        <div class="product-info simpleCart_shelfItem">
-                            <div class="product-info-cust prt_name">
-                                <h4>{{ related_artifact.name }}</h4>
-                                <div class="clearfix"></div>
                             </div>
-
                         </div>
-                        </div>
-                    {% endfor %}
+                    </div>
 
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
 
-                <div class="clearfix"></div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                    </button>
+
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                    </button>
+
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
     </div>
 
+
+    {#    <div class="product">#}
+    {#        <div class="container">#}
+    {#            <div class="product-price1">#}
+    {#                <div class="top-sing">#}
+    {#                    <div class="col-md-7 single-top">#}
+    {#                        <div class="flexslider">#}
+    {#                            <ul class="slides">#}
+    {#                                <li data-thumb="{{ artifact.photo }}" style="list-style: none">#}
+    {#                                    <div class="thumb-image"><img src="{{ artifact.photo }}" data-imagezoom="true"#}
+    {#                                                                  class="img-responsive" alt=""/></div>#}
+    {#                                </li>#}
+    {#                            </ul>#}
+    {#                        </div>#}
+    {##}
+    {#                    </div>#}
+    {#                    <div class="col-md-5 single-top-in simpleCart_shelfItem">#}
+    {#                        <div class="single-para ">#}
+    {#                            <h4>Artesanato </h4>#}
+    {#                            <h5 class="item_price">{{ artifact.name }}</h5>#}
+    {#                            <p class="para">{{ artifact.description }}</p>#}
+    {#                            <div class="prdt-info-grid">#}
+    {#                                <ul>#}
+    {#                                    <li>- Artesão : {{ artifact.artisan.name }}</li>#}
+    {#                                    <li>- Categoria : {{ artifact.subcategory.category.name }}</li>#}
+    {#                                    <li>- Sub Categoria : {{ artifact.subcategory.name }} </li>#}
+    {#                                    <li>- Material : {{ artifact.material.name }}</li>#}
+    {#                                </ul>#}
+    {#                            </div>#}
+    {#                            <div class="check">#}
+    {#                                <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Cadastrado#}
+    {#                                    em: {{ artifact.created }}</p>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                    <div class="clearfix"></div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="product-price1">#}
+    {#                <div class="col-md-7 pull-left">#}
+    {#                    <div class="single-para ">#}
+    {#                        <h4>Artesão</h4>#}
+    {#                        <h5 class="item_price">{{ artifact.artisan.name }}</h5>#}
+    {#                        <p class="para"> {{ artifact.artisan.biography }} </p>#}
+    {#                        <div class="prdt-info-grid">#}
+    {#                            <ul>#}
+    {#                                <li>- Email : {{ artifact.artisan.email }} </li>#}
+    {#                                <li>- Telefone : {{ artifact.artisan.phone }} </li>#}
+    {#                                <li>- Estado : {{ artifact.artisan.address.state }}</li>#}
+    {#                                <li>- Cidade : {{ artifact.artisan.address.city }}</li>#}
+    {#                                <li>- Bairro : {{ artifact.artisan.address.neighborhood }}</li>#}
+    {#                                <li>- Rua : {{ artifact.artisan.address.street }},#}
+    {#                                    Nº {{ artifact.artisan.address.number }}#}
+    {#                                </li>#}
+    {##}
+    {#                            </ul>#}
+    {#                        </div>#}
+    {#                        <div class="check">#}
+    {#                            <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Cadastrado#}
+    {#                                em: {{ artifact.artisan.created }}</p>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {##}
+    {#                    <div>#}
+    {#                        {% for comment in comments %}#}
+    {#                            {{ comment.name }}#}
+    {#                            {{ comment.comment }}#}
+    {#                            à {{ comment.created|timesince }}#}
+    {#                        {% endfor %}#}
+    {##}
+    {#                    </div>#}
+    {##}
+    {#                    <!-- COMMENTS -->#}
+    {#                    <form class="form-horizontal" method="POST">#}
+    {#                        {% csrf_token %}#}
+    {##}
+    {#                        {% for field in form_comment %}#}
+    {#                            <div class="form-group">#}
+    {#                                <label class="col-sm-2 control-label"#}
+    {#                                       for="{{ field.auto_id }}">{{ field.label }}</label>#}
+    {#                                <div class="col-sm-10">#}
+    {#                                    {% render_field field class="form-control" %}#}
+    {#                                </div>#}
+    {#                            </div>#}
+    {#                        {% endfor %}#}
+    {##}
+    {##}
+    {##}
+    {##}
+    {#                        <div class="form-group">#}
+    {#                            <div class="col-sm-10">#}
+    {#                                <input type="submit" value="Enviar Comentário">#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {##}
+    {#                    </form>#}
+    {##}
+    {#                </div>#}
+    {##}
+    {#                <div class="col-md-5 pull-right">#}
+    {#                    <a href="#">#}
+    {#                        <img src="{{ artifact.artisan.photo }}" alt="Usuário" class="img-responsive thumbnail"#}
+    {#                             style="margin: 0 auto;">#}
+    {#                    </a>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {##}
+    {##}
+    {#        <div class="container">#}
+    {#            <div class="bottom-prdt">#}
+    {#                <h4>Artesanatos Relacionados</h4>#}
+    {#                <div class="clearfix"></div>#}
+    {##}
+    {#                <div class="btm-grid-sec">#}
+    {##}
+    {#                    {% for related_artifact in related_artifacts %}#}
+    {#                        <a href="{% url 'artifacts:show_artifact_user' related_artifact.pk %}">#}
+    {#                            <div class="product-grid">#}
+    {#                                <div class="more-product"><span> </span></div>#}
+    {#                                <div class="product-img b-link-stripe b-animate-go  thickbox">#}
+    {#                                    <img src="{{ related_artifact.photo }}" class="img-responsive" alt="">#}
+    {#                                    <div class="b-wrapper">#}
+    {#                                        <h4 class="b-animate b-from-left  b-delay03">#}
+    {#                                            <button><span class="fa fa-file-text-o" aria-hidden="true"></span> Ver mais#}
+    {#                                            </button>#}
+    {#                                        </h4>#}
+    {#                                    </div>#}
+    {#                                </div>#}
+    {#                        </a>#}
+    {#                        <div class="product-info simpleCart_shelfItem">#}
+    {#                            <div class="product-info-cust prt_name">#}
+    {#                                <h4>{{ related_artifact.name }}</h4>#}
+    {#                                <div class="clearfix"></div>#}
+    {#                            </div>#}
+    {##}
+    {#                        </div>#}
+    {#                        </div>#}
+    {#                    {% endfor %}#}
+    {##}
+    {##}
+    {#                <div class="clearfix"></div>#}
+    {#            </div>#}
+    {##}
+    {#        </div>#}
+    {#    </div>#}
+
+
+{% endblock %}
+
+{% block custom-js %}
+    <script>
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        // build items array
+        let items = [
+            {
+                src: document.getElementsByClassName("craft__img")[0].getAttribute("src"),
+                w: 600,
+                h: 400
+            },
+        ];
+        let options = {
+            // optionName: 'option value'
+            // for example:
+            index: 0 // start at first slide
+        };
+        // Initializes and opens PhotoSwipe
+        let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+{#        gallery.init();#}
+    </script>
 {% endblock %}
