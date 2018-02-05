@@ -73,7 +73,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
 .crafts {
   margin-top: 20px; }
 
-.description {
+.description, .information {
   margin-top: 2em; }
 
 .description__details {
