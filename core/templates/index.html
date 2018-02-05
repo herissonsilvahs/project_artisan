@@ -3,312 +3,42 @@
 <html>
 <head>
     <title>Projeto Artesão</title>
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all"/>
-    <!-- Custom Theme files -->
-    <!--theme style-->
-    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-
-    <!--//theme style-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="keywords" content="Wedding Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
-    <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
-    <!-- start menu -->
-    <script src="{% static 'js/simpleCart.min.js' %}"></script>
-    <!-- start menu -->
-    <link href="{% static 'css/memenu.css' %}" rel="stylesheet" type="text/css" media="all"/>
-    <script type="text/javascript" src="{% static 'js/memenu.js' %}"></script>
-    <script>$(document).ready(function () {
-        $(".memenu").memenu();
-    });</script>
-    <!-- /start menu -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/appp.css' %}">
+    <link rel="stylesheet" href=" {% static 'photoswipe/photoswipe.css' %}">
+    <link rel="stylesheet" href="{% static 'photoswipe/default-skin/default-skin.css' %}">
 </head>
 <body>
-<!--header-->
-<script src="{% static 'js/responsiveslides.min.js' %}"></script>
-<script>
-    $(function () {
-        $("#slider").responsiveSlides({
-            auto: true,
-            nav: true,
-            speed: 500,
-            namespace: "callbacks",
-            pager: false,
-        });
-    });
-</script>
 
-<div class="header-top">
-    <div class="header-bottom">
-        <div class="logo" style="background-color:#4292f4;">
-            <h1><a href="index.html">ArtesãoNato</a></h1>
-        </div>
-        <!---->
-        <div class="top-nav">
-            <ul class="memenu skyblue">
-                <li class="active"><a href="{% url 'core:index' %}">Início</a></li>
-                <li class="grid"><a href="{% url 'artisans:list_artisan_users' %}">Artesões</a></li>
-                <!--
-                    <div class="mepanel">
-                        <div class="row">
-                            <div class="col1 me-one">
-                                <h4>Shop</h4>
-                                <ul>
-                                    <li><a href="product.html">New Arrivals</a></li>
-                                    <li><a href="product.html">Home</a></li>
-                                    <li><a href="product.html">Decorates</a></li>
-                                    <li><a href="product.html">Accessories</a></li>
-                                    <li><a href="product.html">Kids</a></li>
-                                    <li><a href="product.html">Login</a></li>
-                                    <li><a href="product.html">Brands</a></li>
-                                    <li><a href="product.html">My Shopping Bag</a></li>
-                                </ul>
-                            </div>
-                            <div class="col1 me-one">
-                                <h4>Type</h4>
-                                <ul>
-                                    <li><a href="product.html">Diwali Lights</a></li>
-                                    <li><a href="product.html">Tube Lights</a></li>
-                                    <li><a href="product.html">Bulbs</a></li>
-                                    <li><a href="product.html">Ceiling Lights</a></li>
-                                    <li><a href="product.html">Accessories</a></li>
-                                    <li><a href="product.html">Lanterns</a></li>
-                                </ul>
-                            </div>
-                            <div class="col1 me-one">
-                                <h4>Popular Brands</h4>
-                                <ul>
-                                    <li><a href="product.html">Everyday</a></li>
-                                    <li><a href="product.html">Philips</a></li>
-                                    <li><a href="product.html">Havells</a></li>
-                                    <li><a href="product.html">Wipro</a></li>
-                                    <li><a href="product.html">Jaguar</a></li>
-                                    <li><a href="product.html">Ave</a></li>
-                                    <li><a href="product.html">Gold Medal</a></li>
-                                    <li><a href="product.html">Anchor</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                -->
-                <li class="grid"><a href="{% url 'artifacts:list_artifacts_users' %}">Artesanatos</a></li>
-                <li class="grid"><a href="{% url 'core:about' %}">Sobre</a></li>
-            </ul>
-        </div>
-        <!---->
+<header class="header">
+    <div class="header__logo">
+        <span class="logo__img">ArtesãoNato</span>
     </div>
-    <div class="clearfix"></div>
-</div>
+    <ul>
+        <li class="active"><a href="{% url 'core:index' %}">Início</a></li>
+        <li class="grid"><a href="{% url 'artisans:list_artisan_users' %}">Artesões</a></li>
+        <li class="grid"><a href="{% url 'artifacts:list_artifacts_users' %}">Artesanatos</a></li>
+        <li class="grid"><a href="{% url 'core:about' %}">Sobre</a></li>
+    </ul>
+    <div class="menu"></div>
+</header>
+
 
 {% block content %}
-    <!---->
-    <div class="slider">
-        <div class="callbacks_container">
-            <ul class="rslides" id="slider">
-                <li>
-                    <div class="banner1">
-                        <div class="banner-info">
-                            <h3>Cultura da Região</h3>
-                            <p></p>
-                            <br><br>
-                            <div class="col-md-6 col-md-offset-3">
-                                <button type="button" class="btn btn-info btn-lg"><i
-                                        class="glyphicon glyphicon-th-list"></i> Ir para o Catálogo
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="banner2">
-                        <div class="banner-info">
-                            <h3>Arte da Região</h3>
-                            <p></p>
-                            <br><br>
-                            <div class="col-md-6 col-md-offset-3">
-                                <button type="button" class="btn btn-info btn-lg"><i
-                                        class="glyphicon glyphicon-th-list"></i> Ir para o Catálogo
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="banner3">
-                        <div class="banner-info">
-                            <h3>Artesão da Região</h3>
-                            <p></p>
-                            <br><br>
-                            <div class="col-md-6 col-md-offset-3">
-                                <button type="button" class="btn btn-info btn-lg"><i
-                                        class="glyphicon glyphicon-th-list"></i> Ir para o Catálogo
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!---->
-    <script src="js/bootstrap.js"></script>
 
-    <div class="items">
-        <div class="offers">
-            <div class="container">
-                <h3>Novos Artesanatos</h3>
-            </div>
-        </div>
-
-
-        <div class="container">
-            <div class="col-md-9">
-
-
-                {% for artifact in artifacts %}
-                    <a href="{% url 'artifacts:show_artifact_user' artifact.pk %}"><div class="product-grid">
-                        <div class="more-product"><span> </span></div>
-                        <div class="product-img b-link-stripe b-animate-go  thickbox">
-                            <img src="{{ artifact.photo }}" class="img-responsive" alt="">
-                            <div class="b-wrapper">
-                                <h4 class="b-animate b-from-left  b-delay03">
-                                    <button><span class="fa fa-file-text-o" aria-hidden="true"></span> Ver mais</button>
-                                </h4>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="product-info simpleCart_shelfItem">
-                        <div class="product-info-cust prt_name">
-                            <h4>{{ artifact.name }}</h4>
-                            <div class="clearfix"> </div>
-                        </div>
-
-                    </div>
-                    </div>
-                {% endfor %}
-
-        </div>
-
-    </div>
-    </div>
-    <!--
-
-    <div class="items">
-        <div class="offers">
-            <div class="container">
-                <h3>Artesanatos Em Alta</h3>
-            </div>
-        </div>
-        <div class="container">
-            <div class="items-sec">
-                <div class="col-md-3 feature-grid">
-                    <a href="product.html"><img src="images/img1.jpg" alt=""/>
-                        <div class="arrival-info">
-                            <p>Art 2</p>
-                        </div>
-                        <div class="viw">
-                            <a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Ver
-                                mais</a>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-    -->
-    <div class="offers">
-        <div class="container">
-            <h3>Registros</h3>
-            <div class="offer-grids">
-                <div class="col-md-6 grid-left">
-                    <div class="offer-grid1 text-center">
-                        <div class="text-center">
-                            <h4>Número de Artesãos</h4>
-                            <p>{{ artisans_count }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 grid-right">
-                    <div class="offer-grid1">
-                        <div class="text-center">
-                            <h4>Número de Artesanatos</h4>
-                            <p>{{ artifacts_count }}</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <a href="#redirecionar-para-tela-de-mais-artesanatos" data-toggle="tooltip" data-placement="top"
-                       title="Veja a lista de artesãos clicando aqui"></a>
-                    <div class="clearfix"></div>
-                </div>
-                <a href="#" data-toggle="tooltip" data-placement="top" title="Veja a lista de artesanatos clicando aqui">
-                    <div class="offer-grid2">
-                </a>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    </div>
-    <!---->
-    <div class="subscribe">
-        <div class="container">
-            <h3>Receber Novidades por e-mail</h3>
-            <form>
-                <input type="text" class="text" value="Email" onfocus="this.value = '';"
-                       onblur="if (this.value == '') {this.value = 'Email';}">
-                <input type="submit" value="Subscribe">
-            </form>
-        </div>
-    </div>
-    <!---->
-    <div class="footer">
-        <div class="container">
-            <div class="footer-grids">
-                <div class="col-md-4 about-us">
-                    <h3>Sobre </h3>
-                    <p></p>
-                </div>
-                <div class="col-md-4 ftr-grid">
-                    <h3>Informações</h3>
-                    <ul class="nav-bottom">
-                        <li><a href="#">Track Order</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 ftr-grid">
-                    <h3>Categorias</h3>
-                    <ul class="nav-bottom">
-                        <li><a href="#">Car Lights</a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
 {% endblock %}
-<div class="copywrite">
-    <div class="container">
-        <div class="copy">
-            <p>Catálogo ArtesãoNato © 2017</p>
-        </div>
-        <div class="social">
-            <a href="#"><i class="facebook"></i></a>
-            <a href="#"><i class="twitter"></i></a>
-            <a href="#"><i class="dribble"></i></a>
-            <a href="#"><i class="google"></i></a>
-            <a href="#"><i class="youtube"></i></a>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!---->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<script src="{% static 'photoswipe/photoswipe.js' %}"></script>
+<script src="{% static 'photoswipe/photoswipe-ui-default.js' %}"></script>
+
+{% block custom-js %}
+
+{% endblock %}
+
 </body>
 </html>
