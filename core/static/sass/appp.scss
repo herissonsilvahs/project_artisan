@@ -4,6 +4,8 @@
 
 $brown: #3B2724;
 $light-brown: #513533;
+$red: #600E1C;
+$light-red: #BF1734;
 $blue: #01A698;
 $light-blue: #03D8BE;
 
@@ -36,6 +38,7 @@ html,body, h1,h2,h3,h4,h5,h6{
 }
 
 @import "header";
+@import "menu";
 @import "crafts";
 @import "description-section"; //todo: rename
 @import "comment";
