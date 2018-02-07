@@ -2,10 +2,26 @@ html, body, h1, h2, h3, h4, h5, h6 {
   color: #fff;
   margin: 0;
   padding: 0;
-  font-family: "Arvo", serif; }
+  font-family: "Arvo", serif;
+  /* Adjust font size */
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* Font varient */
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  /* Smoothing */
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
 
 * {
   word-wrap: break-word; }
+
+.comments-ctn {
+  padding: 1em;
+  background: #01A698; }
 
 .header {
   background: #fff;
@@ -17,7 +33,10 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
 .crafts-cnt {
   background: #3B2724;
-  padding: 12px 16px; }
+  padding: 12px 16px 60px 16px; }
+
+.crafts-title {
+  font-size: 30px; }
 
 .crafts__bg {
   padding: 0.6em;
@@ -32,6 +51,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#72403b', endColorstr='#e68273', GradientType=1); }
 
 .craft__img {
+  will-change: transform;
   max-width: 70vw;
   transform: translate(-17px, -16px);
   -webkit-box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.29);
@@ -67,6 +87,61 @@ html, body, h1, h2, h3, h4, h5, h6 {
   .information__details * {
     display: block; }
 
+.comments-title {
+  font-size: 25px;
+  text-align: center; }
+
+.comment {
+  padding: 1em;
+  background: #03D8BE;
+  -webkit-box-shadow: 0px 0px 15px 9px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 0px 0px 15px 9px rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 0px 15px 9px rgba(0, 0, 0, 0.11); }
+
+.comment__author {
+  font-size: 20px;
+  margin-bottom: 5px; }
+
+.comment__text {
+  margin-bottom: 20px; }
+
+.comment__date {
+  font-style: italic;
+  text-align: right;
+  font-size: 12px; }
+
+.form-group__label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px; }
+
+.form-group__input {
+  font-family: "Arvo", serif;
+  padding: 5px 0 5px 3px;
+  font-size: 16px;
+  display: block;
+  border: none;
+  -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.21);
+  -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.21);
+  box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.21); }
+
+textarea.form-group__input {
+  width: 100%;
+  height: 140px; }
+
+.submit-button {
+  background: #03D8BE;
+  font-size: 18px;
+  font-family: "Arvo", serif;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  padding: 0.6em 2em;
+  display: block;
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.26); }
+
 .crafts-artisan {
   margin-top: 16px; }
 
@@ -85,3 +160,19 @@ html, body, h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
   padding: 1em 2em;
   margin-left: -16px; }
+
+.comment {
+  margin-bottom: 3em; }
+
+.comments-title {
+  margin-bottom: 20px; }
+
+.new-comment-title {
+  font-size: 20px;
+  margin: 3em 0 1em 0; }
+
+.form-group {
+  margin-bottom: 1em; }
+
+.submit-button {
+  margin: 1.5em auto 1em; }

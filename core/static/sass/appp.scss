@@ -2,18 +2,41 @@
 //bg: background
 //desc: description
 
+$brown: #3B2724;
+$light-brown: #513533;
+$blue: #01A698;
+$light-blue: #03D8BE;
+
 html,body, h1,h2,h3,h4,h5,h6{
   color: #fff;
   margin: 0;
   padding: 0;
   font-family: "Arvo", serif;
+  /* Adjust font size */
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    /* Font varient */
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    /* Smoothing */
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
 
 *{ // temporário
   word-wrap: break-word;
 }
 
+.comments-ctn{ //temporário
+  padding: 1em;
+  background: $blue;
+}
+
 @import "header";
 @import "crafts";
-@import "description-section";
+@import "description-section"; //todo: rename
+@import "comment";
 @import "positioning";
