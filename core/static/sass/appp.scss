@@ -34,6 +34,11 @@ body{
   position: relative;
 }
 
+a, a:hover{
+  color: white;
+  text-decoration: none;
+}
+
 *{ // temporário
   word-wrap: break-word;
 }

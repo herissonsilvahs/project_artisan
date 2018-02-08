@@ -35,12 +35,12 @@
 <div class="menu-wrapper">
         <div class="menu__bg"></div>
         <div class="menu">
-            <div class="menu__group">
-                <div class="menu__item">Início</div>
-                <div class="menu__item">Artesões</div>
-                <div class="menu__item">Artesanato</div>
-                <div class="menu__item">Sobre</div>
-            </div>
+            <ul class="menu__group">
+                <li class="menu__item"><a href="{% url 'core:index' %}">Início</a></li>
+                <li class="menu__item"><a href="{% url 'artisans:list_artisan_users' %}">Artesões</a></li>
+                <li class="menu__item"><a href="{% url 'artifacts:list_artifacts_users' %}">Artesanato</a></li>
+                <li class="menu__item"><a href="{% url 'core:about' %}">Sobre</a></li>
+            </ul>
         </div>
     </div>
 
