@@ -1,6 +1,7 @@
 //cnt: container
 //bg: background
 //desc: description
+//btn: button
 
 $brown: #3B2724;
 $light-brown: #513533;
@@ -10,6 +11,7 @@ $blue: #01A698;
 $light-blue: #03D8BE;
 
 html,body, h1,h2,h3,h4,h5,h6{
+  overflow-x: hidden;
   color: #fff;
   margin: 0;
   padding: 0;
@@ -26,6 +28,10 @@ html,body, h1,h2,h3,h4,h5,h6{
     font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
     text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+body{
+  position: relative;
 }
 
 *{ // temporário

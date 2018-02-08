@@ -1,39 +1,78 @@
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50px;
+  width: 60px;
+  position: relative;
+  z-index: 9999;
+
+  &__rect {
+    width: 100%;
+    height: 20%;
+    background: red;
+    border-radius: 20px;
+
+    &--diag {
+      position: absolute;
+
+      &:nth-child(4) {
+        background: #fff;
+        opacity: 0;
+        transform: rotate(45deg);
+
+        -webkit-box-shadow: -8px -7px 8px -2px rgba(0, 0, 0, 0.18);
+        -moz-box-shadow: -8px -7px 8px -2px rgba(0, 0, 0, 0.18);
+        box-shadow: -8px -7px 8px -2px rgba(0, 0, 0, 0.18);
+      }
+
+      &:nth-child(5) {
+        background: #fff;
+        opacity: 0;
+        transform: rotate(-45deg);
+
+        //-webkit-box-shadow: 8px -7px 8px -2px rgba(0,0,0,0.18);
+        //-moz-box-shadow: 8px -7px 8px -2px rgba(0,0,0,0.18);
+        //box-shadow: 8px -7px 8px -2px rgba(0,0,0,0.18);
+      }
+    }
+  }
+}
+
 .menu {
   position: fixed;
   width: 100%;
   height: 80vh;
-   background: $red;
+  background: $red;
   bottom: 0;
   left: 0;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  &:before {
-    //content: '';
-    //width: 100%;
-    //height: 80vh;
-    //background: $red;
-    //position: absolute;
-    //transition: all 1s;
-    //transform: scaleY(0);
-    //transform-origin: center bottom 0;
-  }
+  transform: scaleY(0);
+  transform-origin: center bottom 0;
+  -webkit-box-shadow: 0px -12px 13px 0px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 0px -12px 13px 0px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px -12px 13px 0px rgba(0, 0, 0, 0.28);
+  will-change: transform;
 }
 
-.menu__group{
+.menu__group {
   position: relative;
   z-index: 1000;
+  margin-left: 2em;
 }
 
-.menu-wrapper:hover .menu:before{
+.menu-wrapper:hover .menu:before {
   transform: scaleY(1);
 }
 
 .menu__item {
   font-size: 40px;
   margin: 1em 0;
+  opacity: 0;
+  will-change: transform;
 }
 
 .menu__bg {
@@ -41,7 +80,10 @@
   top: 0;
   left: 0;
   background: $blue;
-  height: 100%;
+  height: 40%;
   width: 100%;
   z-index: 999;
+  transform: scaleY(0);
+  transform-origin: center top 0;
+  will-change: transform;
 }

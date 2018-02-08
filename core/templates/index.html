@@ -16,15 +16,24 @@
     <div class="header__logo">
         <span class="logo__img">ArtesãoNato</span>
     </div>
-    <ul>
-        <li class="active"><a href="{% url 'core:index' %}">Início</a></li>
-        <li class="grid"><a href="{% url 'artisans:list_artisan_users' %}">Artesões</a></li>
-        <li class="grid"><a href="{% url 'artifacts:list_artifacts_users' %}">Artesanatos</a></li>
-        <li class="grid"><a href="{% url 'core:about' %}">Sobre</a></li>
-    </ul>
-    <div class="menu-button"></div>
+{#    <ul>#}
+{#        <li class="active"><a href="{% url 'core:index' %}">Início</a></li>#}
+{#        <li class="grid"><a href="{% url 'artisans:list_artisan_users' %}">Artesões</a></li>#}
+{#        <li class="grid"><a href="{% url 'artifacts:list_artifacts_users' %}">Artesanatos</a></li>#}
+{#        <li class="grid"><a href="{% url 'core:about' %}">Sobre</a></li>#}
+{#    </ul>#}
+    <div class="menu-btn">
+        <span class="menu-btn__rect"></span>
+        <span class="menu-btn__rect"></span>
+        <span class="menu-btn__rect"></span>
+        <span class="menu-btn__rect menu-btn__rect--diag"></span>
+        <span class="menu-btn__rect menu-btn__rect--diag"></span>
+    </div>
 
-    <div class="menu-wrapper">
+</header>
+
+<div class="menu-wrapper">
+        <div class="menu__bg"></div>
         <div class="menu">
             <div class="menu__group">
                 <div class="menu__item">Início</div>
@@ -35,10 +44,6 @@
         </div>
     </div>
 
-    <div class="menu__bg"></div>
-</header>
-
-
 {% block content %}
 
 {% endblock %}
@@ -47,6 +52,8 @@
 
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/easing/EasePack.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 <script src="{% static 'js/scrollmagic/uncompressed/plugins/animation.gsap.js' %}"></script>
 <script src="{% static 'js/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js' %}"></script>
@@ -55,6 +62,10 @@
 {#<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>#}
 <script src="{% static 'photoswipe/photoswipe.js' %}"></script>
 <script src="{% static 'photoswipe/photoswipe-ui-default.js' %}"></script>
+
+
+
+<script src="{% static 'js/appp.js' %}"></script>
 
 {% block custom-js %}
 

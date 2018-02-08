@@ -1,9 +1,13 @@
-.header{
+.header {
   background: #fff;
   padding: 25px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header__logo{
-  font-size: 20px;
+.header__logo {
+  font-size: 33px;
+  color: #000000;
   font-weight: bold;
 }
