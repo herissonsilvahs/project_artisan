@@ -47,8 +47,8 @@ a, a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 3.125em;
-  width: 3.75em;
+  height: 2.625em;
+  width: 3.05em;
   position: relative;
   z-index: 101; }
   .menu-btn__rect {
@@ -71,8 +71,8 @@ a, a:hover {
       .menu-btn__rect--diag:nth-child(5) {
         transform: rotate(-45deg);
         transform-origin: left bottom 0;
-        top: 40px;
-        left: 15px; }
+        top: 33px;
+        left: 14px; }
 
 .menu {
   position: fixed;
@@ -99,10 +99,20 @@ a, a:hover {
   position: relative;
   z-index: 101;
   margin-left: 2em; }
+  @media (min-width: 0px) and (max-width: 480px) and (orientation: landscape) {
+    .menu__group {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      justify-content: space-evenly; } }
   @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
     .menu__group {
       display: flex;
-      flex-wrap: wrap; } }
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      justify-content: space-evenly; } }
 
 .menu__item {
   font-size: 2.5rem;
@@ -110,6 +120,10 @@ a, a:hover {
   opacity: 0;
   will-change: transform;
   list-style: none; }
+  @media (min-width: 0px) and (max-width: 480px) and (orientation: landscape) {
+    .menu__item {
+      font-size: 1.8rem;
+      margin: 0.9em 0; } }
   @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
     .menu__item {
       margin: 0.6em 1em; } }
@@ -254,7 +268,7 @@ textarea.form-group__input {
 .information__details {
   margin-top: 0.625em;
   padding: 1em 2em;
-  margin-left: -1empx; }
+  margin-left: -1em; }
 
 .comment {
   margin-bottom: 3em; }
