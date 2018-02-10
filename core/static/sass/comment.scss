@@ -1,5 +1,5 @@
 .comments-title {
-  font-size: 25px;
+  font-size: 1.5625rem;
   text-align: center;
 }
 
@@ -12,30 +12,30 @@
 }
 
 .comment__author {
-  font-size: 20px;
-  margin-bottom: 5px;
+  font-size: 1.25rem;
+  margin-bottom: 0.3125em;
 }
 
 .comment__text {
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
 }
 
 .comment__date {
   font-style: italic;
   text-align: right;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .form-group__label {
   display: block;
-  font-size: 18px;
-  margin-bottom: 5px;
+  font-size: 1.125rem;
+  margin-bottom: 0.3125em;
 }
 
 .form-group__input {
   font-family: "Arvo", serif;
-  padding: 5px 0 5px 3px;
-  font-size: 16px;
+  padding: 0.3125em 0 0.3125em 0.1875em;
+  font-size: 1rem;
   display: block;
   border: none;
   -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.21);
@@ -45,15 +45,15 @@
 
 textarea.form-group__input { //used tag due Django form rendering
   width: 100%;
-  height: 140px;
+  height: 8.75em;
 }
 
 .submit-button {
   background: $light-blue;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: "Arvo", serif;
   color: #fff;
-  border-radius: 30px;
+  border-radius: 1.1875em;
   border: none;
   padding: 0.6em 2em;
   display: block;
