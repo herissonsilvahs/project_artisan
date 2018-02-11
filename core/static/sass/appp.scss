@@ -10,6 +10,9 @@ $light-red: #BF1734;
 $blue: #01A698;
 $light-blue: #03D8BE;
 
+
+$ctn-hor-padding: 1em !default;
+
 html,body, h1,h2,h3,h4,h5,h6{
   overflow-x: hidden;
   color: #fff;
@@ -43,15 +46,11 @@ a, a:hover{
   word-wrap: break-word;
 }
 
-.comments-ctn{ //temporário
-  padding: 1em;
-  background: $blue;
-}
-
 @import "queries";
 @import "header";
 @import "menu";
-@import "crafts";
-@import "description-section"; //todo: rename
-@import "comment";
+@import "img";
+@import "container";
+@import "card";
+@import "form";
 @import "positioning";

@@ -1,0 +1,30 @@
+.ctn {
+  padding: 0.75em $ctn-hor-padding 2.55em $ctn-hor-padding;
+
+  @each $query in small-l, medium, medium-l {
+    @include to($query) {
+      $ctn-hor-padding: 3em;
+      padding: 0.75em $ctn-hor-padding 2.55em $ctn-hor-padding;
+    }
+  }
+}
+
+.ctn__title {
+  font-size: 1.875em;
+
+  &--centered {
+    text-align: center;
+  }
+}
+
+.ctn--brown {
+  background: $brown;
+}
+
+.ctn--red {
+  background: $red;
+}
+
+.ctn--blue {
+  background: $blue;
+}

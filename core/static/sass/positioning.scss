@@ -1,44 +1,107 @@
-.crafts-artisan {
-  margin-top: 1em;
+.ctn__title {
+  margin: 1em 0;
 }
 
-.crafts {
+.ctn__title--artifact {
+  margin-bottom: 0;
+}
+
+.ctn__subtitle {
+  margin-bottom: 2em;
+}
+
+.ctn--padded {
+  padding: 1em;
+}
+
+.img {
   margin-top: 1.25em;
+
+  &--centered {
+    text-align: center;
+  }
 }
 
-.description, .information {
+.card {
   margin-top: 2em;
+
+  &__content {
+    padding: 1em 2em;
+  }
+
+  &--centered {
+    text-align: center;
+  }
+
+  &--comment {
+    .card__content {
+      text-align: left;
+    }
+  }
 }
 
-.description__details {
+.card--right .card__content {
   margin-top: 0.625em;
-  padding: 1em 2em;
-  margin-right: -1em;
+  margin-right: -$ctn-hor-padding;
+
+  @each $query in small-l, medium, medium-l {
+    @include to($query) {
+      $ctn-hor-padding: 3em;
+      margin-right: -$ctn-hor-padding;
+    }
+  }
 }
 
-.information__details {
+.card--left .card__content {
   margin-top: 0.625em;
-  padding: 1em 2em;
-  margin-left: -1em;
+  margin-left: -$ctn-hor-padding;
+
+  @each $query in small-l, medium, medium-l {
+    @include to($query) {
+      $ctn-hor-padding: 3em;
+      margin-left: -$ctn-hor-padding;
+    }
+  }
 }
 
-.comment{
-  margin-bottom: 3em;
+.card--full-width .card__content {
+  display: block;
+  text-align: center;
+  margin-left: -$ctn-hor-padding;
+  margin-right: -$ctn-hor-padding;
+
+  @each $query in small-l, medium, medium-l {
+    @include to($query) {
+      $ctn-hor-padding: 3em;
+      margin-left: -$ctn-hor-padding;
+      margin-right: -$ctn-hor-padding;
+    }
+  }
+
 }
 
-.comments-title{
-  margin-bottom: 1.25em;
+.card__title {
+  margin-bottom: 0.55em;
 }
 
-.new-comment-title{
+.new-comment-title {
   font-size: 1.25rem;
   margin: 3em 0 1em 0;
 }
 
-.form-group{
+.form-group {
   margin-bottom: 1em;
 }
 
-.submit-button{
-  margin: 1.5em auto 1em;
+.submit-btn {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  //margin: 1.5em auto 1em;
+
+  &--centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
+//todo: revise layout alignment technique

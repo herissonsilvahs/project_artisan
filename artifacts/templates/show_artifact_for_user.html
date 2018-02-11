@@ -8,60 +8,84 @@
 
 
 
-    <div class="crafts-cnt">
-        <h1 class="crafts-title">
-            {{ artifact.name }}
+    <section class="ctn ctn--brown">
+        <h1 class="ctn__title ctn__title--artifact">
+            {{ artifact.name|capfirst }}
         </h1>
-        <h2 class="crafts-artisan">
-            Artesão: {{ artifact.artisan.name }}
+        <h2 class="ctn__subtitle">
+            Artesão: {{ artifact.artisan.name|title }}
         </h2>
-        <div class="crafts">
-            <div class="crafts__bg">
-                <img src="{{ artifact.photo }}" data-imagezoom="true" class="craft__img" alt=""/>
+        <div class="img">
+            <div class="img__bg img__bg--red">
+                <img class="img__file" src="{{ artifact.photo }}" data-imagezoom="true" alt=""/>
             </div>
         </div>
 
-        <div class="description">
-            <div class="description__title">
+        <div class="card card--right card--brown">
+            <div class="card__title">
                 <span>Descrição</span>
             </div>
-
-            <div class="description__details">
+            <div class="card__content">
                 {{ artifact.description }}
             </div>
         </div>
 
-        <div class="information">
-            <div class="information__title">
+        <div class="card card--left card--brown">
+            <div class="card__title">
                 <span>Informações</span>
             </div>
-
-            <div class="information__details">
+            <div class="card__content">
                 <span>Categoria: {{ artifact.subcategory.category.name }}</span>
                 <span>Subcategoria: {{ artifact.subcategory.name }}</span>
                 <span>Material: {{ artifact.material.name }}</span>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="comments-ctn">
-        <h3 class="comments-title">
+    <section class="ctn ctn--red">
+        <h3 class="ctn__title ctn__title--centered">
+            Sobre o Artesão
+        </h3>
+
+        <div class="img img--centered">
+            <div class="img__bg img__bg--yellow">
+                <img class="img__file" src="{{ artifact.artisan.photo }}" alt="foto de {{ artifact.artisan.name }}">
+            </div>
+        </div>
+
+        <div class="card card--full-width card--red card--centered">
+            <h2 class="card__title card__content">
+                {{ artifact.artisan.name|title }}
+            </h2>
+        </div>
+
+        <div class="card card--red card--centered">
+            <div class="card__content">
+                <p>
+                    {{ artifact.artisan.biography }}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="ctn ctn--blue">
+        <h3 class="ctn__title ctn__title--centered">
             Comentários
         </h3>
 
         {% for comment in comments %}
-            <div class="comment">
-                <div class="comment__author">
-                    {{ comment.name }}
-                    {#                João#}
-                </div>
-                <div class="comment__text">
-                    {{ comment.comment }}
-                    {#                Lorem lorem muito lorem ipsum#}
-                </div>
+            <div class="card card--blue card--comment card--centered">
+                <div class="card__content">
+                    <div class="comment__author">
+                        {{ comment.name }}
+                    </div>
+                    <div class="comment__text">
+                        {{ comment.comment }}
 
-                <div class="comment__date">
-                    {{ comment.created|timesince }} atrás
+                    </div>
+                    <div class="comment__date">
+                         há {{ comment.created|timesince }}
+                    </div>
                 </div>
             </div>
         {% endfor %}
@@ -81,9 +105,9 @@
 
             {% endfor %}
 
-            <input type="submit" class="submit-button" value="Enviar Comentário">
+            <input type="submit" class="submit-btn submit-btn--centered" value="Enviar Comentário">
         </form>
-    </div>
+    </section>
 
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
@@ -157,33 +181,33 @@
 
 {% block custom-js %}
     <script>
-        let pswpElement = document.querySelectorAll('.pswp')[0];
-        let items = [
-            {
-                src: document.getElementsByClassName("craft__img")[0].getAttribute("src"),
-                w: 600,
-                h: 400
-            },
-        ];
-        let options = {
-            // optionName: 'option value'
-            // for example:
-            index: 0 // start at first slide
-        };
-
-        $(".craft__img").click(function () {
-            let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-            gallery.init();
-        });
-
-
-        // build scene
-        let controller = new ScrollMagic.Controller();
-        let scene = new ScrollMagic.Scene({triggerElement: ".craft__img", duration: 700})
-        // animate color and top border in relation to scroll position
-            .setTween(".craft__img", {transform: "translateX(-30px)"}) // the tween durtion can be omitted and defaults to 1
-            .addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)
-            .addTo(controller);
+        {#        let pswpElement = document.querySelectorAll('.pswp')[0];#}
+        {#        let items = [#}
+        {#            {#}
+        {#                src: document.getElementsByClassName("craft__img")[0].getAttribute("src"),#}
+        {#                w: 600,#}
+        {#                h: 400#}
+        {#            },#}
+        {#        ];#}
+        {#        let options = {#}
+        {#            // optionName: 'option value'#}
+        {#            // for example:#}
+        {#            index: 0 // start at first slide#}
+        {#        };#}
+        {##}
+        {#        $(".craft__img").click(function () {#}
+        {#            let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);#}
+        {#            gallery.init();#}
+        {#        });#}
+        {##}
+        {##}
+        {#        // build scene#}
+        {#        let controller = new ScrollMagic.Controller();#}
+        {#        let scene = new ScrollMagic.Scene({triggerElement: ".craft__img", duration: 700})#}
+        {#        // animate color and top border in relation to scroll position#}
+        {#            .setTween(".craft__img", {transform: "translateX(-30px)"}) // the tween durtion can be omitted and defaults to 1#}
+        {#            .addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)#}
+        {#            .addTo(controller);#}
     </script>
 
 
