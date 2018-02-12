@@ -29,7 +29,7 @@ a, a:hover {
 
 .header {
   background: #fff;
-  padding: 25px 16px;
+  padding: 1.5625em 1em;
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -67,8 +67,8 @@ a, a:hover {
       .menu-btn__rect--diag:nth-child(5) {
         transform: rotate(-45deg);
         transform-origin: left bottom 0;
-        top: 33px;
-        left: 14px; }
+        top: 32px;
+        left: 13px; }
 
 .menu {
   position: fixed;
@@ -136,6 +136,14 @@ a, a:hover {
   transform-origin: center top 0;
   will-change: transform; }
 
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .img--centered\@medium {
+    text-align: center; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .img--centered\@medium {
+    text-align: center; } }
+
 .img__bg {
   padding: 0.6em;
   display: inline-block; }
@@ -168,6 +176,12 @@ a, a:hover {
   @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
     .img__file {
       max-width: 60vw; } }
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .img__file {
+      max-width: 50vw; } }
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .img__file {
+      max-width: 50vw; } }
 
 .ctn {
   padding: 0.75em 1em 2.55em 1em; }
@@ -208,17 +222,30 @@ a, a:hover {
   text-align: right; }
   .card--right .card__content {
     max-width: 17.8125em; }
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+      .card--right .card__content {
+        max-width: 22.8125em; } }
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      .card--right .card__content {
+        max-width: 22.8125em; } }
 
 .card--left {
   text-align: left; }
   .card--left .card__content {
     max-width: 17.8125em; }
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+      .card--left .card__content {
+        max-width: 22.8125em; } }
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      .card--left .card__content {
+        max-width: 22.8125em; } }
 
 .card__title {
   font-size: 1.5625em;
   font-weight: bold; }
 
 .card__content {
+  height: 100%;
   display: inline-block;
   -webkit-box-shadow: 0px 0px 15px 9px rgba(0, 0, 0, 0.11);
   -moz-box-shadow: 0px 0px 15px 9px rgba(0, 0, 0, 0.11);
@@ -359,3 +386,15 @@ textarea.form-group__input {
   .submit-btn--centered {
     margin-left: auto;
     margin-right: auto; }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .line\@medium > * {
+    display: inline-block; }
+    .line\@medium > *:last-child {
+      float: right; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .line\@medium > * {
+    display: inline-block; }
+    .line\@medium > *:last-child {
+      float: right; } }

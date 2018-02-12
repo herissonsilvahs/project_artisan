@@ -22,9 +22,11 @@ tlToggleMenu.add(tlMenuIcon()).add(tlMenu(), "-=0.7");
 $('.menu-btn').click(function () {
 
     if (isMenuOpened) {
+        $('html, body').css('overflow-y', 'initial');
         tlToggleMenu.reverse();
-        isMenuOpened = false
+        isMenuOpened = false;
     } else {
+        $('html, body').css('overflow-y', 'hidden'); //todo: execute this only when animation ends
         tlToggleMenu.play();
         isMenuOpened = true
     }

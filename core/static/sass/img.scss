@@ -1,3 +1,11 @@
+@each $query in medium, medium-l {
+  @include to($query) {
+    .img--centered\@medium {
+      text-align: center;
+    }
+  }
+}
+
 .img__bg {
   padding: 0.6em;
   display: inline-block;
@@ -33,7 +41,13 @@
   -moz-box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.29);
   box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.29);
 
-  @include to(small-l){
+  @include to(small-l) {
     max-width: 60vw;
+  }
+
+  @each $query in medium, medium-l {
+    @include to($query) {
+      max-width: 50vw;
+    }
   }
 }

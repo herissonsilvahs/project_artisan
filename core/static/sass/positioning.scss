@@ -77,7 +77,6 @@
       margin-right: -$ctn-hor-padding;
     }
   }
-
 }
 
 .card__title {
@@ -101,6 +100,17 @@
   &--centered {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@each $query in medium, medium-l {
+  @include to($query) {
+    .line\@medium > * {
+      display: inline-block;
+      &:last-child {
+        float: right;
+      }
+    }
   }
 }
 

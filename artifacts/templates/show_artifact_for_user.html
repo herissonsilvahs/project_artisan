@@ -15,7 +15,7 @@
         <h2 class="ctn__subtitle">
             Artesão: {{ artifact.artisan.name|title }}
         </h2>
-        <div class="img">
+        <div class="img img--centered@medium">
             <div class="img__bg img__bg--red">
                 <img class="img__file" src="{{ artifact.photo }}" data-imagezoom="true" alt=""/>
             </div>
@@ -66,6 +66,28 @@
                 </p>
             </div>
         </div>
+
+        <div class="line@medium">
+            <div class="card card--left card--red">
+                <div class="card__title">
+                    <span>Endereço</span>
+                </div>
+                <div class="card__content same-height@medium">
+                    <span>{{ artifact.artisan.address.street }}, número {{ artifact.artisan.address.number }}</span>
+                    <span>{{ artifact.artisan.address.neighborhood }}, {{ artifact.artisan.address.city }}</span>
+                </div>
+            </div>
+
+            <div class="card card--right card--red">
+                <div class="card__title">
+                    <span>Contato</span>
+                </div>
+                <div class="card__content">
+                    <span>{{ artifact.artisan.email }}</span>
+                    <span>{{ artifact.artisan.phone }}</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="ctn ctn--blue">
@@ -84,7 +106,7 @@
 
                     </div>
                     <div class="comment__date">
-                         há {{ comment.created|timesince }}
+                        há {{ comment.created|timesince }}
                     </div>
                 </div>
             </div>

@@ -1,28 +1,40 @@
-.card--brown .card__content{
+.card--brown .card__content {
   background: $light-brown;
 }
 
-.card--red .card__content{
+.card--red .card__content {
   background: $light-red;
 }
 
-.card--blue .card__content{
+.card--blue .card__content {
   background: $light-blue;
 }
 
 .card--right {
   text-align: right;
 
-  .card__content{
+  .card__content {
     max-width: 17.8125em;
+
+    @each $query in medium, medium-l {
+      @include to($query) {
+        max-width: 22.8125em;;
+      }
+    }
   }
 }
 
-.card--left{
+.card--left {
   text-align: left;
 
-  .card__content{
+  .card__content {
     max-width: 17.8125em;
+
+    @each $query in medium, medium-l {
+      @include to($query) {
+        max-width: 22.8125em;;
+      }
+    }
   }
 }
 
@@ -33,18 +45,19 @@
 }
 
 .card__content {
+  height: 100%;
   display: inline-block;
   -webkit-box-shadow: 0px 0px 15px 9px rgba(0, 0, 0, 0.11);
   -moz-box-shadow: 0px 0px 15px 9px rgba(0, 0, 0, 0.11);
   box-shadow: 0px 0px 15px 9px rgba(0, 0, 0, 0.11);
 
-  & *{
+  & * {
     display: block;
   }
 }
 
-.card--comment{
-  .card__content{
+.card--comment {
+  .card__content {
     display: block;
   }
 }

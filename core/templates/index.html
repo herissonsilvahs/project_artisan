@@ -16,33 +16,35 @@
     <div class="header__logo">
         <span class="logo__img">ArtesãoNato</span>
     </div>
-{#    <ul>#}
-{#        <li class="active"><a href="{% url 'core:index' %}">Início</a></li>#}
-{#        <li class="grid"><a href="{% url 'artisans:list_artisan_users' %}">Artesões</a></li>#}
-{#        <li class="grid"><a href="{% url 'artifacts:list_artifacts_users' %}">Artesanatos</a></li>#}
-{#        <li class="grid"><a href="{% url 'core:about' %}">Sobre</a></li>#}
-{#    </ul>#}
-    <div class="menu-btn">
-        <span class="menu-btn__rect"></span>
-        <span class="menu-btn__rect"></span>
-        <span class="menu-btn__rect"></span>
-        <span class="menu-btn__rect menu-btn__rect--diag"></span>
-        <span class="menu-btn__rect menu-btn__rect--diag"></span>
+    {#    <ul>#}
+    {#        <li class="active"><a href="{% url 'core:index' %}">Início</a></li>#}
+    {#        <li class="grid"><a href="{% url 'artisans:list_artisan_users' %}">Artesões</a></li>#}
+    {#        <li class="grid"><a href="{% url 'artifacts:list_artifacts_users' %}">Artesanatos</a></li>#}
+    {#        <li class="grid"><a href="{% url 'core:about' %}">Sobre</a></li>#}
+    {#    </ul>#}
+    <div class="icon-fixer">
+        <div class="menu-btn">
+            <span class="menu-btn__rect"></span>
+            <span class="menu-btn__rect"></span>
+            <span class="menu-btn__rect"></span>
+            <span class="menu-btn__rect menu-btn__rect--diag"></span>
+            <span class="menu-btn__rect menu-btn__rect--diag"></span>
+        </div>
     </div>
 
 </header>
 
 <div class="menu-wrapper">
-        <div class="menu__bg"></div>
-        <div class="menu">
-            <ul class="menu__group">
-                <li class="menu__item"><a href="{% url 'core:index' %}">Início</a></li>
-                <li class="menu__item"><a href="{% url 'artisans:list_artisan_users' %}">Artesões</a></li>
-                <li class="menu__item"><a href="{% url 'artifacts:list_artifacts_users' %}">Artesanato</a></li>
-                <li class="menu__item"><a href="{% url 'core:about' %}">Sobre</a></li>
-            </ul>
-        </div>
+    <div class="menu__bg"></div>
+    <div class="menu">
+        <ul class="menu__group">
+            <li class="menu__item"><a href="{% url 'core:index' %}">Início</a></li>
+            <li class="menu__item"><a href="{% url 'artisans:list_artisan_users' %}">Artesões</a></li>
+            <li class="menu__item"><a href="{% url 'artifacts:list_artifacts_users' %}">Artesanato</a></li>
+            <li class="menu__item"><a href="{% url 'core:about' %}">Sobre</a></li>
+        </ul>
     </div>
+</div>
 
 {% block content %}
 
@@ -69,7 +71,6 @@
 
 <script src="{% static 'photoswipe/photoswipe.js' %}"></script>
 <script src="{% static 'photoswipe/photoswipe-ui-default.js' %}"></script>
-
 
 
 <script src="{% static 'js/appp.js' %}"></script>
