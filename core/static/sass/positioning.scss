@@ -1,17 +1,19 @@
-.ctn__title {
-  margin: 1em 0;
-}
+.ctn {
+  &__title {
+    margin: 1em 0;
 
-.ctn__title--artifact {
-  margin-bottom: 0;
-}
+    &--artifact {
+      margin-bottom: 0;
+    }
+  }
 
-.ctn__subtitle {
-  margin-bottom: 2em;
-}
+  &__subtitle {
+    margin-bottom: 2em;
+  }
 
-.ctn--padded {
-  padding: 1em;
+  &--padded {
+    padding: 1em;
+  }
 }
 
 .img {
@@ -38,78 +40,115 @@
       text-align: left;
     }
   }
-}
 
-.card--right .card__content {
-  margin-top: 0.625em;
-  margin-right: -$ctn-hor-padding;
+  &--lt {
+    &:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
 
-  @each $query in small-l, medium, medium-l {
-    @include to($query) {
-      $ctn-hor-padding: 3em;
-      margin-right: -$ctn-hor-padding;
+      text-align: left;
+
+      .card__content {
+        margin-top: 0.625em;
+        margin-left: -$ctn-hor-padding;
+      }
+    }
+
+    &\@mobile {
+      @each $query in small, small-l, medium, medium-l {
+        @include to($query) {
+          text-align: right;
+
+          .card__content {
+            margin-top: 0.625em;
+            margin-left: -$ctn-hor-padding;
+          }
+        }
+      }
+    }
+
+    &\@computer {
+      @each $query in large, x-large {
+        @include to($query) {
+          text-align: left;
+
+          .card__content {
+            margin-top: 0.625em;
+            margin-left: -$ctn-hor-padding;
+          }
+        }
+      }
+    }
+  }
+
+  &--rt {
+    &:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+
+      text-align: right;
+
+      .card__content {
+        margin-top: 0.625em;
+        margin-right: -$ctn-hor-padding;
+      }
+    }
+
+    &\@mobile {
+      @each $query in small, small-l, medium, medium-l {
+        @include to($query) {
+          text-align: right;
+
+          .card__content {
+            margin-top: 0.625em;
+            margin-right: -$ctn-hor-padding;
+          }
+        }
+      }
+    }
+
+    &\@computer {
+      @each $query in large, x-large {
+        @include to($query) {
+          text-align: right;
+
+          .card__content {
+            margin-top: 0.625em;
+            margin-right: -$ctn-hor-padding;
+          }
+        }
+      }
     }
   }
 }
 
-.card--left .card__content {
-  margin-top: 0.625em;
-  margin-left: -$ctn-hor-padding;
+.flex {
+  display: flex;
 
-  @each $query in small-l, medium, medium-l {
-    @include to($query) {
-      $ctn-hor-padding: 3em;
-      margin-left: -$ctn-hor-padding;
-    }
+  &--column {
+    flex-direction: column;
   }
-}
-
-.card--full-width .card__content {
-  display: block;
-  text-align: center;
-  margin-left: -$ctn-hor-padding;
-  margin-right: -$ctn-hor-padding;
-
-  @each $query in small-l, medium, medium-l {
-    @include to($query) {
-      $ctn-hor-padding: 3em;
-      margin-left: -$ctn-hor-padding;
-      margin-right: -$ctn-hor-padding;
-    }
-  }
-}
-
-.card__title {
-  margin-bottom: 0.55em;
-}
-
-.new-comment-title {
-  font-size: 1.25rem;
-  margin: 3em 0 1em 0;
-}
-
-.form-group {
-  margin-bottom: 1em;
-}
-
-.submit-btn {
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-  //margin: 1.5em auto 1em;
 
   &--centered {
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
   }
-}
 
-@each $query in medium, medium-l {
-  @include to($query) {
-    .line\@medium > * {
-      display: inline-block;
-      &:last-child {
-        float: right;
+  &--column.&--centered {
+    justify-content: center;
+  }
+
+  &\@large {
+    @each $query in large, x-large, {
+      @include to($query) {
+        display: flex;
       }
+    }
+  }
+
+  .flex-ch {
+
+    &--half-wt {
+      width: 50%; //todo: bug aqui nos 50%
+    }
+
+    &--centered {
+      align-self: center;
     }
   }
 }

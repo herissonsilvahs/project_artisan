@@ -11,7 +11,7 @@ $blue: #01A698;
 $light-blue: #03D8BE;
 
 
-$ctn-hor-padding: 1em !default;
+$ctn-hor-padding: 1em;
 
 html,body, h1,h2,h3,h4,h5,h6{
   overflow-x: hidden;
@@ -28,7 +28,7 @@ html,body, h1,h2,h3,h4,h5,h6{
     /* Smoothing */
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    font-smoothing: antialiased;
+    font-smoothing: subpixel-antialised;
     -webkit-font-smoothing: antialiased;
     text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }

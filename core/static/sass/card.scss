@@ -10,7 +10,7 @@
   background: $light-blue;
 }
 
-.card--right {
+.card--rt {
   text-align: right;
 
   .card__content {
@@ -21,10 +21,16 @@
         max-width: 22.8125em;;
       }
     }
+
+    @each $query in large, x-large {
+      @include to($query) {
+        max-width: 25.8125em;;
+      }
+    }
   }
 }
 
-.card--left {
+.card--lt {
   text-align: left;
 
   .card__content {
@@ -33,6 +39,12 @@
     @each $query in medium, medium-l {
       @include to($query) {
         max-width: 22.8125em;;
+      }
+    }
+
+    @each $query in large, x-large {
+      @include to($query) {
+        max-width: 25.8125em;;
       }
     }
   }

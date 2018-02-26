@@ -6,85 +6,96 @@
 
 {% block content %}
 
-
-
     <section class="ctn ctn--brown">
-        <h1 class="ctn__title ctn__title--artifact">
-            {{ artifact.name|capfirst }}
-        </h1>
-        <h2 class="ctn__subtitle">
-            Artesão: {{ artifact.artisan.name|title }}
-        </h2>
-        <div class="img img--centered@medium">
-            <div class="img__bg img__bg--red">
-                <img class="img__file" src="{{ artifact.photo }}" data-imagezoom="true" alt=""/>
+        <div class="flex@large">
+            <div class="flex-ch flex-ch--half-wt">
+                <h1 class="ctn__title ctn__title--artifact">
+                    {{ artifact.name|capfirst }}
+                </h1>
+                <h2 class="ctn__subtitle">
+                    Artesão: {{ artifact.artisan.name|title }}
+                </h2>
+                <div class="img img--centered@medium img--main">
+                    <div class="img__bg img__bg--red">
+                        <img class="img__file" src="{{ artifact.photo }}" data-imagezoom="true" alt=""/>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="flex-ch flex-ch--centered">
+                <div class="card card--rt card--brown">
+                    <div class="card__title">
+                        <span>Descrição</span>
+                    </div>
+                    <div class="card__content">
+                        {{ artifact.description }}
+                    </div>
+                </div>
 
-        <div class="card card--right card--brown">
-            <div class="card__title">
-                <span>Descrição</span>
-            </div>
-            <div class="card__content">
-                {{ artifact.description }}
-            </div>
-        </div>
-
-        <div class="card card--left card--brown">
-            <div class="card__title">
-                <span>Informações</span>
-            </div>
-            <div class="card__content">
-                <span>Categoria: {{ artifact.subcategory.category.name }}</span>
-                <span>Subcategoria: {{ artifact.subcategory.name }}</span>
-                <span>Material: {{ artifact.material.name }}</span>
+                <div class="card card--lt card--rt@computer card--brown">
+                    <div class="card__title">
+                        <span>Informações</span>
+                    </div>
+                    <div class="card__content">
+                        <span>Categoria: {{ artifact.subcategory.category.name }}</span>
+                        <span>Subcategoria: {{ artifact.subcategory.name }}</span>
+                        <span>Material: {{ artifact.material.name }}</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="ctn ctn--red">
+
+
         <h3 class="ctn__title ctn__title--centered">
             Sobre o Artesão
         </h3>
 
-        <div class="img img--centered">
-            <div class="img__bg img__bg--yellow">
-                <img class="img__file" src="{{ artifact.artisan.photo }}" alt="foto de {{ artifact.artisan.name }}">
-            </div>
-        </div>
-
-        <div class="card card--full-width card--red card--centered">
-            <h2 class="card__title card__content">
-                {{ artifact.artisan.name|title }}
-            </h2>
-        </div>
-
-        <div class="card card--red card--centered">
-            <div class="card__content">
-                <p>
-                    {{ artifact.artisan.biography }}
-                </p>
-            </div>
-        </div>
-
-        <div class="line@medium">
-            <div class="card card--left card--red">
-                <div class="card__title">
-                    <span>Endereço</span>
+        <div class="flex@large flex--column flex--centered">
+            <div class="flex-ch">
+                <div class="img img--centered">
+                    <div class="img__bg img__bg--yellow">
+                        <img class="img__file" src="{{ artifact.artisan.photo }}"
+                             alt="foto de {{ artifact.artisan.name }}">
+                    </div>
                 </div>
-                <div class="card__content same-height@medium">
-                    <span>{{ artifact.artisan.address.street }}, número {{ artifact.artisan.address.number }}</span>
-                    <span>{{ artifact.artisan.address.neighborhood }}, {{ artifact.artisan.address.city }}</span>
+
+                <div class="card card--full-width card--red card--centered card--rt@large">
+                    <h2 class="card__title card__content">
+                        {{ artifact.artisan.name|title }}
+                    </h2>
+                </div>
+
+                <div class="card card--red card--centered">
+                    <div class="card__content">
+                        <p>
+                            {{ artifact.artisan.biography }}
+                        </p>
+                    </div>
                 </div>
             </div>
+            <div class="flex-ch">
+                <div class="line@medium">
+                    <div class="card card--lt card--red">
+                        <div class="card__title">
+                            <span>Endereço</span>
+                        </div>
+                        <div class="card__content same-height@medium">
+                            <span>{{ artifact.artisan.address.street }}, número {{ artifact.artisan.address.number }}</span>
+                            <span>{{ artifact.artisan.address.neighborhood }}, {{ artifact.artisan.address.city }}</span>
+                        </div>
+                    </div>
 
-            <div class="card card--right card--red">
-                <div class="card__title">
-                    <span>Contato</span>
-                </div>
-                <div class="card__content">
-                    <span>{{ artifact.artisan.email }}</span>
-                    <span>{{ artifact.artisan.phone }}</span>
+                    <div class="card card--rt card--red">
+                        <div class="card__title">
+                            <span>Contato</span>
+                        </div>
+                        <div class="card__content">
+                            <span>{{ artifact.artisan.email }}</span>
+                            <span>{{ artifact.artisan.phone }}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 @each $query in medium, medium-l {
   @include to($query) {
-    .img--centered\@medium {
+    .img--centered:medium {
       text-align: center;
     }
   }
@@ -40,14 +40,25 @@
   -webkit-box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.29);
   box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.29);
+}
 
-  @include to(small-l) {
-    max-width: 60vw;
-  }
+.img--main {
+  .img__file {
+    cursor: pointer;
+    @include to(small-l) {
+      max-width: 60vw;
+    }
 
-  @each $query in medium, medium-l {
-    @include to($query) {
-      max-width: 50vw;
+    @each $query in medium, medium-l {
+      @include to($query) {
+        max-width: 50vw;
+      }
+    }
+
+    @each $query in large, x-large {
+      @include to($query) {
+        max-width: 35vw;
+      }
     }
   }
 }
