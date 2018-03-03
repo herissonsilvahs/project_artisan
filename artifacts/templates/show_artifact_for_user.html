@@ -7,8 +7,8 @@
 {% block content %}
 
     <section class="ctn ctn--brown">
-        <div class="flex@large">
-            <div class="flex-ch flex-ch--half-wt">
+        <div class="flex@large wt--full">
+            <div class="wt--half@computer">
                 <h1 class="ctn__title ctn__title--artifact">
                     {{ artifact.name|capfirst }}
                 </h1>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-ch flex-ch--centered">
+            <div class="wt--half@computer">
                 <div class="card card--rt card--brown">
                     <div class="card__title">
                         <span>Descrição</span>
@@ -53,7 +53,7 @@
         </h3>
 
         <div class="flex@large flex--column flex--centered">
-            <div class="flex-ch">
+            <div class="f">
                 <div class="img img--centered">
                     <div class="img__bg img__bg--yellow">
                         <img class="img__file" src="{{ artifact.artisan.photo }}"
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-ch">
+            <div class="">
                 <div class="line@medium">
                     <div class="card card--lt card--red">
                         <div class="card__title">

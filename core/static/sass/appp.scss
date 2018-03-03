@@ -3,15 +3,9 @@
 //desc: description
 //btn: button
 
-$brown: #3B2724;
-$light-brown: #513533;
-$red: #600E1C;
-$light-red: #BF1734;
-$blue: #01A698;
-$light-blue: #03D8BE;
+//$ctn-hor-padding: 1em;
 
-
-$ctn-hor-padding: 1em;
+@import "variables";
 
 html,body, h1,h2,h3,h4,h5,h6{
   overflow-x: hidden;
@@ -47,10 +41,10 @@ a, a:hover{
 }
 
 @import "queries";
+@import "container";
 @import "header";
 @import "menu";
 @import "img";
-@import "container";
 @import "card";
 @import "form";
 @import "positioning";

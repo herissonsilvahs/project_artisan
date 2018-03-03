@@ -48,7 +48,7 @@
 
       .card__content {
         margin-top: 0.625em;
-        margin-left: -$ctn-hor-padding;
+        margin-left: -$ctn-hor-padding; //todo refactor to be compatible to map
       }
     }
 
@@ -129,10 +129,6 @@
     align-items: center;
   }
 
-  &--column.&--centered {
-    justify-content: center;
-  }
-
   &\@large {
     @each $query in large, x-large, {
       @include to($query) {
@@ -140,15 +136,32 @@
       }
     }
   }
+}
 
-  .flex-ch {
-
-    &--half-wt {
-      width: 50%; //todo: bug aqui nos 50%
-    }
-
+.f {
     &--centered {
       align-self: center;
+    }
+  }
+
+.wt{
+  &--half{
+    width: 50%;
+
+    &\@mobile {
+      @each $query in small, small-l, medium, medium-l {
+        @include to($query) {
+            width: 50%;
+        }
+      }
+    }
+
+    &\@computer {
+      @each $query in large, x-large {
+        @include to($query) {
+            width: 50%;
+        }
+      }
     }
   }
 }

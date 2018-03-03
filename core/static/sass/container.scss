@@ -1,10 +1,8 @@
 .ctn {
-  padding: 0.75em $ctn-hor-padding 2.55em $ctn-hor-padding;
 
-  @each $query in small-l, medium, medium-l {
+  @each $query in small, small-l, medium, medium-l, large, x-large {
     @include to($query) {
-      $ctn-hor-padding: 3em;
-      padding: 0.75em $ctn-hor-padding 2.55em $ctn-hor-padding;
+      padding: 0.75em map_get($ctn-hor-padding, $query) 2.55em map_get($ctn-hor-padding, $query);
     }
   }
 }
