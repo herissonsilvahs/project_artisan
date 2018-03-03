@@ -357,88 +357,582 @@ textarea.form-group__input {
     text-align: center; }
   .card--comment .card__content {
     text-align: left; }
-  .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+  @media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+    .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+      text-align: left; }
+      .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
+        margin-top: 0.625em;
+        margin-left: -1em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--lt\@mobile {
     text-align: left; }
-    .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
+    .card--lt\@mobile .card__content {
       margin-top: 0.625em;
-      margin-left: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
-    .card--lt\@mobile {
-      text-align: right; }
-      .card--lt\@mobile .card__content {
-        margin-top: 0.625em;
-        margin-left: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+      margin-left: -1em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 992px) and (max-width: 1199px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 1200px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
   @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
-    .card--lt\@mobile {
-      text-align: right; }
-      .card--lt\@mobile .card__content {
+    .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+      text-align: left; }
+      .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-left: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+        margin-left: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -1em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 992px) and (max-width: 1199px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 1200px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    .card--lt\@mobile {
-      text-align: right; }
-      .card--lt\@mobile .card__content {
+    .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+      text-align: left; }
+      .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-left: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+        margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -1em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 992px) and (max-width: 1199px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 1200px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .card--lt\@mobile {
-      text-align: right; }
-      .card--lt\@mobile .card__content {
+    .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+      text-align: left; }
+      .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-left: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+        margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -1em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 992px) and (max-width: 1199px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 1200px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
   @media (min-width: 992px) and (max-width: 1199px) {
-    .card--lt\@computer {
+    .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: left; }
-      .card--lt\@computer .card__content {
+      .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-left: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+        margin-left: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -1em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) and (max-width: 1199px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 1200px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
   @media (min-width: 1200px) {
-    .card--lt\@computer {
+    .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: left; }
-      .card--lt\@computer .card__content {
+      .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-left: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
-  .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+        margin-left: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -1em; } }
+
+@media (min-width: 1200px) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--lt\@mobile {
+    text-align: left; }
+    .card--lt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 992px) and (max-width: 1199px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 1200px) {
+  .card--lt\@computer {
+    text-align: left; }
+    .card--lt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-left: -3em; } }
+  @media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+    .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+      text-align: right; }
+      .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
+        margin-top: 0.625em;
+        margin-right: -1em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--rt\@mobile {
     text-align: right; }
-    .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
+    .card--rt\@mobile .card__content {
       margin-top: 0.625em;
-      margin-right: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
-    .card--rt\@mobile {
-      text-align: right; }
-      .card--rt\@mobile .card__content {
-        margin-top: 0.625em;
-        margin-right: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+      margin-right: -1em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 992px) and (max-width: 1199px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 1200px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
   @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
-    .card--rt\@mobile {
+    .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
-      .card--rt\@mobile .card__content {
+      .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-right: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+        margin-right: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -1em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 992px) and (max-width: 1199px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 1200px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    .card--rt\@mobile {
+    .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
-      .card--rt\@mobile .card__content {
+      .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-right: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+        margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -1em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 992px) and (max-width: 1199px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 1200px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .card--rt\@mobile {
+    .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
-      .card--rt\@mobile .card__content {
+      .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-right: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+        margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -1em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 992px) and (max-width: 1199px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 1200px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
   @media (min-width: 992px) and (max-width: 1199px) {
-    .card--rt\@computer {
+    .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
-      .card--rt\@computer .card__content {
+      .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-right: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+        margin-right: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -1em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) and (max-width: 1199px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 1200px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
   @media (min-width: 1200px) {
-    .card--rt\@computer {
+    .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
-      .card--rt\@computer .card__content {
+      .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
-        margin-right: -(small: 1em, small-l: 3em, medium: 3em, medium-l: 3em, large: 3em, x-large: 3em); } }
+        margin-right: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -1em; } }
+
+@media (min-width: 1200px) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .card--rt\@mobile {
+    text-align: right; }
+    .card--rt\@mobile .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 992px) and (max-width: 1199px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
+
+@media (min-width: 1200px) and (min-width: 1200px) {
+  .card--rt\@computer {
+    text-align: right; }
+    .card--rt\@computer .card__content {
+      margin-top: 0.625em;
+      margin-right: -3em; } }
 
 .flex {
   display: flex; }

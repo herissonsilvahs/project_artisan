@@ -40,82 +40,91 @@
       text-align: left;
     }
   }
+  @each $query in small, small-l, medium, medium-l, large, x-large {
+    @include to($query) {
 
-  &--lt {
-    &:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+      &--lt {
+        &:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
 
-      text-align: left;
-
-      .card__content {
-        margin-top: 0.625em;
-        margin-left: -$ctn-hor-padding; //todo refactor to be compatible to map
-      }
-    }
-
-    &\@mobile {
-      @each $query in small, small-l, medium, medium-l {
-        @include to($query) {
-          text-align: right;
-
-          .card__content {
-            margin-top: 0.625em;
-            margin-left: -$ctn-hor-padding;
-          }
-        }
-      }
-    }
-
-    &\@computer {
-      @each $query in large, x-large {
-        @include to($query) {
           text-align: left;
 
           .card__content {
             margin-top: 0.625em;
-            margin-left: -$ctn-hor-padding;
+            margin-left: -(map_get($ctn-hor-padding, $query)); //todo refactor to be compatible to map
+          }
+        }
+
+        &\@mobile {
+          @each $query in small, small-l, medium, medium-l {
+            @include to($query) {
+              text-align: left;
+
+              .card__content {
+                margin-top: 0.625em;
+                margin-left: -(map_get($ctn-hor-padding, $query));
+              }
+            }
+          }
+        }
+
+        &\@computer {
+          @each $query in large, x-large {
+            @include to($query) {
+              text-align: left;
+
+              .card__content {
+                margin-top: 0.625em;
+                margin-left: -(map_get($ctn-hor-padding, $query));
+              }
+            }
           }
         }
       }
     }
   }
 
-  &--rt {
-    &:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
+  @each $query in small, small-l, medium, medium-l, large, x-large {
+    @include to($query) {
+      &--rt {
+        &:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
 
-      text-align: right;
-
-      .card__content {
-        margin-top: 0.625em;
-        margin-right: -$ctn-hor-padding;
-      }
-    }
-
-    &\@mobile {
-      @each $query in small, small-l, medium, medium-l {
-        @include to($query) {
           text-align: right;
 
           .card__content {
             margin-top: 0.625em;
-            margin-right: -$ctn-hor-padding;
+            margin-right: -(map_get($ctn-hor-padding, $query));
           }
         }
-      }
-    }
 
-    &\@computer {
-      @each $query in large, x-large {
-        @include to($query) {
-          text-align: right;
+        &\@mobile {
+          @each $query in small, small-l, medium, medium-l {
+            @include to($query) {
+              text-align: right;
 
-          .card__content {
-            margin-top: 0.625em;
-            margin-right: -$ctn-hor-padding;
+              .card__content {
+                margin-top: 0.625em;
+                margin-right: -(map_get($ctn-hor-padding, $query));
+              }
+            }
+          }
+        }
+
+        &\@computer {
+          @each $query in large, x-large {
+            @include to($query) {
+              text-align: right;
+
+              .card__content {
+                margin-top: 0.625em;
+                margin-right: -(map_get($ctn-hor-padding, $query));
+              }
+            }
           }
         }
       }
     }
   }
+
 }
 
 .flex {
@@ -139,19 +148,19 @@
 }
 
 .f {
-    &--centered {
-      align-self: center;
-    }
+  &--centered {
+    align-self: center;
   }
+}
 
-.wt{
-  &--half{
+.wt {
+  &--half {
     width: 50%;
 
     &\@mobile {
       @each $query in small, small-l, medium, medium-l {
         @include to($query) {
-            width: 50%;
+          width: 50%;
         }
       }
     }
@@ -159,7 +168,7 @@
     &\@computer {
       @each $query in large, x-large {
         @include to($query) {
-            width: 50%;
+          width: 50%;
         }
       }
     }
