@@ -27,23 +27,23 @@ a, a:hover {
 * {
   word-wrap: break-word; }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 0px) and (orientation: portrait) {
   .ctn {
     padding: 0.75em 1em 2.55em 1em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 0px) and (orientation: landscape) {
   .ctn {
     padding: 0.75em 3em 2.55em 3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: portrait) {
   .ctn {
     padding: 0.75em 3em 2.55em 3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: landscape) {
   .ctn {
     padding: 0.75em 3em 2.55em 3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) {
   .ctn {
     padding: 0.75em 3em 2.55em 3em; } }
 
@@ -125,7 +125,7 @@ a, a:hover {
   -moz-box-shadow: 0px -12px 13px 0px rgba(0, 0, 0, 0.28);
   box-shadow: 0px -12px 13px 0px rgba(0, 0, 0, 0.28);
   will-change: transform; }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  @media (min-width: 0px) and (orientation: landscape) {
     .menu {
       height: 75%; } }
 
@@ -133,14 +133,14 @@ a, a:hover {
   position: relative;
   z-index: 101;
   margin-left: 2em; }
-  @media (min-width: 0px) and (max-width: 480px) and (orientation: landscape) {
+  @media (min-width: 0px) and (orientation: landscape) {
     .menu__group {
       display: flex;
       flex-wrap: wrap;
       margin: 0;
       padding: 0;
       justify-content: space-evenly; } }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  @media (min-width: 0px) and (orientation: landscape) {
     .menu__group {
       display: flex;
       flex-wrap: wrap;
@@ -154,11 +154,11 @@ a, a:hover {
   opacity: 0;
   will-change: transform;
   list-style: none; }
-  @media (min-width: 0px) and (max-width: 480px) and (orientation: landscape) {
+  @media (min-width: 0px) and (orientation: landscape) {
     .menu__item {
       font-size: 1.8rem;
       margin: 0.9em 0; } }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  @media (min-width: 0px) and (orientation: landscape) {
     .menu__item {
       margin: 0.6em 1em; } }
 
@@ -173,14 +173,6 @@ a, a:hover {
   transform: scaleY(0);
   transform-origin: center top 0;
   will-change: transform; }
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .img--centered:medium {
-    text-align: center; } }
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .img--centered:medium {
-    text-align: center; } }
 
 .img__bg {
   padding: 0.6em;
@@ -214,21 +206,36 @@ a, a:hover {
 
 .img--main .img__file {
   cursor: pointer; }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  @media (min-width: 0px) and (orientation: landscape) {
     .img--main .img__file {
       max-width: 60vw; } }
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  @media (min-width: 768px) and (orientation: portrait) {
     .img--main .img__file {
       max-width: 50vw; } }
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  @media (min-width: 768px) and (orientation: landscape) {
     .img--main .img__file {
       max-width: 50vw; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 992px) {
     .img--main .img__file {
       max-width: 35vw; } }
   @media (min-width: 1200px) {
     .img--main .img__file {
       max-width: 35vw; } }
+
+.img-grid {
+  display: flex;
+  justify-content: center; }
+  .img-grid__wrapper {
+    display: flex;
+    width: 60vw;
+    flex-wrap: wrap;
+    justify-content: center; }
+  .img-grid__item {
+    display: inline-block;
+    margin: 0 1em; }
+    .img-grid__item img {
+      height: 200px;
+      width: 200px; }
 
 .card--brown .card__content {
   background: #513533; }
@@ -243,13 +250,13 @@ a, a:hover {
   text-align: right; }
   .card--rt .card__content {
     max-width: 17.8125em; }
-    @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    @media (min-width: 768px) and (orientation: portrait) {
       .card--rt .card__content {
         max-width: 22.8125em; } }
-    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    @media (min-width: 768px) and (orientation: landscape) {
       .card--rt .card__content {
         max-width: 22.8125em; } }
-    @media (min-width: 992px) and (max-width: 1199px) {
+    @media (min-width: 992px) {
       .card--rt .card__content {
         max-width: 25.8125em; } }
     @media (min-width: 1200px) {
@@ -260,13 +267,13 @@ a, a:hover {
   text-align: left; }
   .card--lt .card__content {
     max-width: 17.8125em; }
-    @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    @media (min-width: 768px) and (orientation: portrait) {
       .card--lt .card__content {
         max-width: 22.8125em; } }
-    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    @media (min-width: 768px) and (orientation: landscape) {
       .card--lt .card__content {
         max-width: 22.8125em; } }
-    @media (min-width: 992px) and (max-width: 1199px) {
+    @media (min-width: 992px) {
       .card--lt .card__content {
         max-width: 25.8125em; } }
     @media (min-width: 1200px) {
@@ -321,7 +328,6 @@ textarea.form-group__input {
   height: 8.75em; }
 
 .submit-btn {
-  background: #03D8BE;
   font-size: 1.125rem;
   font-family: "Arvo", serif;
   color: #fff;
@@ -332,6 +338,12 @@ textarea.form-group__input {
   -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.26);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.26); }
+  .submit-btn--blue {
+    background: #03D8BE; }
+  .submit-btn--brown {
+    background: #513533; }
+  .submit-btn--bright-brown {
+    background: #744D4B; }
 
 .ctn__title {
   margin: 1em 0; }
@@ -348,6 +360,42 @@ textarea.form-group__input {
   margin-top: 1.25em; }
   .img--centered {
     text-align: center; }
+    @media (min-width: 0px) and (orientation: portrait) {
+      .img--centered\@mobile {
+        text-align: center; } }
+    @media (min-width: 0px) and (orientation: landscape) {
+      .img--centered\@mobile {
+        text-align: center; } }
+    @media (min-width: 768px) and (orientation: portrait) {
+      .img--centered\@mobile {
+        text-align: center; } }
+    @media (min-width: 768px) and (orientation: landscape) {
+      .img--centered\@mobile {
+        text-align: center; } }
+    @media (min-width: 992px) {
+      .img--centered\@computer {
+        text-align: center; } }
+    @media (min-width: 1200px) {
+      .img--centered\@computer {
+        text-align: center; } }
+    @media (min-width: 0px) and (orientation: portrait) {
+      .img--centered\@small {
+        text-align: center; } }
+    @media (min-width: 0px) and (orientation: landscape) {
+      .img--centered\@small-l {
+        text-align: center; } }
+    @media (min-width: 768px) and (orientation: portrait) {
+      .img--centered\@medium {
+        text-align: center; } }
+    @media (min-width: 768px) and (orientation: landscape) {
+      .img--centered\@medium-l {
+        text-align: center; } }
+    @media (min-width: 992px) {
+      .img--centered\@large {
+        text-align: center; } }
+    @media (min-width: 1200px) {
+      .img--centered\@x-large {
+        text-align: center; } }
 
 .card {
   margin-top: 2em; }
@@ -357,241 +405,241 @@ textarea.form-group__input {
     text-align: center; }
   .card--comment .card__content {
     text-align: left; }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  @media (min-width: 0px) and (orientation: portrait) {
     .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: left; }
       .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-left: -1em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 0px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -1em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 0px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 768px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 768px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 992px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 1200px) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 1200px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  @media (min-width: 0px) and (orientation: landscape) {
     .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: left; }
       .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-left: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 0px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -1em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 0px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 768px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 768px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 992px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 1200px) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 1200px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  @media (min-width: 768px) and (orientation: portrait) {
     .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: left; }
       .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 0px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -1em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 0px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 768px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 768px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 992px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 1200px) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 1200px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  @media (min-width: 768px) and (orientation: landscape) {
     .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: left; }
       .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 0px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -1em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 0px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 768px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 768px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 992px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 1200px) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 1200px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 992px) {
     .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: left; }
       .card--lt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-left: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 992px) and (min-width: 0px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -1em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 992px) and (min-width: 0px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 992px) and (min-width: 768px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 992px) and (min-width: 768px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (min-width: 992px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 1200px) {
+@media (min-width: 992px) and (min-width: 1200px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
@@ -604,35 +652,35 @@ textarea.form-group__input {
         margin-top: 0.625em;
         margin-left: -3em; } }
 
-@media (min-width: 1200px) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 1200px) and (min-width: 0px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -1em; } }
 
-@media (min-width: 1200px) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 1200px) and (min-width: 0px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 1200px) and (min-width: 768px) and (orientation: portrait) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 1200px) and (min-width: 768px) and (orientation: landscape) {
   .card--lt\@mobile {
     text-align: left; }
     .card--lt\@mobile .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
 
-@media (min-width: 1200px) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 1200px) and (min-width: 992px) {
   .card--lt\@computer {
     text-align: left; }
     .card--lt\@computer .card__content {
@@ -645,241 +693,241 @@ textarea.form-group__input {
     .card--lt\@computer .card__content {
       margin-top: 0.625em;
       margin-left: -3em; } }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  @media (min-width: 0px) and (orientation: portrait) {
     .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
       .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-right: -1em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 0px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -1em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 0px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 768px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 768px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 992px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) and (min-width: 1200px) {
+@media (min-width: 0px) and (orientation: portrait) and (min-width: 1200px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  @media (min-width: 0px) and (orientation: landscape) {
     .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
       .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-right: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 0px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -1em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 0px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 768px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 768px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 992px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) and (min-width: 1200px) {
+@media (min-width: 0px) and (orientation: landscape) and (min-width: 1200px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  @media (min-width: 768px) and (orientation: portrait) {
     .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
       .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 0px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -1em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 0px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 768px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 768px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 992px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (min-width: 1200px) {
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 1200px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  @media (min-width: 768px) and (orientation: landscape) {
     .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
       .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 0px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -1em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 0px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 768px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 768px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 992px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (min-width: 1200px) {
+@media (min-width: 768px) and (orientation: landscape) and (min-width: 1200px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 992px) {
     .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {
       text-align: right; }
       .card--rt:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) .card__content {
         margin-top: 0.625em;
         margin-right: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 992px) and (min-width: 0px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -1em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 992px) and (min-width: 0px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 992px) and (min-width: 768px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 992px) and (min-width: 768px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (min-width: 992px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 992px) and (max-width: 1199px) and (min-width: 1200px) {
+@media (min-width: 992px) and (min-width: 1200px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
@@ -892,35 +940,35 @@ textarea.form-group__input {
         margin-top: 0.625em;
         margin-right: -3em; } }
 
-@media (min-width: 1200px) and (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 1200px) and (min-width: 0px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -1em; } }
 
-@media (min-width: 1200px) and (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 1200px) and (min-width: 0px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 1200px) and (min-width: 768px) and (orientation: portrait) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 1200px) and (min-width: 768px) and (orientation: landscape) {
   .card--rt\@mobile {
     text-align: right; }
     .card--rt\@mobile .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
 
-@media (min-width: 1200px) and (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 1200px) and (min-width: 992px) {
   .card--rt\@computer {
     text-align: right; }
     .card--rt\@computer .card__content {
@@ -933,6 +981,54 @@ textarea.form-group__input {
     .card--rt\@computer .card__content {
       margin-top: 0.625em;
       margin-right: -3em; } }
+
+.new-comment-title {
+  margin-top: 1em; }
+
+.form-group {
+  margin: 1em 0; }
+
+.text-center {
+  text-align: center; }
+
+.inline-block {
+  display: inline-block; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .inline-block\@mobile {
+      display: inline-block; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .inline-block\@mobile {
+      display: inline-block; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .inline-block\@mobile {
+      display: inline-block; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .inline-block\@mobile {
+      display: inline-block; } }
+  @media (min-width: 992px) {
+    .inline-block\@computer {
+      display: inline-block; } }
+  @media (min-width: 1200px) {
+    .inline-block\@computer {
+      display: inline-block; } }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .inline-block\@small {
+      display: inline-block; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .inline-block\@small-l {
+      display: inline-block; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .inline-block\@medium {
+      display: inline-block; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .inline-block\@medium-l {
+      display: inline-block; } }
+  @media (min-width: 992px) {
+    .inline-block\@large {
+      display: inline-block; } }
+  @media (min-width: 1200px) {
+    .inline-block\@x-large {
+      display: inline-block; } }
 
 .flex {
   display: flex; }
@@ -940,7 +1036,7 @@ textarea.form-group__input {
     flex-direction: column; }
   .flex--centered {
     align-items: center; }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 992px) {
     .flex\@large {
       display: flex; } }
   @media (min-width: 1200px) {
@@ -952,21 +1048,873 @@ textarea.form-group__input {
 
 .wt--half {
   width: 50%; }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: portrait) {
+  @media (min-width: 0px) and (orientation: portrait) {
     .wt--half\@mobile {
       width: 50%; } }
-  @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+  @media (min-width: 0px) and (orientation: landscape) {
     .wt--half\@mobile {
       width: 50%; } }
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  @media (min-width: 768px) and (orientation: portrait) {
     .wt--half\@mobile {
       width: 50%; } }
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  @media (min-width: 768px) and (orientation: landscape) {
     .wt--half\@mobile {
       width: 50%; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 992px) {
     .wt--half\@computer {
       width: 50%; } }
   @media (min-width: 1200px) {
     .wt--half\@computer {
       width: 50%; } }
+
+.wt--full {
+  width: 100%; }
+
+.justify-space-between {
+  justify-content: space-between; }
+
+.align-items-center {
+  align-items: center; }
+
+.align-items-start {
+  align-items: flex-start; }
+
+.m-t-1 {
+  margin-top: 1em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-t-1\@mobile {
+      margin-top: 1em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-t-1\@mobile {
+      margin-top: 1em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-t-1\@mobile {
+      margin-top: 1em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-t-1\@mobile {
+      margin-top: 1em; } }
+  @media (min-width: 992px) {
+    .m-t-1\@computer {
+      margin-top: 1em; } }
+  @media (min-width: 1200px) {
+    .m-t-1\@computer {
+      margin-top: 1em; } }
+
+.m-t-2 {
+  margin-top: 2em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-t-2\@mobile {
+      margin-top: 2em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-t-2\@mobile {
+      margin-top: 2em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-t-2\@mobile {
+      margin-top: 2em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-t-2\@mobile {
+      margin-top: 2em; } }
+  @media (min-width: 992px) {
+    .m-t-2\@computer {
+      margin-top: 2em; } }
+  @media (min-width: 1200px) {
+    .m-t-2\@computer {
+      margin-top: 2em; } }
+
+.m-t-3 {
+  margin-top: 3em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-t-3\@mobile {
+      margin-top: 3em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-t-3\@mobile {
+      margin-top: 3em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-t-3\@mobile {
+      margin-top: 3em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-t-3\@mobile {
+      margin-top: 3em; } }
+  @media (min-width: 992px) {
+    .m-t-3\@computer {
+      margin-top: 3em; } }
+  @media (min-width: 1200px) {
+    .m-t-3\@computer {
+      margin-top: 3em; } }
+
+.m-t-4 {
+  margin-top: 4em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-t-4\@mobile {
+      margin-top: 4em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-t-4\@mobile {
+      margin-top: 4em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-t-4\@mobile {
+      margin-top: 4em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-t-4\@mobile {
+      margin-top: 4em; } }
+  @media (min-width: 992px) {
+    .m-t-4\@computer {
+      margin-top: 4em; } }
+  @media (min-width: 1200px) {
+    .m-t-4\@computer {
+      margin-top: 4em; } }
+
+.m-t-5 {
+  margin-top: 5em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-t-5\@mobile {
+      margin-top: 5em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-t-5\@mobile {
+      margin-top: 5em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-t-5\@mobile {
+      margin-top: 5em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-t-5\@mobile {
+      margin-top: 5em; } }
+  @media (min-width: 992px) {
+    .m-t-5\@computer {
+      margin-top: 5em; } }
+  @media (min-width: 1200px) {
+    .m-t-5\@computer {
+      margin-top: 5em; } }
+
+.m-r-1 {
+  margin-right: 1em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-r-1\@mobile {
+      margin-right: 1em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-r-1\@mobile {
+      margin-right: 1em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-r-1\@mobile {
+      margin-right: 1em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-r-1\@mobile {
+      margin-right: 1em; } }
+  @media (min-width: 992px) {
+    .m-r-1\@computer {
+      margin-right: 1em; } }
+  @media (min-width: 1200px) {
+    .m-r-1\@computer {
+      margin-right: 1em; } }
+
+.m-r-2 {
+  margin-right: 2em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-r-2\@mobile {
+      margin-right: 2em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-r-2\@mobile {
+      margin-right: 2em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-r-2\@mobile {
+      margin-right: 2em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-r-2\@mobile {
+      margin-right: 2em; } }
+  @media (min-width: 992px) {
+    .m-r-2\@computer {
+      margin-right: 2em; } }
+  @media (min-width: 1200px) {
+    .m-r-2\@computer {
+      margin-right: 2em; } }
+
+.m-r-3 {
+  margin-right: 3em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-r-3\@mobile {
+      margin-right: 3em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-r-3\@mobile {
+      margin-right: 3em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-r-3\@mobile {
+      margin-right: 3em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-r-3\@mobile {
+      margin-right: 3em; } }
+  @media (min-width: 992px) {
+    .m-r-3\@computer {
+      margin-right: 3em; } }
+  @media (min-width: 1200px) {
+    .m-r-3\@computer {
+      margin-right: 3em; } }
+
+.m-r-4 {
+  margin-right: 4em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-r-4\@mobile {
+      margin-right: 4em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-r-4\@mobile {
+      margin-right: 4em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-r-4\@mobile {
+      margin-right: 4em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-r-4\@mobile {
+      margin-right: 4em; } }
+  @media (min-width: 992px) {
+    .m-r-4\@computer {
+      margin-right: 4em; } }
+  @media (min-width: 1200px) {
+    .m-r-4\@computer {
+      margin-right: 4em; } }
+
+.m-r-5 {
+  margin-right: 5em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-r-5\@mobile {
+      margin-right: 5em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-r-5\@mobile {
+      margin-right: 5em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-r-5\@mobile {
+      margin-right: 5em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-r-5\@mobile {
+      margin-right: 5em; } }
+  @media (min-width: 992px) {
+    .m-r-5\@computer {
+      margin-right: 5em; } }
+  @media (min-width: 1200px) {
+    .m-r-5\@computer {
+      margin-right: 5em; } }
+
+.m-b-1 {
+  margin-bottom: 1em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-b-1\@mobile {
+      margin-bottom: 1em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-b-1\@mobile {
+      margin-bottom: 1em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-b-1\@mobile {
+      margin-bottom: 1em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-b-1\@mobile {
+      margin-bottom: 1em; } }
+  @media (min-width: 992px) {
+    .m-b-1\@computer {
+      margin-bottom: 1em; } }
+  @media (min-width: 1200px) {
+    .m-b-1\@computer {
+      margin-bottom: 1em; } }
+
+.m-b-2 {
+  margin-bottom: 2em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-b-2\@mobile {
+      margin-bottom: 2em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-b-2\@mobile {
+      margin-bottom: 2em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-b-2\@mobile {
+      margin-bottom: 2em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-b-2\@mobile {
+      margin-bottom: 2em; } }
+  @media (min-width: 992px) {
+    .m-b-2\@computer {
+      margin-bottom: 2em; } }
+  @media (min-width: 1200px) {
+    .m-b-2\@computer {
+      margin-bottom: 2em; } }
+
+.m-b-3 {
+  margin-bottom: 3em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-b-3\@mobile {
+      margin-bottom: 3em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-b-3\@mobile {
+      margin-bottom: 3em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-b-3\@mobile {
+      margin-bottom: 3em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-b-3\@mobile {
+      margin-bottom: 3em; } }
+  @media (min-width: 992px) {
+    .m-b-3\@computer {
+      margin-bottom: 3em; } }
+  @media (min-width: 1200px) {
+    .m-b-3\@computer {
+      margin-bottom: 3em; } }
+
+.m-b-4 {
+  margin-bottom: 4em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-b-4\@mobile {
+      margin-bottom: 4em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-b-4\@mobile {
+      margin-bottom: 4em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-b-4\@mobile {
+      margin-bottom: 4em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-b-4\@mobile {
+      margin-bottom: 4em; } }
+  @media (min-width: 992px) {
+    .m-b-4\@computer {
+      margin-bottom: 4em; } }
+  @media (min-width: 1200px) {
+    .m-b-4\@computer {
+      margin-bottom: 4em; } }
+
+.m-b-5 {
+  margin-bottom: 5em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-b-5\@mobile {
+      margin-bottom: 5em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-b-5\@mobile {
+      margin-bottom: 5em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-b-5\@mobile {
+      margin-bottom: 5em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-b-5\@mobile {
+      margin-bottom: 5em; } }
+  @media (min-width: 992px) {
+    .m-b-5\@computer {
+      margin-bottom: 5em; } }
+  @media (min-width: 1200px) {
+    .m-b-5\@computer {
+      margin-bottom: 5em; } }
+
+.m-l-1 {
+  margin-left: 1em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-l-1\@mobile {
+      margin-left: 1em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-l-1\@mobile {
+      margin-left: 1em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-l-1\@mobile {
+      margin-left: 1em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-l-1\@mobile {
+      margin-left: 1em; } }
+  @media (min-width: 992px) {
+    .m-l-1\@computer {
+      margin-left: 1em; } }
+  @media (min-width: 1200px) {
+    .m-l-1\@computer {
+      margin-left: 1em; } }
+
+.m-l-2 {
+  margin-left: 2em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-l-2\@mobile {
+      margin-left: 2em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-l-2\@mobile {
+      margin-left: 2em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-l-2\@mobile {
+      margin-left: 2em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-l-2\@mobile {
+      margin-left: 2em; } }
+  @media (min-width: 992px) {
+    .m-l-2\@computer {
+      margin-left: 2em; } }
+  @media (min-width: 1200px) {
+    .m-l-2\@computer {
+      margin-left: 2em; } }
+
+.m-l-3 {
+  margin-left: 3em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-l-3\@mobile {
+      margin-left: 3em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-l-3\@mobile {
+      margin-left: 3em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-l-3\@mobile {
+      margin-left: 3em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-l-3\@mobile {
+      margin-left: 3em; } }
+  @media (min-width: 992px) {
+    .m-l-3\@computer {
+      margin-left: 3em; } }
+  @media (min-width: 1200px) {
+    .m-l-3\@computer {
+      margin-left: 3em; } }
+
+.m-l-4 {
+  margin-left: 4em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-l-4\@mobile {
+      margin-left: 4em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-l-4\@mobile {
+      margin-left: 4em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-l-4\@mobile {
+      margin-left: 4em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-l-4\@mobile {
+      margin-left: 4em; } }
+  @media (min-width: 992px) {
+    .m-l-4\@computer {
+      margin-left: 4em; } }
+  @media (min-width: 1200px) {
+    .m-l-4\@computer {
+      margin-left: 4em; } }
+
+.m-l-5 {
+  margin-left: 5em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .m-l-5\@mobile {
+      margin-left: 5em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .m-l-5\@mobile {
+      margin-left: 5em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .m-l-5\@mobile {
+      margin-left: 5em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .m-l-5\@mobile {
+      margin-left: 5em; } }
+  @media (min-width: 992px) {
+    .m-l-5\@computer {
+      margin-left: 5em; } }
+  @media (min-width: 1200px) {
+    .m-l-5\@computer {
+      margin-left: 5em; } }
+
+.p-t-1 {
+  padding-top: 1em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-t-1\@mobile {
+      padding-top: 1em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-t-1\@mobile {
+      padding-top: 1em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-t-1\@mobile {
+      padding-top: 1em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-t-1\@mobile {
+      padding-top: 1em; } }
+  @media (min-width: 992px) {
+    .p-t-1\@computer {
+      padding-top: 1em; } }
+  @media (min-width: 1200px) {
+    .p-t-1\@computer {
+      padding-top: 1em; } }
+
+.p-t-2 {
+  padding-top: 2em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-t-2\@mobile {
+      padding-top: 2em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-t-2\@mobile {
+      padding-top: 2em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-t-2\@mobile {
+      padding-top: 2em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-t-2\@mobile {
+      padding-top: 2em; } }
+  @media (min-width: 992px) {
+    .p-t-2\@computer {
+      padding-top: 2em; } }
+  @media (min-width: 1200px) {
+    .p-t-2\@computer {
+      padding-top: 2em; } }
+
+.p-t-3 {
+  padding-top: 3em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-t-3\@mobile {
+      padding-top: 3em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-t-3\@mobile {
+      padding-top: 3em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-t-3\@mobile {
+      padding-top: 3em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-t-3\@mobile {
+      padding-top: 3em; } }
+  @media (min-width: 992px) {
+    .p-t-3\@computer {
+      padding-top: 3em; } }
+  @media (min-width: 1200px) {
+    .p-t-3\@computer {
+      padding-top: 3em; } }
+
+.p-t-4 {
+  padding-top: 4em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-t-4\@mobile {
+      padding-top: 4em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-t-4\@mobile {
+      padding-top: 4em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-t-4\@mobile {
+      padding-top: 4em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-t-4\@mobile {
+      padding-top: 4em; } }
+  @media (min-width: 992px) {
+    .p-t-4\@computer {
+      padding-top: 4em; } }
+  @media (min-width: 1200px) {
+    .p-t-4\@computer {
+      padding-top: 4em; } }
+
+.p-t-5 {
+  padding-top: 5em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-t-5\@mobile {
+      padding-top: 5em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-t-5\@mobile {
+      padding-top: 5em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-t-5\@mobile {
+      padding-top: 5em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-t-5\@mobile {
+      padding-top: 5em; } }
+  @media (min-width: 992px) {
+    .p-t-5\@computer {
+      padding-top: 5em; } }
+  @media (min-width: 1200px) {
+    .p-t-5\@computer {
+      padding-top: 5em; } }
+
+.p-r-1 {
+  padding-right: 1em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-r-1\@mobile {
+      padding-right: 1em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-r-1\@mobile {
+      padding-right: 1em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-r-1\@mobile {
+      padding-right: 1em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-r-1\@mobile {
+      padding-right: 1em; } }
+  @media (min-width: 992px) {
+    .p-r-1\@computer {
+      padding-right: 1em; } }
+  @media (min-width: 1200px) {
+    .p-r-1\@computer {
+      padding-right: 1em; } }
+
+.p-r-2 {
+  padding-right: 2em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-r-2\@mobile {
+      padding-right: 2em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-r-2\@mobile {
+      padding-right: 2em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-r-2\@mobile {
+      padding-right: 2em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-r-2\@mobile {
+      padding-right: 2em; } }
+  @media (min-width: 992px) {
+    .p-r-2\@computer {
+      padding-right: 2em; } }
+  @media (min-width: 1200px) {
+    .p-r-2\@computer {
+      padding-right: 2em; } }
+
+.p-r-3 {
+  padding-right: 3em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-r-3\@mobile {
+      padding-right: 3em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-r-3\@mobile {
+      padding-right: 3em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-r-3\@mobile {
+      padding-right: 3em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-r-3\@mobile {
+      padding-right: 3em; } }
+  @media (min-width: 992px) {
+    .p-r-3\@computer {
+      padding-right: 3em; } }
+  @media (min-width: 1200px) {
+    .p-r-3\@computer {
+      padding-right: 3em; } }
+
+.p-r-4 {
+  padding-right: 4em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-r-4\@mobile {
+      padding-right: 4em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-r-4\@mobile {
+      padding-right: 4em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-r-4\@mobile {
+      padding-right: 4em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-r-4\@mobile {
+      padding-right: 4em; } }
+  @media (min-width: 992px) {
+    .p-r-4\@computer {
+      padding-right: 4em; } }
+  @media (min-width: 1200px) {
+    .p-r-4\@computer {
+      padding-right: 4em; } }
+
+.p-r-5 {
+  padding-right: 5em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-r-5\@mobile {
+      padding-right: 5em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-r-5\@mobile {
+      padding-right: 5em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-r-5\@mobile {
+      padding-right: 5em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-r-5\@mobile {
+      padding-right: 5em; } }
+  @media (min-width: 992px) {
+    .p-r-5\@computer {
+      padding-right: 5em; } }
+  @media (min-width: 1200px) {
+    .p-r-5\@computer {
+      padding-right: 5em; } }
+
+.p-b-1 {
+  padding-bottom: 1em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-b-1\@mobile {
+      padding-bottom: 1em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-b-1\@mobile {
+      padding-bottom: 1em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-b-1\@mobile {
+      padding-bottom: 1em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-b-1\@mobile {
+      padding-bottom: 1em; } }
+  @media (min-width: 992px) {
+    .p-b-1\@computer {
+      padding-bottom: 1em; } }
+  @media (min-width: 1200px) {
+    .p-b-1\@computer {
+      padding-bottom: 1em; } }
+
+.p-b-2 {
+  padding-bottom: 2em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-b-2\@mobile {
+      padding-bottom: 2em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-b-2\@mobile {
+      padding-bottom: 2em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-b-2\@mobile {
+      padding-bottom: 2em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-b-2\@mobile {
+      padding-bottom: 2em; } }
+  @media (min-width: 992px) {
+    .p-b-2\@computer {
+      padding-bottom: 2em; } }
+  @media (min-width: 1200px) {
+    .p-b-2\@computer {
+      padding-bottom: 2em; } }
+
+.p-b-3 {
+  padding-bottom: 3em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-b-3\@mobile {
+      padding-bottom: 3em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-b-3\@mobile {
+      padding-bottom: 3em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-b-3\@mobile {
+      padding-bottom: 3em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-b-3\@mobile {
+      padding-bottom: 3em; } }
+  @media (min-width: 992px) {
+    .p-b-3\@computer {
+      padding-bottom: 3em; } }
+  @media (min-width: 1200px) {
+    .p-b-3\@computer {
+      padding-bottom: 3em; } }
+
+.p-b-4 {
+  padding-bottom: 4em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-b-4\@mobile {
+      padding-bottom: 4em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-b-4\@mobile {
+      padding-bottom: 4em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-b-4\@mobile {
+      padding-bottom: 4em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-b-4\@mobile {
+      padding-bottom: 4em; } }
+  @media (min-width: 992px) {
+    .p-b-4\@computer {
+      padding-bottom: 4em; } }
+  @media (min-width: 1200px) {
+    .p-b-4\@computer {
+      padding-bottom: 4em; } }
+
+.p-b-5 {
+  padding-bottom: 5em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-b-5\@mobile {
+      padding-bottom: 5em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-b-5\@mobile {
+      padding-bottom: 5em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-b-5\@mobile {
+      padding-bottom: 5em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-b-5\@mobile {
+      padding-bottom: 5em; } }
+  @media (min-width: 992px) {
+    .p-b-5\@computer {
+      padding-bottom: 5em; } }
+  @media (min-width: 1200px) {
+    .p-b-5\@computer {
+      padding-bottom: 5em; } }
+
+.p-l-1 {
+  padding-left: 1em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-l-1\@mobile {
+      padding-left: 1em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-l-1\@mobile {
+      padding-left: 1em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-l-1\@mobile {
+      padding-left: 1em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-l-1\@mobile {
+      padding-left: 1em; } }
+  @media (min-width: 992px) {
+    .p-l-1\@computer {
+      padding-left: 1em; } }
+  @media (min-width: 1200px) {
+    .p-l-1\@computer {
+      padding-left: 1em; } }
+
+.p-l-2 {
+  padding-left: 2em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-l-2\@mobile {
+      padding-left: 2em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-l-2\@mobile {
+      padding-left: 2em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-l-2\@mobile {
+      padding-left: 2em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-l-2\@mobile {
+      padding-left: 2em; } }
+  @media (min-width: 992px) {
+    .p-l-2\@computer {
+      padding-left: 2em; } }
+  @media (min-width: 1200px) {
+    .p-l-2\@computer {
+      padding-left: 2em; } }
+
+.p-l-3 {
+  padding-left: 3em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-l-3\@mobile {
+      padding-left: 3em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-l-3\@mobile {
+      padding-left: 3em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-l-3\@mobile {
+      padding-left: 3em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-l-3\@mobile {
+      padding-left: 3em; } }
+  @media (min-width: 992px) {
+    .p-l-3\@computer {
+      padding-left: 3em; } }
+  @media (min-width: 1200px) {
+    .p-l-3\@computer {
+      padding-left: 3em; } }
+
+.p-l-4 {
+  padding-left: 4em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-l-4\@mobile {
+      padding-left: 4em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-l-4\@mobile {
+      padding-left: 4em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-l-4\@mobile {
+      padding-left: 4em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-l-4\@mobile {
+      padding-left: 4em; } }
+  @media (min-width: 992px) {
+    .p-l-4\@computer {
+      padding-left: 4em; } }
+  @media (min-width: 1200px) {
+    .p-l-4\@computer {
+      padding-left: 4em; } }
+
+.p-l-5 {
+  padding-left: 5em; }
+  @media (min-width: 0px) and (orientation: portrait) {
+    .p-l-5\@mobile {
+      padding-left: 5em; } }
+  @media (min-width: 0px) and (orientation: landscape) {
+    .p-l-5\@mobile {
+      padding-left: 5em; } }
+  @media (min-width: 768px) and (orientation: portrait) {
+    .p-l-5\@mobile {
+      padding-left: 5em; } }
+  @media (min-width: 768px) and (orientation: landscape) {
+    .p-l-5\@mobile {
+      padding-left: 5em; } }
+  @media (min-width: 992px) {
+    .p-l-5\@computer {
+      padding-left: 5em; } }
+  @media (min-width: 1200px) {
+    .p-l-5\@computer {
+      padding-left: 5em; } }

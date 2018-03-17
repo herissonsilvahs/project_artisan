@@ -21,6 +21,30 @@
 
   &--centered {
     text-align: center;
+
+    &\@mobile {
+      @each $query in small, small-l, medium, medium-l {
+        @include to($query) {
+          text-align: center;
+        }
+      }
+    }
+
+    &\@computer {
+      @each $query in large, x-large {
+        @include to($query) {
+          text-align: center;
+        }
+      }
+    }
+
+     @each $query in small, small-l, medium, medium-l, large, x-large {
+      @include to($query) {
+        &\@#{$query} {
+          text-align: center;
+        }
+      }
+    }
   }
 }
 
@@ -124,55 +148,14 @@
       }
     }
   }
-
 }
 
-.flex {
-  display: flex;
-
-  &--column {
-    flex-direction: column;
-  }
-
-  &--centered {
-    align-items: center;
-  }
-
-  &\@large {
-    @each $query in large, x-large, {
-      @include to($query) {
-        display: flex;
-      }
-    }
-  }
+.new-comment-title {
+  margin-top: 1em;
 }
 
-.f {
-  &--centered {
-    align-self: center;
-  }
-}
-
-.wt {
-  &--half {
-    width: 50%;
-
-    &\@mobile {
-      @each $query in small, small-l, medium, medium-l {
-        @include to($query) {
-          width: 50%;
-        }
-      }
-    }
-
-    &\@computer {
-      @each $query in large, x-large {
-        @include to($query) {
-          width: 50%;
-        }
-      }
-    }
-  }
+.form-group {
+  margin: 1em 0;
 }
 
 //todo: revise layout alignment technique

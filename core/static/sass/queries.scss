@@ -1,24 +1,24 @@
 @mixin to($media){
   @if $media == x-small { // very small smartphones (iphone 4)
-    @media (min-width : 0px) and (max-width : 480px) and (orientation : portrait) {@content}
+    @media (min-width : 0px) and (orientation : portrait) {@content}
   }
   @else if $media == x-small-l{
-    @media (min-width : 0px) and (max-width : 480px) and (orientation : landscape) {@content}
+    @media (min-width : 0px) and (orientation : landscape) {@content}
   }
   @else if $media == small { // smartphones, small tablets and phablets
-    @media (min-width : 0px) and (max-width : 767px) and (orientation : portrait) {@content}
+    @media (min-width : 0px) and (orientation : portrait) {@content}
   }
   @else if $media == small-l {
-    @media (min-width : 0px) and (max-width : 767px) and (orientation : landscape) { @content }
+    @media (min-width : 0px) and (orientation : landscape) { @content }
   }
   @else if $media == medium { //tablets
-    @media (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) { @content }
+    @media (min-width : 768px) and (orientation : portrait) { @content }
   }
   @else if $media == medium-l {
-    @media (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) { @content }
+    @media (min-width : 768px) and (orientation : landscape) { @content }
   }
   @else if $media == large{ //small laptops
-    @media (min-width: 992px) and (max-width: 1199px) { @content }
+    @media (min-width: 992px) { @content }
   }
   @else if $media == x-large{ //laptops and monitors
     @media (min-width: 1200px) { @content }

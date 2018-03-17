@@ -1,0 +1,156 @@
+.text-center {
+  text-align: center;
+}
+
+.inline-block {
+  display: inline-block;
+
+  &\@mobile {
+    @each $query in small, small-l, medium, medium-l {
+      @include to($query) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &\@computer {
+    @each $query in large, x-large {
+      @include to($query) {
+        display: inline-block;
+      }
+    }
+  }
+
+  @each $query in small, small-l, medium, medium-l, large, x-large {
+    @include to($query) {
+      &\@#{$query} {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.flex {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--centered {
+    align-items: center;
+  }
+
+  &\@large {
+    @each $query in large, x-large, {
+      @include to($query) {
+        display: flex;
+
+      }
+    }
+  }
+}
+
+.f {
+  &--centered {
+    align-self: center;
+  }
+}
+
+.wt {
+  &--half {
+    width: 50%;
+
+    &\@mobile {
+      @each $query in small, small-l, medium, medium-l {
+        @include to($query) {
+          width: 50%;
+        }
+      }
+    }
+
+    &\@computer {
+      @each $query in large, x-large {
+        @include to($query) {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.align-items {
+
+  &-center {
+    align-items: center;
+  }
+
+  &-start {
+    align-items: flex-start;
+  }
+}
+
+.m {
+  @each $class, $direction in (t, top), (r, right), (b, bottom), (l, left) {
+    &-#{$class} {
+      @each $value in (1, 2, 3, 4, 5) {
+        &-#{$value} {
+          margin-#{$direction}: #{$value}em;
+
+          &\@mobile {
+            @each $query in small, small-l, medium, medium-l {
+              @include to($query) {
+                margin-#{$direction}: #{$value}em;
+              }
+            }
+          }
+
+          &\@computer {
+            @each $query in large, x-large {
+              @include to($query) {
+                margin-#{$direction}: #{$value}em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.p {
+  @each $class, $direction in (t, top), (r, right), (b, bottom), (l, left) {
+    &-#{$class} {
+      @each $value in (1, 2, 3, 4, 5) {
+        &-#{$value} {
+          padding-#{$direction}: #{$value}em;
+
+          &\@mobile {
+            @each $query in small, small-l, medium, medium-l {
+              @include to($query) {
+                padding-#{$direction}: #{$value}em;
+              }
+            }
+          }
+
+          &\@computer {
+            @each $query in large, x-large {
+              @include to($query) {
+                padding-#{$direction}: #{$value}em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

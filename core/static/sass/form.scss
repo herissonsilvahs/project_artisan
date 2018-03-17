@@ -21,7 +21,6 @@ textarea.form-group__input { //used tag due Django form rendering
 }
 
 .submit-btn {
-  background: $light-blue;
   font-size: 1.125rem;
   font-family: "Arvo", serif;
   color: #fff;
@@ -32,4 +31,16 @@ textarea.form-group__input { //used tag due Django form rendering
   -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.26);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.26);
+
+  &--blue{
+    background: $light-blue;
+  }
+
+  &--brown{
+    background: $light-brown;
+  }
+
+  &--bright-brown{
+    background: $bright-brown;
+  }
 }

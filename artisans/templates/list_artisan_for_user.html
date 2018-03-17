@@ -2,54 +2,77 @@
 
 {% block content %}
 
-    <div class="product-model">
-        <div class="container">
-            <div class="row">
-                <ol class="breadcrumb">
-                    <li><a href="{% url 'core:index' %}">Início</a></li>
-                    <li class="active">Artesões</li>
-                </ol>
-            </div>
-            <h2>Artesões</h2>
-            <div class="col-md-9 product-model-sec">
-                {% for artisan in artisans %}
-                    <a href="{% url 'artisans:show_artisan_user' artisan.pk %}"><div class="product-grid">
-                        <div class="more-product"><span> </span></div>
-                        <div class="product-img b-link-stripe b-animate-go  thickbox">
-                            <img src="{{ artisan.photo }}" class="img-responsive" alt="">
-                            <div class="b-wrapper">
-                                <h4 class="b-animate b-from-left  b-delay03">
-                                    <button><span class="fa fa-file-text-o" aria-hidden="true"></span> Ver mais</button>
-                                </h4>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="product-info simpleCart_shelfItem">
-                        <div class="product-info-cust prt_name">
-                            <h4>{{ artisan.name }}</h4>
-                            <div class="clearfix"> </div>
-                        </div>
+    <div class="ctn ctn--brown">
+        <div class="flex align-items-center justify-space-between m-b-3@computer">
+{#          todo: create visiblity classes#}
+            <h1 class="ctn__title">
+                Artesões
+            </h1>
 
-                    </div>
-                    </div>
-                {% endfor %}
-
-        </div>
-        <div class="rsidebar span_1_of_left">
-            <section  class="sky-form">
-                <div class="product_right">
+            <div class="card card--rt card--brown">
+                <div class="card__content">
                     <form action="?search=" method="GET">
-                        <div class="input-group">
-                            <input type="text" name="search" class="form-control" placeholder="Artesao">
-                            <span class="input-group-btn">
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Pesquisar</button>
-                      </span>
+                        <div class="form-group inline-block">
+                            <input type="text" name="search" class="form-group__input"
+                                   placeholder="Pesquise artesões">
                         </div>
+
+                        <input type="submit" class="submit-btn submit-btn--bright-brown inline-block m-l-2" value="Pesquisar">
                     </form>
                 </div>
-            </section>
+            </div>
         </div>
+
+
+        <div class="img-grid">
+            <div class="img-grid__wrapper">
+                {% for artisan in artisans %}
+                    <div class="img-grid__item">
+                        <a href="{% url 'artisans:show_artisan_user' artisan.pk %}">
+                            <div class="img img--centered@mobile">
+                                <div class="img__bg img__bg--red">
+                                    <img class="img__file" src="{{ artisan.photo }}"/>
+                                </div>
+                            </div>
+                            <p class="text-center">{{ artisan.name }}</p>
+                        </a>
+                    </div>
+
+                    <div class="img-grid__item">
+                        <a href="{% url 'artisans:show_artisan_user' artisan.pk %}">
+                            <div class="img img--centered@mobile">
+                                <div class="img__bg img__bg--red">
+                                    <img class="img__file" src="{{ artisan.photo }}"/>
+                                </div>
+                            </div>
+                            <p class="text-center">{{ artisan.name }}</p>
+                        </a>
+                    </div>
+
+                    <div class="img-grid__item">
+                        <a href="{% url 'artisans:show_artisan_user' artisan.pk %}">
+                            <div class="img img--centered@mobile">
+                                <div class="img__bg img__bg--red">
+                                    <img class="img__file" src="{{ artisan.photo }}"/>
+                                </div>
+                            </div>
+                            <p class="text-center">{{ artisan.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <form action="?search=" method="GET">
+            <div class="form-group">
+                <label class="form-group__label">Pesquise artesões</label>
+                <input type="text" name="search" class="form-group__input">
+            </div>
+
+            <input type="submit" class="submit-btn submit-btn--brown" value="Pesquisar">
+        </form>
     </div>
-    </div>
+
 
 {% endblock %}
