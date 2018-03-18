@@ -1,15 +1,14 @@
 {% extends 'index.html' %}
-
+{% load static %}
 {% block content %}
 
     <div class="ctn ctn--brown">
-        <div class="flex align-items-center justify-space-between m-b-3@computer">
-{#          todo: create visiblity classes#}
+        <div class="flex align-items-center justify-space-between m-b-3@computer relative">
             <h1 class="ctn__title">
                 Artesões
             </h1>
 
-            <div class="card card--rt card--brown">
+            <div class="card card--rt card--brown hide@mobile">
                 <div class="card__content">
                     <form action="?search=" method="GET">
                         <div class="form-group inline-block">
@@ -17,10 +16,16 @@
                                    placeholder="Pesquise artesões">
                         </div>
 
-                        <input type="submit" class="submit-btn submit-btn--bright-brown inline-block m-l-2" value="Pesquisar">
+                        <input type="submit" class="btn-submit btn-submit--bright-brown inline-block m-l-2"
+                               value="Pesquisar">
                     </form>
                 </div>
             </div>
+
+            <div class="btn-icon btn--brown search hide@computer">
+                <img src="{% static 'images/magnify.svg' %}" alt=""/>
+            </div>
+
         </div>
 
 
@@ -61,17 +66,20 @@
                     </div>
                 {% endfor %}
             </div>
-
         </div>
+    </div>
 
-        <form action="?search=" method="GET">
-            <div class="form-group">
-                <label class="form-group__label">Pesquise artesões</label>
-                <input type="text" name="search" class="form-group__input">
-            </div>
+    <div class="card card--brown card--search wt--full hide@computer">
+        <div class="card__content">
+            <form action="?search=" method="GET" class="flex flex--column align-items-center wt--full">
+                <div class="form-group">
+                    <label class="form-group__label">Pesquise artesões</label>
+                    <input type="text" name="search" class="form-group__input">
+                </div>
 
-            <input type="submit" class="submit-btn submit-btn--brown" value="Pesquisar">
-        </form>
+                <input type="submit" class="btn-submit btn--brown" value="Pesquisar">
+            </form>
+        </div>
     </div>
 
 

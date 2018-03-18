@@ -38,7 +38,7 @@
       }
     }
 
-     @each $query in small, small-l, medium, medium-l, large, x-large {
+    @each $query in small, small-l, medium, medium-l, large, x-large {
       @include to($query) {
         &\@#{$query} {
           text-align: center;
@@ -63,6 +63,10 @@
     .card__content {
       text-align: left;
     }
+  }
+
+  &.card--search {
+    margin: 0;
   }
   @each $query in small, small-l, medium, medium-l, large, x-large {
     @include to($query) {
@@ -157,5 +161,3 @@
 .form-group {
   margin: 1em 0;
 }
-
-//todo: revise layout alignment technique

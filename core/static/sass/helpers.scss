@@ -83,6 +83,10 @@
   }
 }
 
+.card .wt--full {
+  width: 100vw;
+}
+
 .justify-space-between {
   justify-content: space-between;
 }
@@ -152,5 +156,27 @@
       }
     }
   }
+}
+
+.hide {
+  &\@mobile {
+    @each $query in small, small-l, medium, medium-l {
+      @include to($query) {
+        display: none;
+      }
+    }
+  }
+
+  &\@computer {
+    @each $query in large, x-large {
+      @include to($query) {
+        display: none;
+      }
+    }
+  }
+}
+
+.relative {
+  position: relative;
 }
 

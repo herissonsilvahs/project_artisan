@@ -1,0 +1,42 @@
+
+.btn {
+
+  &-submit {
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-family: "Arvo", serif;
+    color: #fff;
+    border-radius: 1.1875em;
+    border: none;
+    padding: 0.6em 2em;
+    display: block;
+    -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.26);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.26);
+  }
+
+  &-icon{
+    cursor: pointer;
+    -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.26);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.26);
+    border-radius: 9px;
+    padding: 1em;
+
+    img{
+      display: block;
+    }
+  }
+
+  &--blue {
+    background: $light-blue;
+  }
+
+  &--brown {
+    background: $light-brown;
+  }
+
+  &--bright-brown {
+    background: $bright-brown;
+  }
+}
