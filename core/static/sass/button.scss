@@ -28,6 +28,10 @@
     }
   }
 
+  &--centered{
+    margin: 0 auto;
+  }
+
   &--blue {
     background: $light-blue;
   }

@@ -160,7 +160,7 @@
 
 .hide {
   &\@mobile {
-    @each $query in small, small-l, medium, medium-l {
+    @each $query in x-small, x-small-l, small, small-l, medium, medium-l {
       @include to($query) {
         display: none;
       }

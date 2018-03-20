@@ -76,27 +76,27 @@
                 </div>
             </div>
 
-                <div class="flex@large wt--full align-items-start justify-space-between">
-                    <div class="card card--lt card--red">
-                        <div class="card__title">
-                            <span>Endereço</span>
-                        </div>
-                        <div class="card__content same-height@medium">
-                            <span>{{ artifact.artisan.address.street }}, número {{ artifact.artisan.address.number }}</span>
-                            <span>{{ artifact.artisan.address.neighborhood }}, {{ artifact.artisan.address.city }}</span>
-                        </div>
+            <div class="flex@large wt--full align-items-start justify-space-between">
+                <div class="card card--lt card--red">
+                    <div class="card__title">
+                        <span>Endereço</span>
                     </div>
-
-                    <div class="card card--rt card--red">
-                        <div class="card__title">
-                            <span>Contato</span>
-                        </div>
-                        <div class="card__content">
-                            <span>{{ artifact.artisan.email }}</span>
-                            <span>{{ artifact.artisan.phone }}</span>
-                        </div>
+                    <div class="card__content same-height@medium">
+                        <span>{{ artifact.artisan.address.street }}, número {{ artifact.artisan.address.number }}</span>
+                        <span>{{ artifact.artisan.address.neighborhood }}, {{ artifact.artisan.address.city }}</span>
                     </div>
                 </div>
+
+                <div class="card card--rt card--red">
+                    <div class="card__title">
+                        <span>Contato</span>
+                    </div>
+                    <div class="card__content">
+                        <span>{{ artifact.artisan.email }}</span>
+                        <span>{{ artifact.artisan.phone }}</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -138,7 +138,7 @@
 
             {% endfor %}
 
-            <input type="submit" class="btn-submit btn--blue" value="Enviar Comentário">
+            <input type="submit" class="btn-submit btn--blue btn--centered" value="Enviar Comentário">
         </form>
     </section>
 
@@ -214,33 +214,37 @@
 
 {% block custom-js %}
     <script>
-        {#        let pswpElement = document.querySelectorAll('.pswp')[0];#}
-        {#        let items = [#}
-        {#            {#}
-        {#                src: document.getElementsByClassName("craft__img")[0].getAttribute("src"),#}
-        {#                w: 600,#}
-        {#                h: 400#}
-        {#            },#}
-        {#        ];#}
-        {#        let options = {#}
-        {#            // optionName: 'option value'#}
-        {#            // for example:#}
-        {#            index: 0 // start at first slide#}
-        {#        };#}
-        {##}
-        {#        $(".craft__img").click(function () {#}
-        {#            let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);#}
-        {#            gallery.init();#}
-        {#        });#}
-        {##}
-        {##}
-        {#        // build scene#}
-        {#        let controller = new ScrollMagic.Controller();#}
-        {#        let scene = new ScrollMagic.Scene({triggerElement: ".craft__img", duration: 700})#}
-        {#        // animate color and top border in relation to scroll position#}
-        {#            .setTween(".craft__img", {transform: "translateX(-30px)"}) // the tween durtion can be omitted and defaults to 1#}
-        {#            .addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)#}
-        {#            .addTo(controller);#}
+        if ($(".img__file")) {
+            let pswpElement = document.querySelectorAll('.pswp')[0];
+            let options = {
+                // optionName: 'option value'
+                // for example:
+                index: 0 // start at first slide
+            };
+
+            $(".img__file").click(function () {
+
+                let items = [
+                    {
+                        src: $(this).attr('src'),
+                        w: $(this).width(),
+                        h: $(this).height()
+                    },
+                ];
+
+                let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+                gallery.init();
+            });
+        }
+
+
+        {#// build scene#}
+        {#let controller = new ScrollMagic.Controller();#}
+        {#let scene = new ScrollMagic.Scene({triggerElement: ".craft__img", duration: 700})#}
+        {#// animate color and top border in relation to scroll position#}
+        {#    .setTween(".craft__img", {transform: "translateX(-30px)"}) // the tween durtion can be omitted and defaults to 1#}
+        {#    .addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)#}
+        {#    .addTo(controller);#}
     </script>
 
 

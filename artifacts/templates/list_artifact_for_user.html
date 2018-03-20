@@ -2,98 +2,127 @@
 {% load static %}
 {% block content %}
 
-    <div class="product-model">
-        <div class="container">
-            <div class="row">
-                <ol class="breadcrumb">
-                    <li><a href="{% url 'core:index' %}">Início</a></li>
-                    <li class="active">Artesanatos</li>
-                </ol>
-            </div>
-            <h2>Artesanatos</h2>
-            <div class="col-md-9 product-model-sec">
 
 
-                {% for artifact in artifacts %}
-                    <a href="{% url 'artifacts:show_artifact_user' artifact.pk %}"><div class="product-grid">
-                        <div class="more-product"><span> </span></div>
-                        <div class="product-img b-link-stripe b-animate-go  thickbox">
-                            <img src="{{ artifact.photo }}" class="img-responsive" alt="">
-                            <div class="b-wrapper">
-                                <h4 class="b-animate b-from-left  b-delay03">
-                                    <button><span class="fa fa-file-text-o" aria-hidden="true"></span> Ver mais</button>
-                                </h4>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="product-info simpleCart_shelfItem">
-                        <div class="product-info-cust prt_name">
-                            <h4>{{ artifact.name }}</h4>
-                            <div class="clearfix"> </div>
-                        </div>
 
-                    </div>
-                    </div>
-                {% endfor %}
 
-        </div>
-        <div class="rsidebar span_1_of_left">
-            <section  class="sky-form">
-                <div class="product_right">
+    <div class="ctn ctn--brown">
+        <div class="flex align-items-center justify-space-between m-b-3@computer relative">
+            <h1 class="ctn__title">
+                Artesões
+            </h1>
+
+            <div class="card card--rt card--brown hide@mobile">
+                <div class="card__content">
                     <form action="?search=" method="GET">
-                        <div class="input-group">
-                            <input type="text" name="search" class="form-control" placeholder="Artesanato">
-                            <span class="input-group-btn">
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Pesquisar</button>
-                      </span>
+                        <div class="form-group inline-block">
+                            <input type="text" name="search" class="form-group__input"
+                                   placeholder="Pesquise artesanatos">
                         </div>
+
+                        <input type="submit" class="btn-submit btn--bright-brown inline-block m-l-2"
+                               value="Pesquisar">
                     </form>
                 </div>
-                <div class="product_right">
-                    <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categorias</h4>
-                    <div class="tab1">
+            </div>
 
-                        {% for category in categories %}
-                            <ul class="place">
-                                <li class="sort"><a href="?order_by=categoria&order={{category.pk}}">{{ category.name }}</a></li>
-                                <div class="clearfix"> </div>
-                            </ul>
-                        {% endfor %}
+            <div class="btn-icon btn--brown search hide@computer">
+                <img src="{% static 'images/magnify.svg' %}" alt=""/>
+            </div>
 
+        </div>
+
+
+        <div class="img-grid">
+            <div class="img-grid__wrapper">
+                {% for artifact in artifacts %}
+                    <div class="img-grid__item">
+                        <a href="{% url 'artifacts:show_artifact_user' artifact.pk %}">
+                            <div class="img img--centered@mobile">
+                                <div class="img__bg img__bg--red">
+                                    <img class="img__file" src="{{ artifact.photo }}"/>
+                                </div>
+                            </div>
+                            <p class="text-center">{{ artifact.name }}</p>
+                        </a>
                     </div>
+
+                    <div class="img-grid__item">
+                        <a href="{% url 'artifacts:show_artifact_user' artifact.pk %}">
+                            <div class="img img--centered@mobile">
+                                <div class="img__bg img__bg--red">
+                                    <img class="img__file" src="{{ artifact.photo }}"/>
+                                </div>
+                            </div>
+                            <p class="text-center">{{ artifact.name }}</p>
+                        </a>
+                    </div>
+
+                    <div class="img-grid__item">
+                        <a href="{% url 'artifacts:show_artifact_user' artifact.pk %}">
+                            <div class="img img--centered@mobile">
+                                <div class="img__bg img__bg--red">
+                                    <img class="img__file" src="{{ artifact.photo }}"/>
+                                </div>
+                            </div>
+                            <p class="text-center">{{ artifact.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div class="card card--brown card--lt">
+
+            <div class="card__content">
+                <h3>Categorias</h3>
+                {% for category in categories %}
+                    <ul class="place">
+                        <li class="sort"><a href="?order_by=categoria&order={{ category.pk }}">{{ category.name }}</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    {% for sub_category  in category.sub_categories %}
+                        <p>{{ sub_category }}</p>
+                    {% endfor %}
+                {% endfor %}
+                <h3>Subcategorias</h3>
+{#                {% for sub_category in sub_categories %}#}
+{#                    <ul class="place">#}
+{#                        <li class="sort"><a#}
+{#                                href="?order_by=sub_categoria&order={{ sub_category.pk }}">{{ sub_category.name }}</a>#}
+{#                        </li>#}
+{#                        <div class="clearfix"></div>#}
+{#                    </ul>#}
+{#                {% endfor %}#}
+{#                <h3>Materiais</h3>#}
+{#                {% for material in materials %}#}
+{#                    <ul class="place">#}
+{#                        <li class="sort"><a href="?order_by=material&order={{ material.pk }}">{{ material.name }}</a>#}
+{#                        </li>#}
+{#                        <div class="clearfix"></div>#}
+{#                    </ul>#}
+{#                {% endfor %}#}
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="card card--brown card--search wt--full hide@computer">
+        <div class="card__content">
+            <form action="?search=" method="GET" class="flex flex--column align-items-center wt--full">
+                <div class="form-group">
+                    <label class="form-group__label">Pesquise artesanatos</label>
+                    <input type="text" name="search" class="form-group__input">
                 </div>
 
-                <div class="product_right">
-                    <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Sub Categorias</h4>
-                    <div class="tab1">
-
-                        {% for sub_category in sub_categories %}
-                            <ul class="place">
-                                <li class="sort"><a href="?order_by=sub_categoria&order={{sub_category.pk}}">{{ sub_category.name }}</a></li>
-                                <div class="clearfix"> </div>
-                            </ul>
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="product_right">
-                    <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Materiais</h4>
-                    <div class="tab1">
-
-                        {% for material in materials %}
-                            <ul class="place">
-                                <li class="sort"><a href="?order_by=material&order={{material.pk}}">{{ material.name }}</a></li>
-                                <div class="clearfix"> </div>
-                            </ul>
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-            </section>
+                <input type="submit" class="btn-submit btn--brown" value="Pesquisar">
+            </form>
         </div>
     </div>
-    </div>
+
 
 {% endblock %}

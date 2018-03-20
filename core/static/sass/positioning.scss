@@ -68,7 +68,7 @@
   &.card--search {
     margin: 0;
   }
-  @each $query in small, small-l, medium, medium-l, large, x-large {
+  @each $query in x-small, x-small-l, small, small-l, medium, medium-l, large, x-large {
     @include to($query) {
 
       &--lt {
@@ -78,7 +78,7 @@
 
           .card__content {
             margin-top: 0.625em;
-            margin-left: -(map_get($ctn-hor-padding, $query)); //todo refactor to be compatible to map
+            margin-left: -(map_get($ctn-hor-padding, $query));
           }
         }
 
@@ -111,7 +111,7 @@
     }
   }
 
-  @each $query in small, small-l, medium, medium-l, large, x-large {
+  @each $query in x-small, x-small-l, small, small-l, medium, medium-l, large, x-large {
     @include to($query) {
       &--rt {
         &:not(.card--rt\@mobile):not(.card--rt\@computer):not(.card--lt\@mobile):not(.card--lt\@computer) {

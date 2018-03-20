@@ -26,6 +26,10 @@ body {
   position: relative;
 }
 
+*{
+  word-break: break-all;
+}
+
 a, a:hover {
   color: white;
   text-decoration: none;
@@ -55,3 +59,6 @@ a, a:hover {
 @import "button";
 @import "positioning";
 @import "helpers";
+
+//todo: create a mixin to replace @each statements with all queries
+//todo: replace margins and paddings to m and p classes
