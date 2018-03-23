@@ -100,7 +100,6 @@ class ArtifactListUsersView(ListView):
             queryset = Artifact.objects.filter(material=order)
         elif self.request.GET.get('search', ''):
             queryset = Artifact.objects.filter(name__icontains=self.request.GET.get('search', ''))
-
         return queryset
 
 

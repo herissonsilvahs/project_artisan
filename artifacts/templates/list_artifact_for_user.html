@@ -84,27 +84,28 @@
                         <div class="clearfix"></div>
                     </ul>
 
-                    {% for sub_category  in category.sub_categories %}
-                        <p>{{ sub_category }}</p>
+                    {% for sub_category in category.sub_category_set.all %}
+                        <p> abc{{ sub_category.name }}</p>
                     {% endfor %}
+
                 {% endfor %}
                 <h3>Subcategorias</h3>
-{#                {% for sub_category in sub_categories %}#}
-{#                    <ul class="place">#}
-{#                        <li class="sort"><a#}
-{#                                href="?order_by=sub_categoria&order={{ sub_category.pk }}">{{ sub_category.name }}</a>#}
-{#                        </li>#}
-{#                        <div class="clearfix"></div>#}
-{#                    </ul>#}
-{#                {% endfor %}#}
-{#                <h3>Materiais</h3>#}
-{#                {% for material in materials %}#}
-{#                    <ul class="place">#}
-{#                        <li class="sort"><a href="?order_by=material&order={{ material.pk }}">{{ material.name }}</a>#}
-{#                        </li>#}
-{#                        <div class="clearfix"></div>#}
-{#                    </ul>#}
-{#                {% endfor %}#}
+                {#                {% for sub_category in sub_categories %}#}
+                {#                    <ul class="place">#}
+                {#                        <li class="sort"><a#}
+                {#                                href="?order_by=sub_categoria&order={{ sub_category.pk }}">{{ sub_category.name }}</a>#}
+                {#                        </li>#}
+                {#                        <div class="clearfix"></div>#}
+                {#                    </ul>#}
+                {#                {% endfor %}#}
+                {#                <h3>Materiais</h3>#}
+                {#                {% for material in materials %}#}
+                {#                    <ul class="place">#}
+                {#                        <li class="sort"><a href="?order_by=material&order={{ material.pk }}">{{ material.name }}</a>#}
+                {#                        </li>#}
+                {#                        <div class="clearfix"></div>#}
+                {#                    </ul>#}
+                {#                {% endfor %}#}
             </div>
         </div>
 
